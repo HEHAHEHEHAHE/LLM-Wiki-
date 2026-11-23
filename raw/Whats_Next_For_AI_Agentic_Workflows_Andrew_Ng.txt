@@ -1,0 +1,351 @@
+[003.56 - 008.00] all of you uh know Andreu in as a famous
+[006.48 - 010.88] uh computer science professor at
+[008.00 - 013.96] Stanford was really early on in the
+[010.88 - 015.72] development of neural networks with gpus
+[013.96 - 017.28] of course a creator of corsera and
+[015.72 - 019.88] popular courses like
+[017.28 - 022.84] deeplearning.ai also the founder and
+[019.88 - 024.68] Creator uh and early lead of Google
+[022.84 - 026.40] brain uh but one thing I've always
+[024.68 - 030.52] wanted to ask you before I hand it over
+[026.40 - 031.64] Andrew while you're on stage uh is a
+[030.52 - 035.28] question I think would be relevant to
+[031.64 - 038.12] the whole audience 10 years ago on
+[035.28 - 039.60] problem set number two of cs229 you gave
+[038.12 - 042.28] me a
+[039.60 - 044.72] b and I was wondering I looked it over I
+[042.28 - 047.52] was wondering what you saw that I did
+[044.72 - 049.08] incorrectly so anyway Andrew thank you
+[047.52 - 051.68] Hansen um looking forward to sharing
+[049.08 - 053.44] with all of you what I'm seeing with AI
+[051.68 - 056.04] agents which I think is the exciting
+[053.44 - 057.92] Trend that I think everyone building in
+[056.04 - 060.04] AI should pay attention to and then also
+[057.92 - 063.20] excited about all all the other uh on
+[060.04 - 065.72] Sak presentations so hey agents you know
+[063.20 - 067.76] today the way most of us use Lish models
+[065.72 - 070.28] is like this with a non- agentic
+[067.76 - 072.28] workflow where you type a prompt and
+[070.28 - 074.68] generates an answer and that's a bit
+[072.28 - 076.76] like if you ask a person to write an
+[074.68 - 078.76] essay on a topic and I say please sit
+[076.76 - 081.28] down to the keyboard and just type the
+[078.76 - 084.28] essay from start to finish without ever
+[081.28 - 087.72] using backspace um and despite how hard
+[084.28 - 090.80] thises is L's do it remarkably well in
+[087.72 - 092.68] contrast with an agentic workflow this
+[090.80 - 095.48] is what it may look like have an AI have
+[092.68 - 097.72] an LM say write an essay outline do you
+[095.48 - 100.28] need to do any web research if so let's
+[097.72 - 102.84] do that then write the first draft and
+[100.28 - 105.28] then read your own first draft and think
+[102.84 - 107.80] about what parts need revision and then
+[105.28 - 109.52] revise your draft and you go on and on
+[107.80 - 112.40] and so this workflow is much more
+[109.52 - 115.60] iterative where you may have the L do
+[112.40 - 117.96] some thinking um and then revise this
+[115.60 - 120.16] article and then do some more thinking
+[117.96 - 122.16] and iterate this through a number of
+[120.16 - 125.32] times and what not many people
+[122.16 - 127.40] appreciate is this delivers remarkably
+[125.32 - 128.92] better results um I've actually been
+[127.40 - 131.28] really surprised myself working these
+[128.92 - 134.08] agent workflows how well how well they
+[131.28 - 136.56] work I's do one case study at my team
+[134.08 - 138.44] analyzed some data uh using a coding
+[136.56 - 140.16] Benchmark called the human eval
+[138.44 - 142.76] Benchmark released by open a few years
+[140.16 - 145.24] ago um but this says coding problems
+[142.76 - 146.80] like given the nonent list of integers
+[145.24 - 149.04] return the sum of all the all elements
+[146.80 - 151.04] are an even positions and it turns out
+[149.04 - 153.64] the answer is you code snipper like that
+[151.04 - 155.84] so today lot of us will use zero shot
+[153.64 - 157.52] prompting meaning we tell the AI write
+[155.84 - 159.28] the code and have it run on the first
+[157.52 - 160.96] spot like who codes like that no human
+[159.28 - 163.92] codes like that just type out the code
+[160.96 - 166.80] and run it maybe you do I can't do that
+[163.92 - 170.04] um so it turns out that if you use GPT
+[166.80 - 175.48] 3.5 uh zero shot prompting it gets it
+[170.04 - 177.68] 48% right uh gp4 way better 607 7% right
+[175.48 - 181.12] but if you take an agentic workflow and
+[177.68 - 183.44] wrap it around GPT 3.5 I say it actually
+[181.12 - 186.56] does better than even
+[183.44 - 189.16] gbd4 um and if you were to wrap this
+[186.56 - 192.40] type of workflow around gb4 you know it
+[189.16 - 195.28] it it also um does very well and you
+[192.40 - 198.68] notice that gbd 3.5 with an agentic
+[195.28 - 201.92] workflow actually outperforms
+[198.68 - 204.12] gp4 um and I think this has and this
+[201.92 - 206.56] means that this has signant consequences
+[204.12 - 209.96] fighting how we all approach building
+[206.56 - 211.76] applications so agents is the ter of
+[209.96 - 213.56] around a lot there's a lot of consultant
+[211.76 - 215.40] reports talk about agents the future of
+[213.56 - 218.20] AI blah blah blah I want to be a bit
+[215.40 - 220.60] concrete and share of you um the broad
+[218.20 - 222.56] design patterns I'm seeing in agents
+[220.60 - 224.28] it's a very messy chaotic space tons of
+[222.56 - 226.92] research tons of Open Source there's a
+[224.28 - 228.76] lot going on but I try to categorize um
+[226.92 - 231.96] bit more concretely what's going on
+[228.76 - 234.12] agents reflection is a tool that I think
+[231.96 - 236.16] many of us should just use it just works
+[234.12 - 237.68] uh to use I think it's more widely
+[236.16 - 239.32] appreciated but actually works pretty
+[237.68 - 241.36] well I think of these as pretty robust
+[239.32 - 244.04] technology when I use them I can you
+[241.36 - 245.96] know almost always get them to work well
+[244.04 - 248.48] um planning and multi-agent
+[245.96 - 250.04] collaboration I think is more emerging
+[248.48 - 252.08] when I use them sometimes my mind is
+[250.04 - 253.72] blown for how well they work but at
+[252.08 - 255.52] least at this moment in time I don't
+[253.72 - 258.12] feel like I can always get them to work
+[255.52 - 260.08] Rel Lively so let me walk through these
+[258.12 - 262.44] four design patterns in the few slides
+[260.08 - 264.04] and if some of you go back and yourself
+[262.44 - 266.12] will ask your engineers to use these I
+[264.04 - 269.16] think you get a productivity boost quite
+[266.12 - 271.96] quickly so reflection here's an example
+[269.16 - 274.80] let's say ask a system please write code
+[271.96 - 277.20] for me for a given task then we have a
+[274.80 - 280.04] coder agent just an LM that you prompt
+[277.20 - 282.92] to write code to say you def du task
+[280.04 - 283.80] write a function like that um an example
+[282.92 - 285.92] of
+[283.80 - 287.92] self-reflection would be if you then
+[285.92 - 290.00] prompt the LM with something like this
+[287.92 - 291.60] here's code intended for a toas and just
+[290.00 - 293.76] give it back the exact same code that
+[291.60 - 295.56] they just generated and then say check
+[293.76 - 297.24] the code carefully for correctness sound
+[295.56 - 299.16] efficiency good construction CRI just
+[297.24 - 301.12] write prompt like that it turns out the
+[299.16 - 303.60] same l that you prompted to write the
+[301.12 - 305.80] code may be able to spot problems like
+[303.60 - 307.84] this bug in line Five May fix it by blah
+[305.80 - 309.52] blah blah and if you now take his own
+[307.84 - 312.00] feedback and give it to it and reprompt
+[309.52 - 313.52] it it may come up with a version two of
+[312.00 - 315.16] the code that could well work better
+[313.52 - 317.36] than the first version not guaranteed
+[315.16 - 319.36] but it works you know often enough for
+[317.36 - 322.96] this be wor trying for a lot of
+[319.36 - 325.20] applications um to foreshadow to use if
+[322.96 - 327.32] you let it run unit test if it fails a
+[325.20 - 329.00] unit test then he why do you fail the
+[327.32 - 331.24] unit test have that conversation and be
+[329.00 - 332.80] able to figure out fail the unit test so
+[331.24 - 335.88] you should try changing something and
+[332.80 - 337.04] come up with V3 by the way for those of
+[335.88 - 338.84] you that want to learn more about these
+[337.04 - 340.48] Technologies I'm very excited about them
+[338.84 - 342.08] for each of the four sections I have a
+[340.48 - 344.28] little recommended reading section at
+[342.08 - 346.24] the bottom that you know hopefully gives
+[344.28 - 348.80] more references and again just the
+[346.24 - 351.28] foreshadow multi-agent systems I've
+[348.80 - 352.92] described as a single coder agent that
+[351.28 - 355.40] you prompt to have it you know have this
+[352.92 - 357.76] conversation with itself um one Natural
+[355.40 - 360.44] Evolution of this idea is instead of a
+[357.76 - 362.84] single code agent you can can have two
+[360.44 - 365.76] agents where one is a coder agent and
+[362.84 - 368.72] the second is a Critic agent and these
+[365.76 - 370.28] could be the same base LM model but that
+[368.72 - 372.76] you prompt in different ways where you
+[370.28 - 374.68] say one your expert coder right code the
+[372.76 - 376.36] other one say your expert code review to
+[374.68 - 378.08] review this code and this Tye of
+[376.36 - 379.88] workflow is actually pretty easy to
+[378.08 - 381.96] implement I think it's such a very
+[379.88 - 383.16] general purpose technology for a lot of
+[381.96 - 385.16] workflows this would give you a
+[383.16 - 388.48] significant boost in in the performance
+[385.16 - 391.00] of LMS um the second design pattern is
+[388.48 - 393.60] to use many of where already have seen
+[391.00 - 396.36] you know LM based systems uh uh using
+[393.60 - 399.04] tools on the left is a screenshot from
+[396.36 - 402.00] um co-pilot on the right is something
+[399.04 - 404.32] that I kind of extracted from uh gp4 but
+[402.00 - 406.24] you know LM today if you ask it what's
+[404.32 - 408.76] the best coffee maker web search for
+[406.24 - 411.44] some problems um will generate code and
+[408.76 - 413.72] run code um and it turns out that there
+[411.44 - 416.20] are a lot of different tools that many
+[413.72 - 418.28] different people are using for analysis
+[416.20 - 420.28] for gathering information for taking
+[418.28 - 422.12] action for personal productivity
+[420.28 - 423.92] um it turns out a lot of the early work
+[422.12 - 426.72] in two use turned out to be in the
+[423.92 - 429.08] computer vision Community because before
+[426.72 - 430.72] large language models lm's you know they
+[429.08 - 433.32] couldn't do anything with images so the
+[430.72 - 435.12] only option was that the LM generate a
+[433.32 - 437.28] function called that could manipulate an
+[435.12 - 438.60] image like generate an image or do
+[437.28 - 440.40] object detection or whatever so if you
+[438.60 - 442.72] actually look at literature it's been
+[440.40 - 445.60] interesting how much of the work um in
+[442.72 - 447.88] two years seems like it originated from
+[445.60 - 451.04] Vision because LMS would blind to images
+[447.88 - 454.12] before you know gp4 and and and lava and
+[451.04 - 458.56] so on um so that's two use and it
+[454.12 - 460.24] expands what an LM can do um and then
+[458.56 - 462.12] planning you know for those of you that
+[460.24 - 464.32] have not yet played a lot with planning
+[462.12 - 466.52] algorithms I I feel like a lot of people
+[464.32 - 468.68] talk about the chat GPT moment where
+[466.52 - 471.48] you're wow never seen anything like this
+[468.68 - 474.40] I think if not used planning alums many
+[471.48 - 476.68] people will have a kind of a AI agent
+[474.40 - 479.00] wow I couldn't imagine the AI agent
+[476.68 - 481.04] doing this I've run live demos where
+[479.00 - 482.92] something failed and the AI agent
+[481.04 - 484.96] rerouted around the failures I've
+[482.92 - 487.16] actually had quite a few of those moment
+[484.96 - 490.48] wow you can't believe my AI system just
+[487.16 - 492.88] did that autonomously but um one example
+[490.48 - 494.72] that I adapted from a hugging GPT paper
+[492.88 - 496.04] you know you say this general image
+[494.72 - 497.44] where the girls read where a girl is
+[496.04 - 499.88] reading a book and it posts the same as
+[497.44 - 501.36] a boy in the image example. jpack and
+[499.88 - 503.64] please subscribe the new image for your
+[501.36 - 505.76] voice so give an example like this um
+[503.64 - 507.76] today we have ai agents who can kind of
+[505.76 - 509.96] decide first thing I need to do is
+[507.76 - 512.12] determine the post of the boy
+[509.96 - 514.80] um then you know find the right model
+[512.12 - 517.60] maybe on hugging face to extract the
+[514.80 - 520.40] post then next need to find a post image
+[517.60 - 523.04] model to synthesize a picture of a of a
+[520.40 - 526.04] girl of as following the instructions
+[523.04 - 528.04] then use image to text to and then
+[526.04 - 530.04] finally use text of speech and today we
+[528.04 - 532.72] actually have agents that I don't want
+[530.04 - 535.24] to say they work reliably you know
+[532.72 - 537.00] they're kind of finicky they don't
+[535.24 - 539.08] always work but when it works is
+[537.00 - 540.76] actually pretty amazing but with agentic
+[539.08 - 543.16] loops sometimes you can recover from
+[540.76 - 545.32] earlier failures as well so I find
+[543.16 - 547.68] myself already using research agents for
+[545.32 - 549.20] some of my work where one of piece of
+[547.68 - 551.00] research but I don't feel like you know
+[549.20 - 553.04] Googling myself and spend a long time I
+[551.00 - 554.56] should send to the research agent come
+[553.04 - 556.52] back in a few minutes and see what it's
+[554.56 - 557.68] come up with and and it sometimes works
+[556.52 - 560.12] sometimes doesn't right but that's
+[557.68 - 562.76] already a part of my personal
+[560.12 - 564.56] workflow the final design pattern multi-
+[562.76 - 568.08] Asian collaboration this is one of those
+[564.56 - 569.88] funny things but uh um it works much
+[568.08 - 573.08] better than you might think
+[569.88 - 576.84] uh uh but on the left is a screenshot
+[573.08 - 578.92] from a paper called um chat Dev uh which
+[576.84 - 581.04] is completely open which actually open
+[578.92 - 583.04] source many of you saw the you know
+[581.04 - 586.56] flashy social media announcements of
+[583.04 - 589.24] demo of a Devon uh uh Chad Dev is open
+[586.56 - 591.08] source it runs on my laptop and what
+[589.24 - 594.40] Chad Dev doeses is example of a
+[591.08 - 597.52] multi-agent system where you prompt one
+[594.40 - 599.40] LM to sometimes act like the CEO of a
+[597.52 - 601.08] software engine company sometimes Act
+[599.40 - 603.64] designer sometime a product manager
+[601.08 - 605.80] sometimes I a tester and this flock of
+[603.64 - 608.20] agents that you built by prompting an LM
+[605.80 - 610.28] to tell them you're now Co you're now
+[608.20 - 612.92] software engineer they collaborate have
+[610.28 - 615.64] an extended conversation so that if you
+[612.92 - 618.36] tell it please develop a game develop a
+[615.64 - 621.04] GOI game they'll actually spend you know
+[618.36 - 623.48] a few minutes writing code testing it uh
+[621.04 - 625.72] iterating and then generate a like
+[623.48 - 627.56] surprisingly complex programs doesn't
+[625.72 - 629.68] always work I've used it sometimes it
+[627.56 - 632.12] doesn't work sometimes it's amazing but
+[629.68 - 634.40] this technology is really um getting
+[632.12 - 636.64] better and and just one of design
+[634.40 - 638.36] pattern it turns out that multi-agent
+[636.64 - 640.04] debate where you have different agents
+[638.36 - 642.96] you know for example could be have ch
+[640.04 - 645.84] GPT and Gemini debate each other that
+[642.96 - 648.40] actually results in better performance
+[645.84 - 650.56] as well so having multiple simulated air
+[648.40 - 653.84] agents work together has been a powerful
+[650.56 - 655.52] design pattern as well um so just to
+[653.84 - 658.80] summarize I think these are the these
+[655.52 - 661.76] are the the the uh patterns of seen and
+[658.80 - 664.24] I think that if we were to um use these
+[661.76 - 666.96] uh uh patterns you know in our work a
+[664.24 - 669.64] lot of us can get a prity boost quite
+[666.96 - 672.12] quickly and I think that um agentic
+[669.64 - 675.20] reasoning design patterns are going to
+[672.12 - 677.20] be important uh this is my small slide I
+[675.20 - 680.60] expect that the set of T AI could do
+[677.20 - 683.64] will expand dramatically this year uh
+[680.60 - 685.00] because of agentic workflows and one
+[683.64 - 687.40] thing that it's actually difficult
+[685.00 - 689.76] people to get used to is when we prompt
+[687.40 - 691.84] an LM we want to response right away
+[689.76 - 693.96] um in fact a decade ago when I was you
+[691.84 - 696.88] know having discussions around at at at
+[693.96 - 699.68] Google on um it called a big box search
+[696.88 - 702.12] we type a long prompt one of the reasons
+[699.68 - 703.96] you know I failed to push successfully
+[702.12 - 705.68] for that was because when you do a web
+[703.96 - 707.36] search you one of responds back in half
+[705.68 - 709.12] a second right that's just human nature
+[707.36 - 710.80] we like that instant grab instant
+[709.12 - 713.80] feedback but for a lot of the agent
+[710.80 - 716.04] workflows um I think we'll need to learn
+[713.80 - 718.60] to dedicate the toss and AI agent and
+[716.04 - 721.12] patiently wait minutes maybe even hours
+[718.60 - 723.80] uh to for a response but just like I've
+[721.12 - 725.60] seen a lot of novice managers delegate
+[723.80 - 727.20] something to someone and then check in 5
+[725.60 - 730.32] minutes later right and that's not
+[727.20 - 731.44] productive um I think we need to it be
+[730.32 - 734.32] difficult we need to do that with some
+[731.44 - 737.12] of our AI agents as well I saw I heard
+[734.32 - 738.96] some loss um and then one other
+[737.12 - 741.20] important Trend fast token generation is
+[738.96 - 743.28] important because with these agented
+[741.20 - 745.08] workflows we're iterating over and over
+[743.28 - 746.84] so the LM is generating tokens for the
+[745.08 - 749.20] elm to read so be able to generate
+[746.84 - 751.92] tokens way faster than any human to read
+[749.20 - 753.96] is fantastic and I think that um
+[751.92 - 756.68] generating more tokens really quickly
+[753.96 - 759.32] from even a slightly lower quality LM
+[756.68 - 761.72] might give good results compared to
+[759.32 - 763.24] slower tokens from a better LM maybe
+[761.72 - 764.92] it's a little bit controversial because
+[763.24 - 766.40] it may let you go around this Loop a lot
+[764.92 - 768.68] more times kind of like the results I
+[766.40 - 771.40] showed with gbd3 and an agent
+[768.68 - 773.56] architecture on the first slide um and
+[771.40 - 776.96] cand I'm really looking forward to Cloud
+[773.56 - 778.36] 5 and uh CL 4 and gb5 and Gemini 2.0 and
+[776.96 - 779.80] all these other wonderful models that
+[778.36 - 781.84] may are building
+[779.80 - 783.88] and part of me feels like if you're
+[781.84 - 787.28] looking forward to running your thing on
+[783.88 - 789.72] gp5 zero shot you know you mayble to get
+[787.28 - 791.64] closer to that level performance on some
+[789.72 - 794.32] applications than you might think with
+[791.64 - 797.36] agenting reasoning um but on an early
+[794.32 - 801.36] model I think I I I I think this is an
+[797.36 - 804.48] important Trend uh uh and honestly the
+[801.36 - 806.52] path to AGI feels like a journey rather
+[804.48 - 809.16] than a destination but I think this typ
+[806.52 - 811.20] of agent workflows could help us take a
+[809.16 - 814.12] small step forward on this very long
+[811.20 - 814.12] journey thank
+[815.01 - 818.15] [Applause]
+[818.88 - 821.88] you

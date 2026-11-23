@@ -72,3 +72,18 @@
 - **啟動器完全對齊 hBN**：`啟動預覽.bat` 重構為與 hBN 完全一致之設定，點擊一次命令提示字元黑視窗自動退出自閉，背景靜默守護伺服器。
 - **徹底杜絕簡報快取 (Cache-busting)**：在 `wiki/presentation.md` 的簡報內嵌與外連加上版本後綴 `?v=clean_20261124`，確保瀏覽器 100% 強制重載無 Emoji、無截圖的純淨卡片版面。
 - **落實演講建議至規範法典**：在 `AGENTS.md` 正式確立「Poteto 倒金字塔模型（5 層）」、「黃金反饋法則（The Golden Rule）」與「消除花園雜草原則」，將演講精華轉化為專案的確定性防護手冊。
+
+
+## [2026-11-24] ingest | What's Next for AI Agentic Workflows — Andrew Ng
+- 原始英文字幕存入 `raw/Whats_Next_For_AI_Agentic_Workflows_Andrew_Ng.txt`（URL: https://youtu.be/sal78ACtGTc，共 351 行）。
+- **影音雙軌抽幀 (Keyframe Extraction)**：使用 `ffmpeg` 針對 1080p 串流精確截取 8 張關鍵 PPT 圖表存入 `wiki/assets/Whats_Next_For_AI_Agentic_Workflows_Andrew_Ng/`。
+- **撰寫結構化深度精讀筆記**：`wiki/videos/Whats_Next_For_AI_Agentic_Workflows_Andrew_Ng.md`：
+  - 核心突破：揭露 GPT-3.5 + Agentic 工作流在 HumanEval 評測突破 80%，直接超越 Zero-shot GPT-4（67.0%）。
+  - 圖表四步深度解析：完整拆解 Non-agentic vs. Agentic、HumanEval 長條圖、四大設計模式矩陣、Reflection/Tools/Planning/Multi-agent 機制圖。
+  - 前瞻趨勢分析：解析 Fast Token Generation 為何是 Agentic Workflows 的關鍵推論基礎設施。
+- **建立全新核心概念頁面**：
+  - `wiki/concepts/agentic-design-patterns.md`（AI Agentic 四大設計模式）
+  - `wiki/concepts/fast-token-generation.md`（高速 Token 生成對代理架構的關鍵影響）
+- **同步更新全局導覽與教學簡報**：
+  - 更新總目錄 `wiki/index.md` 與多目錄側邊欄 `_sidebar.md`。
+  - 擴充 Reveal.js 教學簡報 `slides.html` 至 15 頁，無縫串聯 Lauren Tan（確定性外部邊界約束）與 Andrew Ng（代理內部推論工作流）的雙翼體系，完全保持無 Emoji 圖標、無截圖之極簡現代卡片版面。

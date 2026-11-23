@@ -21,14 +21,17 @@
 | # | 影片名稱 | 講者 | 組織 / 會議 | 核心技術突破 | 關鍵量化成果 | 筆記連結 |
 | :- | :--- | :--- | :--- | :--- | :--- | :--- |
 | 1 | All Code Is Slop (Except Mine) | Lauren Tan (Potato) | AI Engineer / xAI Grok Bot | 倒金字塔確定性防護模型、全面禁用逃避性註解與高危語法 | 單月交付 11,000 PRs，Revert 率約 0.5% | [閱讀精讀筆記](wiki/videos/All_Code_Is_Slop_Except_Mine_Lauren_Tan.md) |
+| 2 | What's Next for AI Agentic Workflows | Andrew Ng (吳恩達) | AI Fund / Sequoia AI Ascent | 迭代式 Agent 工作流、四大設計模式 (Reflection, Tools, Planning, Multi-agent) | GPT-3.5 + 工作流超越 GPT-4 Zero-shot，HumanEval > 80% | [閱讀精讀筆記](wiki/videos/Whats_Next_For_AI_Agentic_Workflows_Andrew_Ng.md) |
 
 ---
 
 ## 核心概念索引 (Core Concepts)
 
+- [AI Agentic 四大設計模式 (Agentic Design Patterns)](wiki/concepts/agentic-design-patterns.md)：Reflection、Tool Use、Planning 與 Multi-agent 之架構成熟度與權衡。
 - [確定性防護欄 (Deterministic Guardrails)](wiki/concepts/deterministic-guardrails.md)：為何機械化 Linter 與編譯器檢查遠勝於自然語言 Prompt。
 - [AI Agents 規模化代碼生成 (Scaling AI Coding Agents)](wiki/concepts/ai-agents-code-generation.md)：從 Copilot 到數千個 Agent 並行的軟體工廠範式轉變。
 - [形式化驗證在 AI 工程的應用 (Formal & Runtime Verification)](wiki/concepts/formal-verification-llm.md)：TLA+、Lean 與不變量檢查如何建立終極信任。
+- [高速 Token 生成對代理架構的關鍵影響 (Fast Token Generation)](wiki/concepts/fast-token-generation.md)：為何極速推論吞吐是支撐代理多次迭代反思的底層命脈。
 
 ---
 

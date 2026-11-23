@@ -20,11 +20,17 @@
 ---
 
 ### 簡報對應章節與設計說明
-- 第 1–3 頁：背景與問題意識（從一天審 3 個 PR 到代碼洪流、花園雜草隱喻）
+- **第 1–3 頁**：背景與問題意識（從一天審 3 個 PR 到代碼洪流、花園雜草隱喻）
   - 對應章節：[All Code Is Slop (Except Mine) - I. 核心論點與背景動機](wiki/videos/All_Code_Is_Slop_Except_Mine_Lauren_Tan.md)
-- 第 4 頁：核心架構（Poteto 倒金字塔 5 層模型視覺化）
+- **第 4 頁**：核心架構（Poteto 倒金字塔 5 層模型視覺化）
   - 對應概念：[確定性防護欄 (Deterministic Guardrails)](wiki/concepts/deterministic-guardrails.md)
-- 第 5–6 頁：生產環境踩坑實錄與 183 個定時器爆發事件
+- **第 5–6 頁**：生產環境踩坑實錄與 183 個定時器爆發事件
   - 對應章節：[All Code Is Slop (Except Mine) - II. Figure 4 深度解析](wiki/videos/All_Code_Is_Slop_Except_Mine_Lauren_Tan.md)
-- 第 7–9 頁：形式化驗證（TLA+/Lean）、量化成果（11,000 PRs、0.5% 回滾率）與工程師黃金法則
+- **第 7–9 頁**：形式化驗證（TLA+/Lean）、量化成果（11,000 PRs、0.5% 回滾率）與工程師黃金法則
   - 對應概念：[形式化驗證在 AI 工程的應用](wiki/concepts/formal-verification-llm.md)
+- **第 10–12 頁**：工作流革命（Andrew Ng: Non-agentic vs. Agentic、HumanEval 評測超越 GPT-4）
+  - 對應章節：[What's Next for AI Agentic Workflows - II. Figure 1 & 2 深度解析](wiki/videos/Whats_Next_For_AI_Agentic_Workflows_Andrew_Ng.md)
+- **第 13 頁**：四大核心代理設計模式（Reflection, Tool Use, Planning, Multi-agent）
+  - 對應概念：[AI Agentic 四大設計模式](wiki/concepts/agentic-design-patterns.md)
+- **第 14–15 頁**：未來趨勢（高速 Token 生成、心智範式移轉）與雙翼知識庫全景導引
+  - 對應概念：[高速 Token 生成對代理架構的關鍵影響](wiki/concepts/fast-token-generation.md)

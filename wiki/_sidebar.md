@@ -5,11 +5,14 @@
 
 - 影片深度精讀 (Videos)
   - [01 | All Code Is Slop (Lauren Tan)](wiki/videos/All_Code_Is_Slop_Except_Mine_Lauren_Tan.md)
+  - [02 | What's Next for AI Agentic Workflows (Andrew Ng)](wiki/videos/Whats_Next_For_AI_Agentic_Workflows_Andrew_Ng.md)
 
 - 核心概念網絡 (Concepts)
+  - [AI Agentic 四大設計模式](wiki/concepts/agentic-design-patterns.md)
   - [確定性防護欄 (Deterministic Guardrails)](wiki/concepts/deterministic-guardrails.md)
   - [AI Agents 規模化代碼生成](wiki/concepts/ai-agents-code-generation.md)
   - [形式化驗證 (Formal Verification)](wiki/concepts/formal-verification-llm.md)
+  - [高速 Token 生成關鍵影響](wiki/concepts/fast-token-generation.md)
 
 - 專案規則規範
   - [AGENTS.md 規範手冊](AGENTS.md)

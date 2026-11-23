@@ -324,17 +324,142 @@
         </div>
       </section>
 
-      <!-- Slide 10: 結尾與知識庫導引 -->
+      <!-- Slide 10: 第二講引言 - Andrew Ng -->
+      <section>
+        <span class="badge">第二講 · 核心思維躍升</span>
+        <h2>What's Next for AI Agentic Workflows</h2>
+        <div class="highlight-box">
+          講者：Andrew Ng (吳恩達) · AI Fund 創始人 / 前 Google Brain 負責人<br>
+          核心命題：除了外部確定性防護，<strong>Agent 內部的推論工作流如何實現超越模型世代的跨越？</strong>
+        </div>
+        <div class="card-grid">
+          <div class="card">
+            <h4>迷思：盲目等待下一代大模型</h4>
+            <p>• 許多人認為唯有等待 GPT-5 才能解決複雜工程難題。<br>• 忽視了工作流設計對既有模型潛力的巨大放大效益。</p>
+          </div>
+          <div class="card">
+            <h4>真相：工作流紅利跨越世代差距</h4>
+            <p>• 透過適當的迭代式代理工作流（Agentic Workflow）。<br>• <strong>較舊的模型甚至能在編程基準上全面擊潰未經工作流加持的新一代頂級模型！</strong></p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          出處章節：<a href="wiki/videos/Whats_Next_For_AI_Agentic_Workflows_Andrew_Ng.md">I. 核心論點與背景動機</a>
+        </div>
+      </section>
+
+      <!-- Slide 11: Non-agentic vs Agentic -->
+      <section>
+        <h2>非代理 vs 代理工作流架構對比</h2>
+        <div class="card-grid" style="margin-top: 25px;">
+          <div class="card" style="border-left: 4px solid var(--warn-color);">
+            <h4>Non-agentic (Zero-shot 一次性)</h4>
+            <p>• <strong>寫作方式</strong>：輸入 Prompt $\to$ LLM 一口氣從第一個字吐到最後一個字。<br>
+            • <strong>極限瓶頸</strong>：如同要求作家完全不打草稿、不查資料、不按 Backspace 退格鍵，一氣呵成寫出完美論文。<br>
+            • <strong>結果</strong>：極易出現幻覺、邏輯斷層與語法邊界失誤。</p>
+          </div>
+          <div class="card" style="border-left: 4px solid var(--success-color);">
+            <h4>Agentic (迭代閉環工作流)</h4>
+            <p>• <strong>寫作方式</strong>：思考題目 $\to$ 擬定大綱 $\to$ 工具檢索 $\to$ 第一版草稿 $\to$ 批判反思 $\to$ 修訂重構。<br>
+            • <strong>本質</strong>：賦予模型自我反思與多輪除錯的閉環狀態機空間。<br>
+            • <strong>結果</strong>：藉由迭代反思收斂，產出遠超單次推理品質的高可靠結果。</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          出處章節：<a href="wiki/videos/Whats_Next_For_AI_Agentic_Workflows_Andrew_Ng.md">Figure 1: Non-agentic vs. Agentic Workflow</a>
+        </div>
+      </section>
+
+      <!-- Slide 12: HumanEval 震撼評測數據 -->
+      <section>
+        <h2>HumanEval 評測：工作流跨越模型世代</h2>
+        <div class="metric-container">
+          <div class="metric-box">
+            <div class="metric-num" style="color:#94a3b8;">48.1%</div>
+            <div class="metric-label">GPT-3.5 (Zero-shot)</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-num" style="color:#cbd5e1;">67.0%</div>
+            <div class="metric-label">GPT-4 (Zero-shot)</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-num" style="color:var(--success-color);">&gt; 80%</div>
+            <div class="metric-label">GPT-3.5 (Agentic Workflow)</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-num" style="color:var(--accent-color);">&gt; 90%</div>
+            <div class="metric-label">GPT-4 (Agentic Workflow)</div>
+          </div>
+        </div>
+        <div class="highlight-box" style="text-align: center;">
+          鐵證確立：<strong>GPT-3.5 加上代理工作流後，編程通過率大幅超越 GPT-4 零樣本近 15 個百分點！</strong><br>
+          工程優先級應為：「先優化工作流架構（Workflow），再更換底層模型」。
+        </div>
+        <div class="slide-footer">
+          出處章節：<a href="wiki/videos/Whats_Next_For_AI_Agentic_Workflows_Andrew_Ng.md">Figure 2: Coding Benchmark on HumanEval</a>
+        </div>
+      </section>
+
+      <!-- Slide 13: 四大代理設計模式 -->
+      <section>
+        <h2>四大核心代理設計模式 (Design Patterns)</h2>
+        <div class="card-grid" style="grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 15px;">
+          <div class="card">
+            <h4>1. Reflection (自我反思)</h4>
+            <p>• 模型生成代碼後，切換視角進行批判性審查與單元測試。<br>• 成本最低、效益最顯著，優先過濾 60%+ 顯淺失誤。</p>
+          </div>
+          <div class="card">
+            <h4>2. Tool Use (工具調用)</h4>
+            <p>• 調用 Web Search、代碼執行器與專用 API。<br>• LLM 升級為通用協調器，根除數值計算失真與知識過期。</p>
+          </div>
+          <div class="card">
+            <h4>3. Planning (動態規劃)</h4>
+            <p>• 將宏觀複雜任務拆解為子目標執行拓撲（如 HuggingGPT）。<br>• 在遇到障礙時自主回溯重構路徑，自主探索長鏈目標。</p>
+          </div>
+          <div class="card">
+            <h4>4. Multi-agent (多代理協同)</h4>
+            <p>• 投影專職角色（Programmer、Reviewer、Tester）相互辯論。<br>• 模擬真實敏捷團隊，顯著降低單一 Prompt 之認知盲點。</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          出處章節：<a href="wiki/videos/Whats_Next_For_AI_Agentic_Workflows_Andrew_Ng.md">Figure 3: Four AI Agentic Design Patterns</a> ｜ 概念：<a href="wiki/concepts/agentic-design-patterns.md">agentic-design-patterns</a>
+        </div>
+      </section>
+
+      <!-- Slide 14: 未來趨勢 Fast Tokens -->
+      <section>
+        <h2>未來趨勢：高速 Token 與心智範式轉移</h2>
+        <div class="card-grid">
+          <div class="card">
+            <h4>高速 Token 生成 (Fast Token/s)</h4>
+            <p>• <strong>Token 的消費者轉變</strong>：生成的內容不是給人類讀的，而是給下一個 Agent、Critic 或編譯器讀的。<br>
+            • <strong>以速度換品質</strong>：速度快 10 倍的中型模型經 5 次迭代反思，品質顯著優於單次慢速大模型。</p>
+          </div>
+          <div class="card">
+            <h4>學會耐心等待 Agent 交付</h4>
+            <p>• <strong>舊心智</strong>：要求按下 Enter 後 1 秒內即時逐字吐出答案。<br>
+            • <strong>新心智</strong>：給予 Agent 幾分鐘至幾小時，允許它完整跑完規劃、寫測試、自我反思與重構閉環。</p>
+          </div>
+        </div>
+        <div class="highlight-box" style="text-align: center; margin-top: 20px;">
+          <strong>兩大演講交會點</strong>：Andrew Ng 的推論迭代工作流 + Lauren Tan 的確定性邊界防護，構成現代 AI Engineering 的完整雙翼！
+        </div>
+        <div class="slide-footer">
+          出處章節：<a href="wiki/videos/Whats_Next_For_AI_Agentic_Workflows_Andrew_Ng.md">IV. 未來趨勢與思維範式轉變</a> ｜ 概念：<a href="wiki/concepts/fast-token-generation.md">fast-token-generation</a>
+        </div>
+      </section>
+
+      <!-- Slide 15: 結尾與知識庫導引 -->
       <section>
         <span class="badge">持續學習與知識複利</span>
         <h2>感謝聆聽 · 歡迎查閱完整 Wiki 知識庫</h2>
-        <p style="font-size: 0.85em; color: #94a3b8; margin-top: 25px;">
+        <p style="font-size: 0.85em; color: #94a3b8; margin-top: 20px;">
           本簡報僅為核心精華提煉，完整影片逐字稿、時間軸拆解與形式化驗證數學原理，請參閱：
         </p>
-        <div style="background: rgba(255,255,255,0.06); border-radius: 8px; padding: 15px; margin: 25px auto; max-width: 600px; text-align: left; font-size: 0.8em;">
+        <div style="background: rgba(255,255,255,0.06); border-radius: 8px; padding: 15px; margin: 20px auto; max-width: 650px; text-align: left; font-size: 0.8em; line-height: 1.8;">
           <strong>AI Video-to-Wiki 首頁</strong>：<a href="index.html">index.html (Docsify)</a><br>
           <strong>第 1 講精讀筆記</strong>：<a href="index.html#/wiki/videos/All_Code_Is_Slop_Except_Mine_Lauren_Tan">All Code Is Slop (Lauren Tan)</a><br>
-          <strong>核心概念網絡</strong>：<a href="index.html#/wiki/concepts/deterministic-guardrails">Deterministic Guardrails</a>
+          <strong>第 2 講精讀筆記</strong>：<a href="index.html#/wiki/videos/Whats_Next_For_AI_Agentic_Workflows_Andrew_Ng">Agentic Workflows (Andrew Ng)</a><br>
+          <strong>核心概念網絡</strong>：<a href="index.html#/wiki/concepts/agentic-design-patterns">Agentic Design Patterns</a> ｜ <a href="index.html#/wiki/concepts/deterministic-guardrails">Deterministic Guardrails</a>
         </div>
         <div class="slide-footer">
           產出系統：AI Video-to-Wiki Automated Slide Generator ｜ 格式：Reveal.js
