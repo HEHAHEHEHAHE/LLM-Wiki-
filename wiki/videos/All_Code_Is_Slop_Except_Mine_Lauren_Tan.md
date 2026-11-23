@@ -34,6 +34,12 @@ Lauren 提出了一個深刻的隱喻：**Codebase 就像一座花園**。
 
 Lauren 在演講中展示了原創的「Poteto 倒金字塔（5 層結構）」，解釋如何建立對 Agent 的信任：
 
+![The Poteto Pyramid](../assets/All_Code_Is_Slop_Except_Mine_Lauren_Tan/02_poteto_pyramid.png)
+
+<div class="figure-caption">
+<strong>Figure 1. The Poteto Pyramid.</strong> 演講原版倒金字塔架構，由頂部面積最大、耗資最大的 Codebase，一路遞減至最底部尖端的人工審查 (Human Review)。
+</div>
+
 ```
 ╲                                                                     ╱
  ╲  1. Codebase (頂部最寬/耗資最大): Good API design, architecture   ╱
@@ -83,6 +89,12 @@ Lauren 在演講中展示了原創的「Poteto 倒金字塔（5 層結構）」�
 ### 案例 3：命令式定時器（Imperative Timers）的效能災難
 - **問題**：Agent 遇到非同步競爭或狀態對齊困難時，極度喜歡使用 `setTimeout`、`requestAnimationFrame` 來當作「快速修復補丁（Quick Fix）」。
 - **惡果**：成千上萬的定時器被高頻創建與銷毀，引發 JavaScript 垃圾回收（GC Pause）大卡頓；更可怕的是，**Agent 會在代碼中寫下註解（Comments）自我合理化這個不良寫法**，導致其他 Agent 瘋狂複製。
+
+![Quick fixes considered harmful](../assets/All_Code_Is_Slop_Except_Mine_Lauren_Tan/06_ban_comments.png)
+
+<div class="figure-caption">
+<strong>Figure 2. Quick fixes considered harmful.</strong> 實戰案例：從 9 月 9 日 Agent 寫下一行帶有註解的 setTimeout 臨時修復，到 10 月 17 日已在專案中自我複製繁衍成 183 個定時器！
+</div>
 
 ### 案例 4：代碼註解是「垃圾的溫床」 (Ban 99% of Comments)
 - **重大顛覆**：團隊決定在生產環境**禁用 99% 的註解**！
