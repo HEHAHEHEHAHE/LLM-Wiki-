@@ -127,3 +127,23 @@
   1. **形態分流與密度門檻**：長片（>30 分鐘或 >500 行逐字稿）強制執行 11 段時間軸分解、核心隱喻對照表、尖銳現場 Q&A 拆解與 2,500 字以上深度下限，徹底杜絕泛泛摘要。
   2. **一影片一獨立簡報原則**：強制每部影片產出獨立 Reveal.js 簡報檔案（`slides_0X_{slug}.html`），杜絕接續串聯模式。
   3. **視覺純淨度硬約束**：全專案嚴禁使用任何 Emoji 圖標或裝飾性截圖，一律採用卡片與指標排版。
+
+## [2026-11-24] ingest | What Are AI Agents? Agentic Systems Explained — Stanford CS329Z (Lecture 1)
+- **原始逐字稿存檔**：`raw/What_Are_AI_Agents_Agentic_Systems_Explained_Stanford_CS329Z.txt`（URL: https://youtu.be/DGI4vucR71w，時長 70 分鐘，共 2,384 行逐字稿）。
+- **關鍵投影片抽幀 (Keyframe Extraction)**：使用 `yt-dlp` 與 `ffmpeg` 抽取 5 張 1080p 原生無損 PPT 投影片，存放於 `wiki/assets/What_Are_AI_Agents_Stanford_CS329Z/`：
+  1. `fig1_swe_bench_evolution.png`：SWE-bench Verified 2024–2025 準確率躍升（30% 至 80%+）
+  2. `fig2_agent_triad_architecture.png`：現代代理認知架構對齊（Lilian Weng 2023 vs. Sumers & Yao 2024）
+  3. `fig3_cot_vs_react_failure_modes.png`：CoT vs. ReAct 故障模式實證拆解（HotpotQA / Fever 幻覺 0%）
+  4. `fig4_tool_use_pipeline.png`：工具調用解剖學四步管線（Select -> Arguments -> Validate -> Execute）
+  5. `fig5_agent_failure_layers.png`：代理工程三層架構體系（System, Data, Evals）
+- **高密度精讀筆記產出**：`wiki/videos/What_Are_AI_Agents_Stanford_CS329Z.md`：
+  - 全景時序 12 段深度拆解（涵蓋師資背景、Russell & Norvig 經典定義、三代演進、三大架構、ReAct 思考行動交織、階層記憶系統、Toolformer 到 Schema 規範化、三層除錯、Operator 買牛奶危機）。
+  - 圖表四步深度解析（5 張圖完整視覺組件、數據機制流向、設計意圖、量化結論）。
+  - 史丹佛課堂 3 大尖銳問答（模型能力飽和 vs 測試時計算、推論錯誤 47% vs 幻覺 0% 之謎、Operator 買牛奶真實事故與確認門檻）。
+  - 核心量化成果矩陣（SWE-bench 80%、幻覺率降至 0%、長鏈條任務誤差級聯 $(0.95)^{20} \approx 35.8\%$）。
+- **提煉核心概念頁面**：
+  - `wiki/concepts/agent-cognitive-architecture.md`（Agent 認知架構：大腦、階層記憶與環境閉環）
+  - `wiki/concepts/tool-use-and-execution-sandbox.md`（Tool Use 工具調用解剖學與安全執行沙盒）
+- **獨立 Reveal.js 教學簡報產出**：
+  - 建立專屬獨立簡報 `slides_04_stanford_cs329z.html`（共 12 頁，純卡片排版、雙色左右邊框對比、零 Emoji、零雜截圖）。
+  - 建立 `wiki/presentation_04.md` 獨立預覽頁面，並同步登記至 `wiki/presentation.md` 總目錄與全域側邊欄 `_sidebar.md`。

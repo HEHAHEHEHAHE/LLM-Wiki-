@@ -7,13 +7,17 @@
   - [01 | All Code Is Slop (Lauren Tan)](wiki/presentation_01.md)
   - [02 | Agentic Workflows (Andrew Ng)](wiki/presentation_02.md)
   - [03 | Shipping 1,000s PRs (Lauren Tan)](wiki/presentation_03.md)
+  - [04 | What Are AI Agents? (Stanford CS329Z)](wiki/presentation_04.md)
 
 - 影片深度精讀 (Videos)
   - [01 | All Code Is Slop (Lauren Tan)](wiki/videos/All_Code_Is_Slop_Except_Mine_Lauren_Tan.md)
   - [02 | What's Next for AI Agentic Workflows (Andrew Ng)](wiki/videos/Whats_Next_For_AI_Agentic_Workflows_Andrew_Ng.md)
   - [03 | Shipping 1,000s of PRs a Month at SpaceX (Lauren Tan)](wiki/videos/Shipping_1000s_Of_PRs_A_Month_At_SpaceX_Lauren_Tan.md)
+  - [04 | What Are AI Agents? (Stanford CS329Z)](wiki/videos/What_Are_AI_Agents_Stanford_CS329Z.md)
 
 - 核心概念網絡 (Concepts)
+  - [Agent 認知架構：大腦、階層記憶與閉環](wiki/concepts/agent-cognitive-architecture.md)
+  - [Tool Use 四步調用管線與執行沙盒](wiki/concepts/tool-use-and-execution-sandbox.md)
   - [Agent Skills 架構哲學與合約](wiki/concepts/agent-skills-architecture.md)
   - [AI Agentic 四大設計模式](wiki/concepts/agentic-design-patterns.md)
   - [確定性防護欄 (Deterministic Guardrails)](wiki/concepts/deterministic-guardrails.md)

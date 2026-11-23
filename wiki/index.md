@@ -19,15 +19,18 @@
 ## 影片精讀目錄 (Video Catalog)
 
 | # | 影片名稱 | 講者 | 組織 / 會議 | 核心技術突破 | 關鍵量化成果 | 筆記連結 |
-| :- | :--- | :--- | :--- | :--- | :--- | :--- |
+| :- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | 1 | All Code Is Slop (Except Mine) | Lauren Tan (Potato) | AI Engineer / xAI Grok Bot | 倒金字塔確定性防護模型、全面禁用逃避性註解與高危語法 | 單月交付 11,000 PRs，Revert 率約 0.5% | [閱讀精讀筆記](wiki/videos/All_Code_Is_Slop_Except_Mine_Lauren_Tan.md) |
 | 2 | What's Next for AI Agentic Workflows | Andrew Ng (吳恩達) | AI Fund / Sequoia AI Ascent | 迭代式 Agent 工作流、四大設計模式 (Reflection, Tools, Planning, Multi-agent) | GPT-3.5 + 工作流超越 GPT-4 Zero-shot，HumanEval > 80% | [閱讀精讀筆記](wiki/videos/Whats_Next_For_AI_Agentic_Workflows_Andrew_Ng.md) |
 | 3 | Shipping 1,000s of PRs a Month at SpaceX | Lauren Tan (Potato) | SpaceX / xAI / pstack | 商業後廚備料台隱喻 (Mise en place)、Context Not Control 哲學、Skills 即軟體合約 | 單月數千 PR 交付、架構重構速度提升 10 倍 | [閱讀深度訪談筆記](wiki/videos/Shipping_1000s_Of_PRs_A_Month_At_SpaceX_Lauren_Tan.md) |
+| 4 | What Are AI Agents? Agentic Systems Explained | Diyi Yang (楊笛一) | Stanford University CS329Z | 現代代理認知架構 (The Agent Triad)、ReAct 推理行動閉環、Tool Use 四步調用管線 | ReAct 將事實幻覺率壓制至 0%，SWE-bench 突破 80%+ | [閱讀史丹佛課程筆記](wiki/videos/What_Are_AI_Agents_Stanford_CS329Z.md) |
 
 ---
 
 ## 核心概念索引 (Core Concepts)
 
+- [Agent 認知架構：大腦、階層記憶與環境閉環 (Agent Cognitive Architecture)](wiki/concepts/agent-cognitive-architecture.md)：將 LLM 作為核心處理單元，封裝工作/情境/語意記憶與致動器迴圈。
+- [Tool Use 工具調用解剖學與安全執行沙盒 (Tool Use & Execution Sandbox)](wiki/concepts/tool-use-and-execution-sandbox.md)：Select $\to$ Arguments $\to$ Validate $\to$ Execute 四步工業標準管線與安全確認門檻。
 - [Agent Skills 架構哲學與可組合合約 (Agent Skills Architecture)](wiki/concepts/agent-skills-architecture.md)：pstack 理念、消除重複探索世界浪費、合約化封裝實踐。
 - [AI Agentic 四大設計模式 (Agentic Design Patterns)](wiki/concepts/agentic-design-patterns.md)：Reflection、Tool Use、Planning 與 Multi-agent 之架構成熟度與權衡。
 - [確定性防護欄 (Deterministic Guardrails)](wiki/concepts/deterministic-guardrails.md)：為何機械化 Linter 與編譯器檢查遠勝於自然語言 Prompt。

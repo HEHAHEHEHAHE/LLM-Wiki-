@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <title>教學簡報 04：What Are AI Agents? Agentic Systems Explained - Stanford CS329Z</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css" id="theme">
+
+  <style>
+    :root {
+      --r-main-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      --r-heading-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      --accent-color: #38bdf8;
+      --warn-color: #f87171;
+      --success-color: #4ade80;
+      --purple-color: #c084fc;
+    }
+    .reveal {
+      font-size: 28px;
+    }
+    .reveal h1, .reveal h2, .reveal h3 {
+      text-transform: none;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    .reveal h1 { font-size: 2.1em; color: #ffffff; }
+    .reveal h2 { font-size: 1.6em; color: var(--accent-color); margin-bottom: 0.8em; }
+    .reveal h3 { font-size: 1.25em; color: #e2e8f0; }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 25px;
+    }
+    .card-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 25px;
+    }
+    .card-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: left;
+    }
+    .card h4 {
+      margin: 0 0 10px 0;
+      font-size: 1.1em;
+      color: var(--accent-color);
+    }
+    .card p, .card li {
+      font-size: 0.82em;
+      line-height: 1.6;
+      color: #cbd5e1;
+      margin: 0;
+    }
+    .card ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .card-danger {
+      border-left: 6px solid var(--warn-color);
+      background: rgba(248, 113, 113, 0.08);
+    }
+    .card-danger h4 { color: var(--warn-color); }
+
+    .card-success {
+      border-left: 6px solid var(--success-color);
+      background: rgba(74, 222, 128, 0.08);
+    }
+    .card-success h4 { color: var(--success-color); }
+
+    .card-info {
+      border-left: 6px solid var(--accent-color);
+      background: rgba(56, 189, 248, 0.08);
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(99, 102, 241, 0.15));
+      border-left: 5px solid var(--accent-color);
+      border-radius: 8px;
+      padding: 16px 20px;
+      text-align: left;
+      margin-top: 20px;
+    }
+    .highlight-box p {
+      font-size: 0.9em;
+      color: #f1f5f9;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.7em;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      background: rgba(56, 189, 248, 0.2);
+      color: var(--accent-color);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      margin-bottom: 15px;
+    }
+
+    .table-custom {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      font-size: 0.75em;
+    }
+    .table-custom th, .table-custom td {
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 10px 14px;
+      text-align: left;
+    }
+    .table-custom th {
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--accent-color);
+      font-weight: 600;
+    }
+    .table-custom tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .breadcrumb {
+      font-size: 0.55em;
+      color: #64748b;
+      margin-top: 25px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Slide 1: Title -->
+      <section>
+        <div class="badge">第四講 · 史丹佛體系</div>
+        <h1 style="font-size: 1.85em; margin-bottom: 0.3em;">What Are AI Agents?</h1>
+        <h3 style="color: var(--accent-color); font-weight: 400; font-size: 1.15em; margin-bottom: 1.2em;">Agentic Systems Explained | Stanford CS329Z 核心精華</h3>
+        
+        <div class="card" style="max-width: 760px; margin: 0 auto; text-align: center; padding: 18px;">
+          <p style="font-size: 0.85em; color: #e2e8f0; margin-bottom: 6px;"><strong>主講：Diyi Yang（楊笛一）· 史丹佛大學計算機科學系助理教授</strong></p>
+          <p style="font-size: 0.75em; color: #94a3b8;">共同授課：John Yang（SWE-bench 創始人）· Michael Ryan（DSPy 核心貢獻者）</p>
+          <p style="font-size: 0.72em; color: var(--accent-color); margin-top: 8px;">史丹佛大學《CS329Z: Engineering AI Agents》第一講</p>
+        </div>
+        <div class="breadcrumb">出席章節：全景綜述與課程導論</div>
+      </section>
+
+      <!-- Slide 2: Myth vs Truth -->
+      <section>
+        <div class="badge">核心命題</div>
+        <h2>迷思與真相：從 LLM 到自主代理系統</h2>
+        
+        <div class="card-grid">
+          <div class="card card-danger">
+            <h4>迷思：LLM 本身就是 Agent</h4>
+            <ul>
+              <li><strong>無狀態文字轉換器</strong>：傳統 LLM 是單向自回歸輸出，Token 生成結束即終止，無持續狀態維護能力。</li>
+              <li><strong>閉合記憶限制</strong>：純 Prompt 推論受限於靜態權重，在多跳事實推導中幻覺率高達 56%。</li>
+              <li><strong>無法改變現實</strong>：無外部致動器（Actuator），無法感知環境反饋或修正錯誤。</li>
+            </ul>
+          </div>
+          
+          <div class="card card-success">
+            <h4>真相：Agent 是微型認知作業系統</h4>
+            <ul>
+              <li><strong>閉環控制迴圈</strong>：建立 Perception $\to$ Brain/Planning $\to$ Action $\to$ Environment 狀態機。</li>
+              <li><strong>認知架構賦能</strong>：結合工作記憶、情境記憶、工具調用與反思引擎，將客觀事實幻覺壓制為 0%。</li>
+              <li><strong>測試時計算躍升</strong>：透過後台多輪取樣與環境反思，實現超越模型世代的任務解決力。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="breadcrumb">出席章節：I. 代理經典定義與範式轉移</div>
+      </section>
+
+      <!-- Slide 3: Russell & Norvig Definition -->
+      <section>
+        <div class="badge">理論基石</div>
+        <h2>代理的經典定義與現代實體轉化</h2>
+        
+        <div class="highlight-box">
+          <p><strong>Stuart Russell & Peter Norvig 經典定義：</strong><br>
+          「代理（Agent）是任何能夠透過感測器（Sensors）感知其所處環境，並透過致動器（Actuators）對該環境採取行動的實體。」</p>
+        </div>
+
+        <div class="card-grid" style="margin-top: 20px;">
+          <div class="card card-info">
+            <h4>感知端 (Sensors / Perception)</h4>
+            <ul>
+              <li><strong>文字與上下文</strong>：即時對話歷史、系統提示詞、指令意圖。</li>
+              <li><strong>多模態與環境狀態</strong>：終端標準輸出、代碼執行錯誤報錯、網頁 DOM 節點、外部 API 返回值。</li>
+            </ul>
+          </div>
+          
+          <div class="card card-info">
+            <h4>致動端 (Actuators / Actions)</h4>
+            <ul>
+              <li><strong>作業系統控制</strong>：檔案讀寫（`read_file`, `write_file`）、終端指令運行（Bash / Sandbox）。</li>
+              <li><strong>外部服務調用</strong>：Web 搜尋引擎、資料庫查詢、第三方 RESTful API。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="breadcrumb">出席章節：I. 代理經典定義與現代範式轉移</div>
+      </section>
+
+      <!-- Slide 4: Three Generations of Agents -->
+      <section>
+        <div class="badge">技術演進</div>
+        <h2>代理演進史：三代架構之跨越</h2>
+        
+        <div class="card-grid-3">
+          <div class="card">
+            <h4>第一代：符號專家系統</h4>
+            <p style="color: var(--accent-color); font-weight: 600; font-size: 0.8em; margin-bottom: 8px;">1970s - 1990s</p>
+            <ul>
+              <li><strong>機制</strong>：人工手寫規則（If-Else 規則引擎）。</li>
+              <li><strong>瓶頸</strong>：缺乏泛化能力，面對開放世界產生組合爆炸。</li>
+              <li><strong>特徵</strong>：純粹符號推理，無自主學習能力。</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h4>第二代：強化學習代理</h4>
+            <p style="color: var(--accent-color); font-weight: 600; font-size: 0.8em; margin-bottom: 8px;">2010s - 2020s</p>
+            <ul>
+              <li><strong>機制</strong>：馬可夫決策過程（MDP, AlphaGo, DQN）。</li>
+              <li><strong>瓶頸</strong>：樣本效率極低，僅適用於封閉規則遊戲。</li>
+              <li><strong>特徵</strong>：缺乏常識推理與通用語言理解。</li>
+            </ul>
+          </div>
+          
+          <div class="card card-success">
+            <h4>第三代：語言認知代理</h4>
+            <p style="color: var(--success-color); font-weight: 600; font-size: 0.8em; margin-bottom: 8px;">2022 - 現在</p>
+            <ul>
+              <li><strong>機制</strong>：大模型大腦 + ReAct 閉環 + 外部工具。</li>
+              <li><strong>突破</strong>：具備常識推理、自我反思與開放環境互動。</li>
+              <li><strong>特徵</strong>：MRKL、ReAct、SWE-agent 引領工業落地。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="breadcrumb">出席章節：I. 代理演進史：從符號邏輯到語言代理</div>
+      </section>
+
+      <!-- Slide 5: Cognitive Architecture -->
+      <section>
+        <div class="badge">架構設計</div>
+        <h2>現代代理認知架構 (The Agent Triad)</h2>
+        
+        <div class="card-grid-3">
+          <div class="card card-info">
+            <h4>1. 大腦：推理與規劃</h4>
+            <ul>
+              <li><strong>子目標分解</strong>：將複雜工程任務拆解為微小可執行單元。</li>
+              <li><strong>ReAct 思考迴圈</strong>：Thought $\to$ Action $\to$ Observation 循環交織。</li>
+              <li><strong>自我反思 (Reflexion)</strong>：根據環境報錯進行動態調優與回溯。</li>
+            </ul>
+          </div>
+          
+          <div class="card card-info">
+            <h4>2. 階層式記憶系統</h4>
+            <ul>
+              <li><strong>工作記憶 (Working)</strong>：即時上下文視窗，成本高且長度受限。</li>
+              <li><strong>情境記憶 (Episodic)</strong>：儲存歷史執行軌跡與使用者互動體驗。</li>
+              <li><strong>語意記憶 (Semantic)</strong>：外部向量資料庫，儲存世界知識與規則庫。</li>
+            </ul>
+          </div>
+          
+          <div class="card card-info">
+            <h4>3. 工具與環境介面</h4>
+            <ul>
+              <li><strong>強型別規格 (Schema)</strong>：JSON Schema 與約束解碼。</li>
+              <li><strong>安全隔離沙盒</strong>：容器化隔離環境，杜絕代碼注入危險。</li>
+              <li><strong>實體狀態變更</strong>：落實寫入檔案、查詢資料庫與網路檢索。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="breadcrumb">出席章節：II. 現代代理認知架構對齊 (Figure 2)</div>
+      </section>
+
+      <!-- Slide 6: ReAct vs CoT -->
+      <section>
+        <div class="badge">破除幻覺</div>
+        <h2>推理與行動交織：ReAct vs. Chain-of-Thought</h2>
+        
+        <div class="card-grid">
+          <div class="card card-danger">
+            <h4>Chain-of-Thought (單向黑盒)</h4>
+            <ul>
+              <li><strong>模式</strong>：`Input` $\to$ `Thinking (Tokens)` $\to$ `Answer`</li>
+              <li><strong>致命弱點</strong>：所有推導均在閉合參數內部完成，一旦進入未知領域便開始憑空編造。</li>
+              <li><strong>實測幻覺率</strong>：在 HotpotQA 多跳問答中高達 <span style="color: var(--warn-color); font-weight: 700;">56%</span>！</li>
+            </ul>
+          </div>
+          
+          <div class="card card-success">
+            <h4>ReAct (推理與行動交織)</h4>
+            <ul>
+              <li><strong>模式</strong>：`Thought` $\to$ `Action` $\to$ `Observation` $\to$ `Thought`</li>
+              <li><strong>架構防護</strong>：每一次思考均建立在客觀工具返回的真實觀察之上，強制接地（Grounding）。</li>
+              <li><strong>實測幻覺率</strong>：直接將客觀事實幻覺壓制為 <span style="color: var(--success-color); font-weight: 700;">0%</span>！</li>
+            </ul>
+          </div>
+        </div>
+        <div class="breadcrumb">出席章節：II. 推理與反思的實證故障模式拆解 (Figure 3)</div>
+      </section>
+
+      <!-- Slide 7: QA Deep Dive (Reasoning Error vs Hallucination) -->
+      <section>
+        <div class="badge">史丹佛課堂思辨</div>
+        <h2>高難度交鋒：推理錯誤 47% vs. 幻覺 0% 之謎</h2>
+        
+        <div class="highlight-box" style="margin-bottom: 20px;">
+          <p><strong>學生尖銳提問 (00:37:46)：</strong>「既然 ReAct 的推理錯誤（Reasoning Error）依然高達 47%，為什麼同張表格裡的幻覺（Hallucination）卻是 0%？推論出錯難道不算幻覺嗎？」</p>
+        </div>
+
+        <div class="card-grid">
+          <div class="card">
+            <h4>客觀事實幻覺 (Hallucination = 0%)</h4>
+            <p><strong>定義</strong>：憑空捏造現實中不存在的事實、文獻、人名或 API 返回值。<br>
+            <strong>ReAct 為何為 0</strong>：每一步思考嚴格依賴外部檢索輸入（Observation），不允許自行編造資料源，因而杜絕事實捏造。</p>
+          </div>
+          
+          <div class="card">
+            <h4>邏輯推論錯誤 (Reasoning Error = 47%)</h4>
+            <p><strong>定義</strong>：面對客觀真實的輸入，模型產生了邏輯謬誤、搜尋循環或推導偏差。<br>
+            <strong>為何依然高達 47%</strong>：模型雖然看到了真實內容，但可能錯誤解讀資訊、提出無效的查詢關鍵字，或無法從空搜尋中復原。</p>
+          </div>
+        </div>
+        <div class="breadcrumb">出席章節：III. 史丹佛現場尖銳問答 Q2</div>
+      </section>
+
+      <!-- Slide 8: Memory Systems -->
+      <section>
+        <div class="badge">記憶管理</div>
+        <h2>記憶系統雙軌模型：情境記憶 vs. 語意記憶</h2>
+        
+        <table class="table-custom">
+          <thead>
+            <tr>
+              <th>記憶維度</th>
+              <th>工作記憶 (Working)</th>
+              <th>情境記憶 (Episodic)</th>
+              <th>語意記憶 (Semantic)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>物理載體</strong></td>
+              <td>當前 Context Window</td>
+              <td>歷史資料庫 / 向量索引庫</td>
+              <td>外部向量知識庫 (RAG)</td>
+            </tr>
+            <tr>
+              <td><strong>儲存內容</strong></td>
+              <td>即時對話變數、當前任務 Prompt</td>
+              <td>過往任務執行軌跡、成功/失敗案例</td>
+              <td>世界常識、工程規範、技術手冊</td>
+            </tr>
+            <tr>
+              <td><strong>核心生命週期</strong></td>
+              <td>滑動視窗修剪、滾動摘要壓縮</td>
+              <td>經驗沉澱、Few-shot 動態召回</td>
+              <td>分塊嵌入（Embedding）、相似度檢索</td>
+            </tr>
+            <tr>
+              <td><strong>工程挑戰</strong></td>
+              <td>Token 成本隨輪次呈非線性膨脹</td>
+              <td>歷史噪訊干擾、檢索召回精度控制</td>
+              <td>切片顆粒度失真、知識時效性過期</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="breadcrumb">出席章節：I. 記憶架構全景：短期、情境與語意記憶</div>
+      </section>
+
+      <!-- Slide 9: Tool Use Pipeline -->
+      <section>
+        <div class="badge">工程管線</div>
+        <h2>工具調用解剖學四步流水線 (Anatomy of a Call)</h2>
+        
+        <div class="card-grid-4">
+          <div class="card">
+            <h4>1. Select (選擇)</h4>
+            <p><strong>意圖匹配</strong>：從 Context 註冊的 Schema 清單中挑選目標工具。</p>
+            <p style="color: var(--accent-color); font-size: 0.75em; margin-top: 6px;">範例：`read_file`</p>
+          </div>
+          
+          <div class="card">
+            <h4>2. Arguments (參數)</h4>
+            <p><strong>參數提取</strong>：將上下文意圖填入強型別欄位。</p>
+            <p style="color: var(--accent-color); font-size: 0.75em; margin-top: 6px;">範例：`{"path": "test.py"}`</p>
+          </div>
+          
+          <div class="card card-success">
+            <h4>3. Validate (驗證)</h4>
+            <p><strong>確定性校驗</strong>：在發出請求前進行 Schema 型別與邊界約束檢查。</p>
+            <p style="color: var(--success-color); font-size: 0.75em; margin-top: 6px;">範例：`path: string`</p>
+          </div>
+          
+          <div class="card card-info">
+            <h4>4. Execute (執行)</h4>
+            <p><strong>沙盒隔離</strong>：於完全隔離環境中運行，結果注入 Context。</p>
+            <p style="color: var(--accent-color); font-size: 0.75em; margin-top: 6px;">範例：`def add(a, b): ...`</p>
+          </div>
+        </div>
+
+        <div class="highlight-box" style="margin-top: 20px;">
+          <p><strong>工程核心要義：</strong>缺少 Validate 與 Sandbox，代理系統將立即面臨命令注入、路徑遍歷或主機崩潰的致命風險。</p>
+        </div>
+        <div class="breadcrumb">出席章節：II. 工具調用解剖學四步管線 (Figure 4)</div>
+      </section>
+
+      <!-- Slide 10: Three Layers -->
+      <section>
+        <div class="badge">除錯體系</div>
+        <h2>代理工程三層架構體系 (Agents: The Three Layers)</h2>
+        
+        <div class="card-grid-3">
+          <div class="card card-info">
+            <h4>系統層 (The System)</h4>
+            <ul>
+              <li><strong>認知架構設計</strong>：ReAct 狀態機、多代理通訊拓撲。</li>
+              <li><strong>防護欄與排程</strong>：確定性 Checkpoints、沙盒超時控制。</li>
+              <li><strong>記憶管理</strong>：滾動摘要壓縮與快取機制。</li>
+            </ul>
+          </div>
+          
+          <div class="card card-info">
+            <h4>資料層 (The Data)</h4>
+            <ul>
+              <li><strong>示範案例 (Few-shot)</strong>：高品質軌跡示範、上下文調優。</li>
+              <li><strong>介面文件</strong>：精確的工具描述與 Schema 邊界說明。</li>
+              <li><strong>訓練與對齊</strong>：專家軌跡微調與偏好對齊數據。</li>
+            </ul>
+          </div>
+          
+          <div class="card card-info">
+            <h4>評估層 (The Evals)</h4>
+            <ul>
+              <li><strong>真實基準測試</strong>：SWE-bench（代碼修復）、WebArena（網頁導覽）。</li>
+              <li><strong>端到端指標</strong>：任務解決率（Pass@1）、單步成本、執行時長。</li>
+              <li><strong>故障診斷</strong>：軌跡錯誤回溯與漂移偵測。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="breadcrumb">出席章節：II. 代理工程三層架構體系 (Figure 5)</div>
+      </section>
+
+      <!-- Slide 11: Operator Incident & Safety -->
+      <section>
+        <div class="badge">安全與邊界</div>
+        <h2>真實世界事故案例：OpenAI Operator 買牛奶危機</h2>
+        
+        <div class="card-grid">
+          <div class="card card-danger">
+            <h4>事故病理解析 (2025.01 實例)</h4>
+            <ul>
+              <li><strong>指令模糊</strong>：使用者輸入「幫我買生活用品/牛奶」。</li>
+              <li><strong>無意圖校準</strong>：未確認住址與偏好超市，直接自主開啟 Instacart。</li>
+              <li><strong>隨機下單</strong>：自動定位到愛荷華州隨機超市開始加購。</li>
+              <li><strong>風險本質</strong>：代理掌握真實信用卡與網路權限，全自動黑箱盲跑引發經濟損失。</li>
+            </ul>
+          </div>
+          
+          <div class="card card-success">
+            <h4>工業級確定性防護解方</h4>
+            <ul>
+              <li><strong>只讀操作全自動</strong>：搜尋、讀取檔案允許 Agent 自由迭代。</li>
+              <li><strong>寫入操作加防護</strong>：代碼修改需經過本機 Linter/CI 確定性驗證。</li>
+              <li><strong>實體與資金操作強制中斷</strong>：凡涉及付款、刪庫、實體物流，<strong>強制中斷並等待人類 Explicit Approval（確認門檻）</strong>！</li>
+            </ul>
+          </div>
+        </div>
+        <div class="breadcrumb">出席章節：III. 史丹佛現場尖銳問答 Q3</div>
+      </section>
+
+      <!-- Slide 12: Summary & Conclusion -->
+      <section>
+        <div class="badge">終局思考</div>
+        <h2>軟體工程代理的終局與最佳實踐</h2>
+        
+        <div class="card-grid">
+          <div class="card card-info">
+            <h4>核心驅動力：測試時計算</h4>
+            <ul>
+              <li>SWE-bench Verified 準確率一年內從 <strong>30% 躍升至 80%+</strong>。</li>
+              <li>能力倍增的主因不是單純模型參數量放大，而是<strong>「代理工作流 + 測試時多輪反思（Test-time Compute）」</strong>的爆發。</li>
+            </ul>
+          </div>
+          
+          <div class="card card-success">
+            <h4>工程師的唯一出路</h4>
+            <ul>
+              <li>停止盲目微調 Prompt，全面轉向構建<strong>確定性認知架構（Cognitive Architecture）</strong>。</li>
+              <li>以「系統層、資料層、評估層」為錨點，將代理緊密鎖定在可測試、可驗證的軟體工程防護欄之內！</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="highlight-box" style="text-align: center; margin-top: 25px;">
+          <p style="font-size: 0.95em;"><strong>「未來的軟體架構師，不再是逐行代碼的編寫者，而是指揮無數專業代理協同作業的系統架構總工程師。」</strong></p>
+        </div>
+        <div class="breadcrumb">出席章節：全景總結與課堂展望</div>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: 'c/t',
+      controls: true,
+      progress: true,
+      center: true,
+      transition: 'slide',
+      transitionSpeed: 'fast'
+    });
+  </script>
+</body>
+</html>
