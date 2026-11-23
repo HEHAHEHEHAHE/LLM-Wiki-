@@ -36,55 +36,77 @@
 本專案落實「大圈很少轉，小圈轉得快」之 Graph 設計：
 
 ```
-[原始影片/逐字稿] 
+[原始影片 / 逐字稿 (raw/)] 
        │
        ▼
-[關卡 1: Ingest Lint (名詞校正 & 消除 ASR 聽寫錯誤)] ──(失敗)──> [小圈 1: Terminology 修復]
+[關卡 1: Ingest Lint (名詞校正 & 消除 ASR 錯誤)] ──(失敗)──> [小圈 1: Terminology 修復]
        │ (通過)
        ▼
-[寫入 raw/ 與 wiki/videos/ 深度精讀筆記]
+[判斷影片型態 (模態分流: 演講 PPT 抽幀 vs 訪談深度文本)]
        │
        ▼
-[提取/更新 wiki/concepts/ 核心概念與雙向鏈結]
+[關卡 2: 深度與密度檢查 (長片強制 11 段時間軸 + Q&A)] ─(太簡略)─> [小圈 2: 深入逐字稿補齊細節]
+       │ (達標: 字數與深度充足)
+       ▼
+[寫入 wiki/videos/ 深度精讀筆記 & 提煉 wiki/concepts/]
        │
        ▼
-[檢索 Wiki 生成教學大綱 (8~15 頁架構)]
+[生成專屬獨立 Reveal.js 教學簡報 (slides_0X_{slug}.html)]
        │
        ▼
-[關卡 2: 覆蓋率與出處檢查 (每頁必須有 Wiki 對應)] ──(失敗)──> [小圈 2: 補足 Wiki 引用]
+[關卡 3: 簡報合規檢查 (獨立檔案、零 Emoji、零雜截圖)] ──(違規)──> [小圈 3: 修正為純卡片排版]
        │ (通過)
        ▼
-[渲染 Reveal.js 教學 HTML 簡報 (slides.html)]
-       │
-       ▼
-[關卡 3: 渲染檢查 (字體不溢出、排版合規)] ───────────(失敗)──> [小圈 3: 調整 Slide 樣式]
-       │ (通過)
-       ▼
-[交付成果與推播 GitHub]
+[更新總目錄 index.md、側邊欄 _sidebar.md、追加 log.md 並提交 Git]
 ```
 
 ---
 
-## 4. 影片深度解析模板（`wiki/videos/{Video_Slug}.md`）
+## 4. 影片分類處理與深度密度門檻 (Content Density Guardrails)
 
-每部影片筆記必須包含以下六大章節：
+為避免 AI 代理產生「浮於表面之泛泛摘要」，本專案依據影片時長與形態設立強制性的**內容密度門檻**：
 
-1. **Metadata 標頭**：Title, Speaker, Conference/Channel, URL, Duration, Tags。
-2. **Executive Summary (TL;DR)**：2–3 句濃縮核心突破與實戰結論。
-3. **I. 核心論點與背景動機 (Core Thesis & Motivation)**：為什麼過去的做法會失敗？講者主張的新範式是什麼？
-4. **II. 核心架構與分層拆解 (Architecture Deep Dive)**：系統性拆解講者提出的層級模型（如逆金字塔、防護欄等）。
-5. **III. 實戰踩坑與反模式案例 (Real-World Anti-Patterns & Case Studies)**：列舉具體在生產環境遇到的真實負面案例與修復手段。
-6. **IV. 關鍵量化指標與法則 (Quantitative Findings & Golden Rules)**：具體數據（PR 數量、Rollback 率、各層投入比例）。
-7. **V. 概念互聯 (Cross-Referenced Concepts)**：使用 `[[wikilink]]` 鏈結至 `wiki/concepts/`。
+### A. 形態分流規則 (Modality Taxonomy)
+1. **投影片演講類 (Keynotes / Slide Talks，如 15–20 分鐘精華)**：
+   - 必須啟動 `ffmpeg` 高清抽幀，為每張重要投影片執行「圖表四步深度解析」（視覺組件、數據機制流向、設計意圖、量化結論）。
+2. **深度訪談與播客類 (Podcasts / Long Interviews，如 30–60+ 分鐘長片)**：
+   - **全面禁絕人物大頭貼或無意義視訊截圖**，將注意力 100% 聚焦於技術細節挖掘。
+   - **強制時間軸分段 (Chronological Breakdown)**：必須以 5–10 分鐘為區間，梳理出 8 至 12 個具體探討主題。
+   - **強制隱喻對照表 (Metaphor Matrix)**：將受訪者提出的工程隱喻對齊至實際軟體工廠實踐。
+   - **強制現場尖銳 Q&A 拆解**：至少收錄 3 個具體工程爭議問題與講者答辯。
+   - **字數門檻**：深度精讀筆記字數不得低於 2,500 字，必須窮盡逐字稿關鍵論據。
+
+### B. 一影片一獨立簡報原則 (Decoupled Slide Deck Architecture)
+- **嚴禁將多部影片串接在同一份簡報中**！每部影片必須擁有專屬的獨立簡報檔案：`slides_0X_{video_slug}.html`（8–15 頁）。
+- 在 `wiki/` 建立對應的獨立預覽頁面：`wiki/presentation_0X.md`，並登錄至 `wiki/presentation.md` 總覽目錄與全域側邊欄。
+- 簡報內嵌與外部連結必須帶有版本後綴（`?v=...`），徹底杜絕瀏覽器快取舊版問題。
+
+### C. 視覺純淨度標準 (Visual Purity & Minimalist Standards)
+- **零 Emoji 與特殊圖標**：側邊欄、筆記標題、投影片內文嚴禁使用任何表情符號（如 🚫, ✅, ⚠️, 📖, 🎬 等），回歸純粹字體層次與極簡學術風格。
+- **純卡片排版**：投影片完全採用雙色卡片、數值指標與文字對比排版，不放任何非必要的裝飾性圖片。
 
 ---
 
-## 5. 衝突與矛盾處理原則
+## 5. 影片深度解析標準模板（`wiki/videos/{Video_Slug}.md`）
+
+每部影片筆記必須完整填寫以下標準章節：
+
+1. **Metadata 標頭**：Title, Speaker, Host/Conference, Video URL, Duration, Tags, Interactive Presentation Link。
+2. **Executive Summary (TL;DR)**：2–3 句濃縮核心突破、實戰結論與量化指標。
+3. **I. 核心論點 / 全景時間軸拆解**：演講類列出核心命題；訪談類列出 8–12 個時序段落深入分析。
+4. **II. 圖表四步深度解析 或 核心工程隱喻對照表**：依影片形態選擇圖表四步法或隱喻對照矩陣。
+5. **III. 實戰踩坑、內部框架細節或現場尖銳 Q&A**：揭秘未公開的架構細節（如 Dune 框架、內外循環閉環）。
+6. **IV. 關鍵量化指標與工程成果 (Quantitative Benchmarks)**：列出具體交付數據、吞吐量與效益。
+7. **V. 概念互聯 (Cross-Referenced Concepts)**：使用 `[[wikilink]]` 雙向鏈結至 `wiki/concepts/`。
+
+---
+
+## 6. 衝突與矛盾處理原則
 若不同影片講者之觀點產生分歧，必須在對應概念頁面設立「觀點分歧與權衡（Trade-offs & Divergence）」區塊，客觀對比雙方立論條件，不單方面進行取捨。
 
 ---
 
-## 6. 演講實踐指導原則：Poteto 防護模型與黃金反饋法則
+## 7. 演講實踐指導原則：Poteto 防護模型與黃金反饋法則
 依據 Lauren Tan《All Code Is Slop (Except Mine)》演講實戰精髓，本專案在人機協同與知識庫維護中全面貫徹以下工程準則：
 
 1. **倒金字塔資源配置 (The Poteto Pyramid)**：
