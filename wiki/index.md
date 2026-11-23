@@ -24,11 +24,14 @@
 | 2 | What's Next for AI Agentic Workflows | Andrew Ng (吳恩達) | AI Fund / Sequoia AI Ascent | 迭代式 Agent 工作流、四大設計模式 (Reflection, Tools, Planning, Multi-agent) | GPT-3.5 + 工作流超越 GPT-4 Zero-shot，HumanEval > 80% | [閱讀精讀筆記](wiki/videos/Whats_Next_For_AI_Agentic_Workflows_Andrew_Ng.md) |
 | 3 | Shipping 1,000s of PRs a Month at SpaceX | Lauren Tan (Potato) | SpaceX / xAI / pstack | 商業後廚備料台隱喻 (Mise en place)、Context Not Control 哲學、Skills 即軟體合約 | 單月數千 PR 交付、架構重構速度提升 10 倍 | [閱讀深度訪談筆記](wiki/videos/Shipping_1000s_Of_PRs_A_Month_At_SpaceX_Lauren_Tan.md) |
 | 4 | What Are AI Agents? Agentic Systems Explained | Diyi Yang (楊笛一) | Stanford University CS329Z | 現代代理認知架構 (The Agent Triad)、ReAct 推理行動閉環、Tool Use 四步調用管線 | ReAct 將事實幻覺率壓制至 0%，SWE-bench 突破 80%+ | [閱讀史丹佛課程筆記](wiki/videos/What_Are_AI_Agents_Stanford_CS329Z.md) |
+| 5 | From AI Infrastructure to the 6G Future | Ronnie Vasishta | NVIDIA GTC Berlin | 軟體定義 AI-RAN、邊緣 GPU 多租戶共享（Multi-Tenancy）、Sionna 神經接收機 6G 演進 | 全球 100 GW 電力與 100k 邊緣站點、頻譜效率 2x 翻倍 | [閱讀 NVIDIA GTC 筆記](wiki/videos/From_AI_Infrastructure_to_the_6G_Future.md) |
 
 ---
 
 ## 核心概念索引 (Core Concepts)
 
+- [AI-RAN 軟體定義架構與 6G AI 原生網路演進 (AI-RAN & 6G Architecture)](wiki/concepts/ai-ran-architecture-and-6g.md)：軟體定義實體層、淘汰專用 ASIC 推土機式升級、Sionna 神經接收機突破。
+- [邊緣分散式 AI 推論與電信 GPU 多租戶架構 (Edge AI & Distributed Inference)](wiki/concepts/edge-ai-and-distributed-inference.md)：利用電信流量日夜潮汐效應，動態出租閒置 GPU 達成接近 100% 設備利用率。
 - [Agent 認知架構：大腦、階層記憶與環境閉環 (Agent Cognitive Architecture)](wiki/concepts/agent-cognitive-architecture.md)：將 LLM 作為核心處理單元，封裝工作/情境/語意記憶與致動器迴圈。
 - [Tool Use 工具調用解剖學與安全執行沙盒 (Tool Use & Execution Sandbox)](wiki/concepts/tool-use-and-execution-sandbox.md)：Select $\to$ Arguments $\to$ Validate $\to$ Execute 四步工業標準管線與安全確認門檻。
 - [Agent Skills 架構哲學與可組合合約 (Agent Skills Architecture)](wiki/concepts/agent-skills-architecture.md)：pstack 理念、消除重複探索世界浪費、合約化封裝實踐。

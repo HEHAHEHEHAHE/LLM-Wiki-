@@ -147,3 +147,19 @@
 - **獨立 Reveal.js 教學簡報產出**：
   - 建立專屬獨立簡報 `slides_04_stanford_cs329z.html`（共 12 頁，純卡片排版、雙色左右邊框對比、零 Emoji、零雜截圖）。
   - 建立 `wiki/presentation_04.md` 獨立預覽頁面，並同步登記至 `wiki/presentation.md` 總目錄與全域側邊欄 `_sidebar.md`。
+
+## [2026-11-24] ingest | From AI Infrastructure to the 6G Future — Ronnie Vasishta (NVIDIA GTC Berlin)
+- **原始逐字稿存檔**：`raw/From_AI_Infrastructure_to_the_6G_Future.txt`（URL: https://youtu.be/yLMjEpMio2w，時長 38 分鐘，共 829 行逐字稿）。
+- **模態判斷與視覺純淨度規範**：該影片為現場舞台演講，舞台畫面為單一講者與實體伺服器，無全螢幕簡報圖表覆蓋。嚴格遵守 `AGENTS.md` 規範：**全面杜絕講者人頭截圖與雜亂視訊截圖**，將精力 100% 傾注於高密度技術架構與數據分析。
+- **高密度精讀筆記產出**：`wiki/videos/From_AI_Infrastructure_to_the_6G_Future.md`（字數超過 3,100 字）：
+  - 全景時序 12 段深度拆解（涵蓋 100 GW 電力與 100,000 個站點、德國電信 AI-RAN 先導、Agile Robots 邊緣控制、Orange 即時語音同傳、歐洲主權 AI 工廠、告別 ASIC 邁向軟體定義、NVIDIA MGX 2U 伺服器硬體規格、芬蘭 Elisa 多租戶共享、英國電信 BT 2027 商用、Sionna 開源模擬器與神經接收機、Nemotron 電信大模型與自治運維、Cisco/Nokia 生態結盟）。
+  - 核心工程架構與硬體拓撲矩陣（對比 Legacy ASIC vs. 現代 AI-RAN vs. 未來 6G AI-Native 六大維度）。
+  - 產學界尖銳工程問答（L1 微秒級延遲確定性與時間片隔離機制、TCO 經濟學反轉、神經接收機突破非線性失真）。
+  - 關鍵量化成果矩陣（100 GW 電力、100k 站點、10-15% 上行增益至 2x 頻譜效率、sub-300ms 延遲、100% GPU 利用率）。
+- **提煉核心概念頁面**：
+  - `wiki/concepts/ai-ran-architecture-and-6g.md`（AI-RAN 軟體定義架構與 6G AI 原生網路演進）
+  - `wiki/concepts/edge-ai-and-distributed-inference.md`（邊緣分散式 AI 推論與電信 GPU 多租戶架構）
+- **獨立 Reveal.js 教學簡報產出**：
+  - 建立專屬獨立簡報 `slides_05_nvidia_ai_ran_6g.html`（共 12 頁，純卡片排版、綠/藍/紅左邊框卡片、零 Emoji、零雜截圖）。
+  - 建立 `wiki/presentation_05.md` 獨立預覽頁面，並同步更新至 `wiki/presentation.md` 總目錄與全域側邊欄 `_sidebar.md`。
+- **里程碑達成**：正式累積完成 5 部前沿 AI 影片之高密度精讀、概念拓撲與獨立簡報生成。

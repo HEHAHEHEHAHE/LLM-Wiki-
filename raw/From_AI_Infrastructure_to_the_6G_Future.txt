@@ -1,0 +1,829 @@
+[00:00:04] There's roughly 100
+[00:00:08] gigawatts of power in the
+[00:00:11] telecommunications
+[00:00:12] infrastructure
+[00:00:14] that exists today that can be leveraged
+[00:00:17] in the intelligence era.
+[00:00:19] Jensen talked yesterday about 100,000
+[00:00:21] sites. That's mobile switching offices,
+[00:00:24] mobile exchanges, points of presence.
+[00:00:27] All of that distributed power can be
+[00:00:30] leveraged in this new world of AI. Also,
+[00:00:35] what we think about in terms of
+[00:00:37] connectivity,
+[00:00:39] connectivity, whether it be over-the-air
+[00:00:41] connectivity or
+[00:00:44] fiber connectivity, backplane
+[00:00:46] connectivity, turning out to be
+[00:00:48] essential in this world of distributed
+[00:00:51] intelligence and connecting intelligence
+[00:00:54] AI factories together.
+[00:00:56] Now, it's not just telecommunications,
+[00:00:59] of course, that's being reshaped by
+[00:01:03] AI and by intelligence. Many other
+[00:01:06] industries, as well, are being
+[00:01:09] reshaped, as well. But, of course, what
+[00:01:11] we don't often realize is many of the
+[00:01:14] transformations happening in other
+[00:01:16] industries require connectivity.
+[00:01:21] Connectivity that is intelligent has
+[00:01:24] become an an essential part of this
+[00:01:27] overall
+[00:01:29] industry AI revolution. And so, telecom
+[00:01:33] often will be seeing us [snorts] sitting
+[00:01:36] at the center of this revolution.
+[00:01:39] What we're also
+[00:01:41] starting to see is the shape at which
+[00:01:44] we're seeing how this transformation in
+[00:01:47] telecoms is happening. Of course, the
+[00:01:50] first and fastest moving, which I'm
+[00:01:52] going to spend a bit more time on, is
+[00:01:56] AI infrastructure build-outs.
+[00:02:00] Today, there's many AI many
+[00:02:03] telecommunications companies have
+[00:02:04] already started on that AI journey
+[00:02:07] across the world. And they're well
+[00:02:11] they're deep into some of that
+[00:02:13] transformation and some are just
+[00:02:14] starting.
+[00:02:16] What I would say is start. [snorts]
+[00:02:19] If you don't start, you don't learn. And
+[00:02:22] I'm not saying that just as a
+[00:02:24] as a high-level statement, but that's
+[00:02:26] our experience that we've able to see
+[00:02:30] from the companies that have already
+[00:02:32] started.
+[00:02:33] >> [snorts]
+[00:02:34] >> AI ran. We heard quite a bit about AI
+[00:02:37] ran yesterday Jensen's keynote and we're
+[00:02:40] going to hear
+[00:02:41] more from me today, but this is perhaps
+[00:02:44] one of the biggest opportunities that
+[00:02:46] presents itself to a telecommunications
+[00:02:48] network that has been
+[00:02:50] really set up to deliver the radio
+[00:02:53] access network and connectivity to
+[00:02:55] consumers, subscribers, and businesses.
+[00:02:58] And then
+[00:02:59] one thing that's very meaningful to
+[00:03:03] telcos around the world is the
+[00:03:04] transformation of their network
+[00:03:07] operations, a very large expense, into
+[00:03:11] autonomous agentic operations. That
+[00:03:15] transformation is happening and I'm
+[00:03:16] going to show you a little bit about
+[00:03:19] that with some of our partners today.
+[00:03:22] What you have to think about though is
+[00:03:24] the same thing that we heard all week,
+[00:03:27] which is this five-layer cake.
+[00:03:30] All these three transformations are
+[00:03:33] happening on exactly the same platform.
+[00:03:37] That is essential.
+[00:03:39] It's the same five-layer cake supporting
+[00:03:42] these transformations that is driving
+[00:03:45] the AI buildout AI revolution around the
+[00:03:50] world. And how is that
+[00:03:53] translating into telecommunications?
+[00:03:57] Well, let's just take a step through
+[00:03:59] some of that. Of course, we know energy
+[00:04:03] is driven by the availability of land
+[00:04:06] power shell. Large availability of
+[00:04:10] availability of large um land power
+[00:04:13] shell assets
+[00:04:15] is becoming harder and harder to come
+[00:04:17] by.
+[00:04:18] So, this distributed assets that exist
+[00:04:21] within telecommunications is really now
+[00:04:25] starting to become a primary factor.
+[00:04:29] When we think about compute, I mentioned
+[00:04:31] this earlier, which is we're seeing that
+[00:04:34] AI stack being the same across AI and
+[00:04:37] and Telco. What's critical in that is
+[00:04:40] you run the same models and software
+[00:04:44] across that entire fabric. It's not
+[00:04:48] custom silicon with some AI embedded
+[00:04:52] into it. Because as I will show you
+[00:04:54] later,
+[00:04:56] the criticality
+[00:04:58] of having AI applications
+[00:05:02] and radio access network
+[00:05:05] is
+[00:05:07] driving new business opportunities.
+[00:05:10] AI factories, centralized, distributed,
+[00:05:13] we're finding that AI factories are
+[00:05:16] popping up everywhere now. You saw on
+[00:05:19] DSX pod yesterday how that will even
+[00:05:22] proliferate more.
+[00:05:23] Models, the availability of
+[00:05:27] um
+[00:05:28] some models, not just open source
+[00:05:31] models, but open source post trained
+[00:05:33] models on Telco data,
+[00:05:36] critical for network operations. I'll
+[00:05:39] show you some examples of that. And of
+[00:05:41] course, you're seeing on the floor
+[00:05:43] today, but also in many of the sessions,
+[00:05:46] some of the amazing AI applications that
+[00:05:49] now also include software defined 5G and
+[00:05:54] moving forward 6G.
+[00:05:58] So, there has never been a better time
+[00:06:00] to be in telecommunications.
+[00:06:02] See, it doesn't get a laugh anymore. I
+[00:06:04] used to say that and everyone in the
+[00:06:06] telco industry used to laugh. But, we're
+[00:06:09] seeing new companies form. We're seeing
+[00:06:11] new divisions form. We're seeing
+[00:06:14] experiences of people within those
+[00:06:16] companies change. New exciting things to
+[00:06:20] learn.
+[00:06:21] New revenue models being created. But,
+[00:06:23] don't hear it just from Nvidia. Let's
+[00:06:26] see what some of the leading telcos
+[00:06:28] around the world are saying. And let's
+[00:06:30] start off in North America, where we're
+[00:06:33] going to hear from Verizon. We're going
+[00:06:35] to hear from T-Mobile, from Bell, from
+[00:06:38] Charter, and also from our friends
+[00:06:42] Telus.
+[00:06:46] Across North America, this
+[00:06:47] transformation is happening. This is
+[00:06:49] just some of their statements that we're
+[00:06:52] seeing. And I like the statement really
+[00:06:55] that um you'll see in a minute from
+[00:06:57] Telus, which says that
+[00:07:00] unprecedented demand completely sold out
+[00:07:03] on our first day AI factory.
+[00:07:06] That wasn't something they would have
+[00:07:08] said to almost 2 years ago when they
+[00:07:11] embarked upon that journey. Actually,
+[00:07:13] less than 2 years ago when they embarked
+[00:07:15] upon that journey. And the same story is
+[00:07:18] playing out across Asia.
+[00:07:20] What we can see
+[00:07:22] is some amazing build-outs and telcos
+[00:07:26] that are now starting to talk about
+[00:07:27] return on investments that they haven't
+[00:07:30] seen before. Demand is insane.
+[00:07:34] Monetization has begun.
+[00:07:38] AI adoption is now the top priority.
+[00:07:42] These are things that are you would
+[00:07:45] probably never, or not probably, will
+[00:07:48] never have heard from telcos 2 3 years
+[00:07:52] ago.
+[00:07:53] And now here in Europe,
+[00:07:56] we're seeing the same play out. And I'm
+[00:07:59] going to come on to some more of these
+[00:08:01] examples. But,
+[00:08:04] when T-Mobile, when Tim said that he's
+[00:08:06] seeing
+[00:08:07] about a billion dollars of extra revenue
+[00:08:10] coming in.
+[00:08:11] You wouldn't have thought that out of a
+[00:08:13] telco. But what we're seeing now is this
+[00:08:16] operational efficiencies playing out as
+[00:08:19] well as companies start to really lean
+[00:08:22] into that.
+[00:08:24] Let's dive into a couple of those
+[00:08:26] things. Firstly, let's start off with
+[00:08:29] Deutsche Telekom and let's understand
+[00:08:32] where they're making some very
+[00:08:35] interesting changes and developments in
+[00:08:39] their
+[00:08:41] ability to transform their radio access
+[00:08:44] network, but deliver also new
+[00:08:46] applications. Again, I'm going to
+[00:08:49] remind you of a theme that I mentioned
+[00:08:51] earlier. The same AI stack
+[00:08:54] that is running AI and ran.
+[00:08:58] That's essential. You need
+[00:09:01] to be able to run software across that
+[00:09:03] entire infrastructure and the same
+[00:09:06] software across that entire in
+[00:09:08] infrastructure.
+[00:09:09] DT is announcing that they're extending
+[00:09:12] and building out their industrial cloud
+[00:09:16] that they started working with Nvidia a
+[00:09:18] while ago into a distributed cloud as
+[00:09:21] well. And also that they've been able to
+[00:09:24] pilot now AI ran with their partner
+[00:09:28] Nokia. And what they've been able to do
+[00:09:31] now is already see 10 to 15%
+[00:09:34] uplink
+[00:09:35] performance improvement in labs based
+[00:09:38] upon the Nokia software.
+[00:09:43] What you're going to see in coming up is
+[00:09:44] an example of that AI and ran running on
+[00:09:47] the same infrastructure.
+[00:09:49] What you're going to see a robot from
+[00:09:51] Agile Robots that is being run in two
+[00:09:55] different modes. One is the robot's
+[00:09:58] being run in a mode where the world
+[00:10:01] foundation model
+[00:10:03] has been trained in the cloud and it's
+[00:10:05] running entirely on the robot. The robot
+[00:10:07] is
+[00:10:08] perceiving through cameras
+[00:10:11] and it's been trained and it's now
+[00:10:13] acting.
+[00:10:15] In the other
+[00:10:16] sitting right next to it, you'll see now
+[00:10:18] the robot that's connected to a Edge RTX
+[00:10:23] Pro 6000 where that world foundational
+[00:10:26] model is running
+[00:10:28] and you'll see the perception that's
+[00:10:30] able to be happening on the Edge as
+[00:10:33] opposed to the robot so it can perceive
+[00:10:36] the next task.
+[00:10:38] And act knowing on the connectivity of
+[00:10:42] that perception being transferred to the
+[00:10:44] robot. What you can see is this robot's
+[00:10:47] picking and placing fans into a server
+[00:10:51] and the robot that's running on the
+[00:10:53] distributed AI infra
+[00:10:56] see how much smoother and also the cycle
+[00:10:59] time of the task how much faster it is.
+[00:11:03] That's the power of the Edge.
+[00:11:07] People often ask why why is the Edge
+[00:11:10] important? We've had an Edge
+[00:11:13] potential for a long time but not in the
+[00:11:15] era of AI.
+[00:11:17] This is a completely new
+[00:11:19] availability of applications that can be
+[00:11:23] serviced by the Edge by combining that
+[00:11:26] with connectivity.
+[00:11:29] What we're also now going to see is
+[00:11:31] another example
+[00:11:33] from our friends at Orange.
+[00:11:36] Our friends at Orange, thank you, uh
+[00:11:39] been able to show some pilots now
+[00:11:43] of a Nemotron speech-to-speech
+[00:11:46] application
+[00:11:48] that's running real time
+[00:11:50] together on that same AI stack
+[00:11:53] and that same AI infra.
+[00:11:56] And what you will see is this
+[00:11:57] translation that's happening real time
+[00:12:01] in an emergency service application.
+[00:12:07] This pilot is using a
+[00:12:10] a The
+[00:12:11] speech-to-speech model that is full
+[00:12:13] duplex and also includes
+[00:12:18] recognition of tone and also semantic
+[00:12:21] recognition.
+[00:12:23] Let's watch it.
+[00:12:58] >> Thank you for your report. Are you and
+[00:13:00] the children inside and safe now?
+[00:13:12] All right, the firefighters are already
+[00:13:13] on their way.
+[00:13:26] >> What you saw there was real-time
+[00:13:27] translation but also a latency
+[00:13:31] sensitive application where the edge
+[00:13:33] makes a difference. Again, a real use
+[00:13:36] case for age and Orange is Orange is
+[00:13:40] delivering that with their will be
+[00:13:42] delivering that with their live
+[00:13:43] intelligence platform.
+[00:13:46] I talked earlier about
+[00:13:49] AI factories.
+[00:13:50] And here in Europe it's worth
+[00:13:53] thinking about the journey that many
+[00:13:54] tele- telcos have gone through as they
+[00:13:57] start to think about deploying AI
+[00:14:00] factories. Initially around GPU as a
+[00:14:03] service, moving up to models as a
+[00:14:06] service, moving up to inference as a
+[00:14:09] service, and delivering AI applications
+[00:14:12] and services on top of that.
+[00:14:15] And so, across Europe, we've seen this
+[00:14:17] now
+[00:14:19] start to develop over the last 2 years.
+[00:14:22] Some of them centralized, some of them
+[00:14:24] distributed.
+[00:14:26] But, what we're also now
+[00:14:28] announcing is that nine of the telcos in
+[00:14:32] Europe are either further enhancing with
+[00:14:35] further build-outs
+[00:14:38] or new telcos that are taking this
+[00:14:41] journey.
+[00:14:42] Building new businesses, building new
+[00:14:45] capabilities, building new
+[00:14:48] experiences and go-to-market.
+[00:14:51] This is now a wave that's sweeping
+[00:14:54] across the world, and Europe is catching
+[00:14:57] that wave as well.
+[00:15:04] Okay, let me come to something that I
+[00:15:06] said early in the presentation is
+[00:15:09] perhaps the biggest opportunity for
+[00:15:11] wireless in decades.
+[00:15:14] We don't need to be reminded that
+[00:15:16] traditional ways of delivering the radio
+[00:15:19] access network have been around
+[00:15:21] proprietary
+[00:15:24] a proprietary equipment. Where
+[00:15:26] proprietary equipment is built on custom
+[00:15:28] silicon,
+[00:15:30] custom software attached to that
+[00:15:32] silicon, and algorithms embedded into
+[00:15:35] that software.
+[00:15:36] And of course, it's been an amazing
+[00:15:40] journey
+[00:15:41] up until now.
+[00:15:43] Up until the advent of the capabilities
+[00:15:46] of software-defined
+[00:15:48] radio access networks.
+[00:15:51] Today, we start to see that momentum of
+[00:15:54] radio access networks move to
+[00:15:55] software-defined. I've showed you some
+[00:15:58] examples already of how that now
+[00:16:02] unleashes new opportunities by having AI
+[00:16:06] software run on that same
+[00:16:08] infrastructure.
+[00:16:10] So, software-defined
+[00:16:12] built as an AI native stack, and as I'll
+[00:16:16] show you, very importantly, once you
+[00:16:19] open up to a completely software-defined
+[00:16:22] architecture, you now enable innovation
+[00:16:25] to come at all layers in that software
+[00:16:28] stack.
+[00:16:31] >> [snorts]
+[00:16:31] >> Why is this now the moment in time that
+[00:16:33] it is? Because up until now, we hadn't
+[00:16:37] reached that tipping point.
+[00:16:39] The tipping point of software-defined
+[00:16:43] crossing
+[00:16:44] that threshold of performance per watt
+[00:16:48] equivalent to proprietary systems.
+[00:16:52] As you can see, we have been moving
+[00:16:55] through generations of hardware within
+[00:16:58] NVIDIA.
+[00:16:59] In Jensen's keynote, he said we've been
+[00:17:01] on this journey for 8 years.
+[00:17:03] 8 years of ex- exploration, 8 years of
+[00:17:06] software development, 8 years of
+[00:17:08] learning new skills about what are the
+[00:17:11] what are the capabilities of the
+[00:17:13] hardware that need to be in there in
+[00:17:15] place, the CUDA kernels, the
+[00:17:17] optimizations. That journey has led us
+[00:17:20] to this point and is the foundation for
+[00:17:22] us moving forward. But, of course, we
+[00:17:25] don't stop here. The hardware roadmap
+[00:17:28] continues, and I'm pleased to say today
+[00:17:32] that we are announcing
+[00:17:34] Let me put this in my pocket.
+[00:17:36] We are announcing an MGX
+[00:17:39] >> [snorts]
+[00:17:40] >> 4U
+[00:17:41] system
+[00:17:43] for C-RAN.
+[00:17:45] This one is from Supermicro.
+[00:17:49] And
+[00:17:51] an MGX
+[00:17:53] >> [snorts]
+[00:17:54] >> 2U
+[00:17:55] from
+[00:17:57] This one is from Dell.
+[00:17:59] These systems, as you can see today,
+[00:18:03] are the formation of the Aerial RAN
+[00:18:05] computer family.
+[00:18:07] The Aerial RAN computer family is what's
+[00:18:10] driving this deployment of radio access
+[00:18:14] network across the world.
+[00:18:20] These are our two new members of the
+[00:18:22] family.
+[00:18:24] We also, if I complete the family
+[00:18:27] picture,
+[00:18:29] we also have
+[00:18:33] previously released
+[00:18:36] the
+[00:18:37] MGX 2U short
+[00:18:39] from Quanta
+[00:18:43] and
+[00:18:45] our friend DGX Spark.
+[00:18:48] DGX Spark is a capable box that is able
+[00:18:52] to deliver
+[00:18:54] six cells, 100 MHz, 44R.
+[00:18:59] So, when people ask you,
+[00:19:02] can a
+[00:19:03] can a GPU really sit at a base station?
+[00:19:06] Is there enough power at a base station
+[00:19:10] to service a GPU?
+[00:19:13] Does it cost too much to put a GPU at a
+[00:19:16] base station?
+[00:19:18] You can now see, with these members, of
+[00:19:22] course, the answer is obvious.
+[00:19:25] Centralized [snorts]
+[00:19:26] RAN,
+[00:19:27] where you can now pull, share resources.
+[00:19:32] Not just AI can run on all of these, of
+[00:19:34] course, but not just for radio access
+[00:19:37] network, but also AI with front haul
+[00:19:40] connectivity to the radio.
+[00:19:44] And this family will continue to grow.
+[00:19:49] We will continue to grow this hardware
+[00:19:51] family as new generations come on, but
+[00:19:54] one thing that's very important is CUDA
+[00:19:56] X
+[00:19:58] is forwards and backwards compatible.
+[00:20:02] Previous
+[00:20:03] generations of software will run on
+[00:20:05] these, new generations of software will
+[00:20:07] run on these, and we will continue to
+[00:20:09] see performance improvement as those new
+[00:20:12] generations come into play.
+[00:20:15] This will mean
+[00:20:17] new capabilities will be delivered on
+[00:20:20] this hardware. Yet unthought-of
+[00:20:23] capabilities, capabilities in research
+[00:20:27] will be delivered on this hardware. You
+[00:20:30] do not need to do a hardware
+[00:20:33] swap to deliver these capabilities that
+[00:20:35] you're seeing today.
+[00:20:38] Also, importantly, something that I said
+[00:20:40] earlier,
+[00:20:41] the same software will run across all of
+[00:20:43] these and in the large AI factories.
+[00:20:47] You can't achieve that by having
+[00:20:49] proprietary silicon with some tensor
+[00:20:51] cores.
+[00:20:52] That's not possible.
+[00:20:57] >> [snorts]
+[00:20:58] >> So, our friends at Elisa, who are here
+[00:21:00] today, thank you very much for your hard
+[00:21:03] work on these platforms.
+[00:21:05] Elisa has been able to deliver
+[00:21:08] AI ran in their network
+[00:21:11] as well as AI applications running on
+[00:21:15] the same infrastructure. On the MGX 2U
+[00:21:18] short, which contains the RTX Pro 4500,
+[00:21:23] and on the MGX
+[00:21:25] 2 2U that contains the RTX Pro 6
+[00:21:30] >> [snorts]
+[00:21:30] >> 6000.
+[00:21:32] What we're going to see today is just a
+[00:21:35] very quick example of what Elisa has
+[00:21:39] been able to do running their software
+[00:21:42] on these systems.
+[00:21:43] What you can see there is the MGX 2U
+[00:21:46] short running on the 4500 at just 30%
+[00:21:50] filled,
+[00:21:52] being able to service both the radio
+[00:21:54] access network and an AI application
+[00:21:58] running at exactly the same time.
+[00:22:02] Incredible.
+[00:22:04] This is a video-to-text
+[00:22:06] application.
+[00:22:08] Just imagine what the future holds now.
+[00:22:11] This
+[00:22:13] system consider a base station. It's
+[00:22:15] sitting at a base station.
+[00:22:17] Servicing these applications, servicing
+[00:22:19] the radio access network.
+[00:22:21] Amazing work by Elisa.
+[00:22:27] BT has also now started to move to this
+[00:22:31] new architecture. And in 2027,
+[00:22:34] BT will be running the Nokia software
+[00:22:37] also on these systems
+[00:22:41] in live
+[00:22:42] trials in Birmingham in the UK.
+[00:22:52] We also heard from Jenson yesterday some
+[00:22:55] exciting news
+[00:22:57] that T-Mobile in the US has been able to
+[00:23:00] make their first commercial call.
+[00:23:03] That is one of the first examples of how
+[00:23:07] major carrier in the world is able to
+[00:23:10] make that commercial call on the radio
+[00:23:12] access network on the systems that I
+[00:23:14] talked to you about. And that is using
+[00:23:17] the MGX 2U short with the Nokia
+[00:23:20] software.
+[00:23:21] See how flexible these systems really
+[00:23:24] are now.
+[00:23:27] So, I think you will be
+[00:23:30] now able to say with me
+[00:23:33] that AI-RAN has crossed that chasm.
+[00:23:37] It's moved from the early adopter phase
+[00:23:40] into the early majority phase. But let
+[00:23:43] me give you some stats to back up
+[00:23:46] that claim if you're not already
+[00:23:49] convinced by what you've heard.
+[00:23:52] 19 leading telcos
+[00:23:55] 147
+[00:23:57] AI-RAN Alliance members.
+[00:24:00] We started with other with our partners
+[00:24:03] 10 other companies in 2024
+[00:24:08] the AI-RAN Alliance. The pace of which
+[00:24:11] the working groups have been working has
+[00:24:13] been tremendous.
+[00:24:15] We now have NEP as well as um RAN
+[00:24:19] providers that are moving their software
+[00:24:22] to this these platforms. Again,
+[00:24:25] moving software to these platforms and
+[00:24:28] AI CUDA accelerated applications to
+[00:24:31] these platforms is being done by
+[00:24:34] millions of developers around the world.
+[00:24:38] The network equipment providers can now
+[00:24:40] tap into that ecosystem of millions of
+[00:24:44] developers for that innovation.
+[00:24:47] And
+[00:24:48] you see just some of our OEM partners
+[00:24:50] here, but there are more and that that
+[00:24:53] is growing pace as well.
+[00:24:55] And then of course nations.
+[00:24:58] Radio access network providers service
+[00:25:01] nations. Nations want to lead in
+[00:25:03] critical infrastructure. We have now as
+[00:25:06] NVIDIA
+[00:25:08] working very closely with the UK, with
+[00:25:11] Japan, and with Korea, and obviously the
+[00:25:14] US to drive the next generation of
+[00:25:18] advanced wireless infrastructure that is
+[00:25:21] software defined.
+[00:25:25] Let me spend a moment just talking about
+[00:25:27] innovation.
+[00:25:30] Innovation
+[00:25:33] I think is one of the untapped
+[00:25:35] potentials in wireless.
+[00:25:38] Of course, wireless is moving through
+[00:25:40] has traditionally moved through the
+[00:25:42] generations of 2 3 4 5G, but 6G is being
+[00:25:47] born in the era of AI.
+[00:25:49] We need to take advantage of AI and
+[00:25:53] everything that AI offers in the
+[00:25:55] innovation.
+[00:25:57] What we did at NVIDIA is take an
+[00:26:00] approach of course of software defined.
+[00:26:03] But we also wanted to democratize the
+[00:26:05] research of 6G.
+[00:26:08] So we created a product called Sionna, a
+[00:26:12] library called Sionna. Sionna is a link
+[00:26:14] layer link layer simulator that's
+[00:26:16] differentiable.
+[00:26:17] We added ray tracing extensions and we
+[00:26:20] put it on GitHub for everyone to
+[00:26:22] download.
+[00:26:23] We also started that journey eight years
+[00:26:26] ago on what we call our aerial software.
+[00:26:29] Aerial is a 5G stack, accelerated layer
+[00:26:32] one on GPU.
+[00:26:34] And we also put that
+[00:26:37] as open source software.
+[00:26:39] So far, we've had over a million
+[00:26:41] downloads of that software.
+[00:26:44] Most of it from researchers.
+[00:26:47] Whether it be corporate research, higher
+[00:26:49] education research, uh
+[00:26:52] what we start or industry and test
+[00:26:54] equipment companies.
+[00:26:56] That
+[00:26:57] availability of a full simulation
+[00:27:00] environment as well as a testing
+[00:27:03] environment as well as an over-the-air
+[00:27:05] implementation environment is very, very
+[00:27:08] unique. We were able to work with our
+[00:27:11] partners to see 50 demos at the latest
+[00:27:14] Mobile World Congress in Barcelona
+[00:27:17] running on real hardware, not just
+[00:27:20] papers that are being published, but
+[00:27:22] real over-the-air hardware testing and
+[00:27:25] demos that are being created. And we in
+[00:27:29] March of 2024 created what we call our
+[00:27:32] 6G developer program.
+[00:27:35] Over 8,000 members of our 6G developer
+[00:27:39] program today. There has never been a
+[00:27:41] moment in time when the research
+[00:27:44] community of wireless has had such
+[00:27:46] amazing tools to work with.
+[00:27:50] We are working with universities across
+[00:27:52] Europe. We're working with institutions
+[00:27:55] across Europe.
+[00:27:58] This is now proliferating to every
+[00:28:00] advanced wireless research lab that
+[00:28:02] there is across the world.
+[00:28:05] When you have availability of something
+[00:28:08] like this
+[00:28:09] that you can run as your full stack, as
+[00:28:12] your simulation environment,
+[00:28:15] why wouldn't you test out
+[00:28:18] real over-the-air capability? And I
+[00:28:20] encourage you now to go on the floor and
+[00:28:25] see the NVIDIA 6G innovation platform.
+[00:28:30] In this platform, this is an
+[00:28:32] agent-driven
+[00:28:34] testbed
+[00:28:36] where you are able to try out, develop
+[00:28:39] new wireless algorithms.
+[00:28:41] You are then able to simulate in a
+[00:28:44] digital twin.
+[00:28:46] You are able to accelerate
+[00:28:49] or you're able to run that on a
+[00:28:51] GPU-accelerated RAN stack.
+[00:28:54] And
+[00:28:56] using commercial radios
+[00:28:58] run an over-the-air test environment.
+[00:29:02] A complete system for research. All
+[00:29:06] running
+[00:29:07] on the DGX Spark. The simulation
+[00:29:09] environment, the CUDA-accelerated RAN,
+[00:29:12] and of course, the over-the-air
+[00:29:15] connectivity to the RU.
+[00:29:21] This is being built upon something that
+[00:29:25] we announced earlier this year.
+[00:29:28] The Telco the AI Telco engineer.
+[00:29:31] When the AI Telco engineer, which is an
+[00:29:34] agentified flow that essentially can
+[00:29:36] enable you to run and develop new
+[00:29:39] wireless algorithms through an through
+[00:29:42] um the
+[00:29:43] techniques of using an agent. When this
+[00:29:46] was announced, one very respected
+[00:29:48] professor in the industry
+[00:29:50] called it earth-shaking.
+[00:29:53] And it is.
+[00:29:54] We are now seeing, for instance, this
+[00:29:56] OTFS equalizer
+[00:29:59] be able to achieve better block error
+[00:30:02] rates
+[00:30:03] through an agentic implementation
+[00:30:06] than traditional block error rate
+[00:30:08] capabilities.
+[00:30:10] This is through um a 3.6x latency
+[00:30:14] improvement as well.
+[00:30:17] We've also seen breakthroughs with
+[00:30:20] Shauna in this same environment
+[00:30:24] on pilotless non-neural network
+[00:30:27] interfaces. Amazing research is
+[00:30:30] happening around the world because of
+[00:30:32] the Telco AI engineer capabilities that
+[00:30:35] are all downloadable on GitHub.
+[00:30:40] Let me change tax now.
+[00:30:43] Yesterday from Jensen, you saw
+[00:30:47] some very interesting stats.
+[00:30:50] You saw the
+[00:30:51] the the importance of data, models,
+[00:30:55] agent harnesses,
+[00:30:57] tools.
+[00:31:00] Some of our partners today have taken
+[00:31:04] our open-source models within their own
+[00:31:07] harnesses or within harnesses provided
+[00:31:10] by us and have been able to post train
+[00:31:13] those models with their data.
+[00:31:17] And release platforms that are built on
+[00:31:20] that.
+[00:31:21] This is really exciting because what you
+[00:31:23] can see now
+[00:31:25] is post trained data
+[00:31:27] is providing better results
+[00:31:30] than
+[00:31:32] the closed-source models.
+[00:31:34] And this is something that Jensen talked
+[00:31:36] about yes yesterday. Cisco for network
+[00:31:39] troubleshooting. I'm going to talk a
+[00:31:40] little bit more about that later. But
+[00:31:42] using NeMo Tron post trained data for
+[00:31:46] network optimization.
+[00:31:49] TCS been working with um BT in the UK.
+[00:31:54] They're a very interesting uh
+[00:31:55] application that where
+[00:31:58] pictures are taken from the site
+[00:32:01] installation.
+[00:32:03] Those pictures are
+[00:32:06] evaluated
+[00:32:07] using NeMo Tron and then post trained.
+[00:32:11] And what happens then is the site
+[00:32:14] engineer,
+[00:32:15] instead of having to go back and forth
+[00:32:17] and take a three-plus week evaluation of
+[00:32:21] those pictures, is able to on-site call
+[00:32:24] that up through an agent, immediately
+[00:32:28] see if the installation is correct or
+[00:32:29] not before he leaves the site before
+[00:32:32] they leave the site.
+[00:32:34] That has never been done before. This is
+[00:32:36] changing the productivity of
+[00:32:40] operators around the world as these
+[00:32:42] capabilities come out.
+[00:32:44] NTT data
+[00:32:46] has been able to build a predictive
+[00:32:48] degradation analysis
+[00:32:51] of networks to
+[00:32:53] predict where faults will happen.
+[00:32:56] And they will be delivering that product
+[00:32:58] out to their clients, telco operators
+[00:33:01] around the world as well.
+[00:33:04] So, we're very pleased to announce today
+[00:33:06] that Cisco
+[00:33:07] is announcing their Crosswork AI powered
+[00:33:11] by NVIDIA NeMoTron.
+[00:33:14] Again,
+[00:33:15] Cisco has used NeMoTron 3
+[00:33:19] and demonstrated better deep network
+[00:33:21] troubleshooting
+[00:33:23] than
+[00:33:25] and generating a hypothesis. So, firstly
+[00:33:27] collecting data,
+[00:33:30] evaluating KPIs, creating hypothesis,
+[00:33:33] and they're able to develop um
+[00:33:35] determine troubleshooting through this
+[00:33:37] platform.
+[00:33:39] And
+[00:33:41] we're also very pleased to announce our
+[00:33:43] partners Nokia
+[00:33:45] have also been able to work with an
+[00:33:48] identified flow post-training NeMoTron
+[00:33:52] across a
+[00:33:53] uh this is a cross-domain. It's RAN,
+[00:33:57] transport,
+[00:33:58] cloud.
+[00:34:00] All of these domains where you can have
+[00:34:03] an identified flow to troubleshoot
+[00:34:06] and create
+[00:34:09] um root cause analysis.
+[00:34:11] Much more accuracy in decision-making,
+[00:34:14] and of course, much faster accuracy in
+[00:34:17] decision-making.
+[00:34:20] Okay, talking about about
+[00:34:22] [clears throat] Nokia.
+[00:34:25] Almost exactly a year ago,
+[00:34:27] Nokia and NVIDIA embarked upon a
+[00:34:29] partnership.
+[00:34:31] And that partnership that was announced
+[00:34:33] in Washington, D.C. uh GTC conference
+[00:34:37] has really accelerated, some of which
+[00:34:39] you have seen here today.
+[00:34:41] And so
+[00:34:43] Nokia's talked about spectral efficiency
+[00:34:45] improvements, 50% by next year,
+[00:34:50] 100% so 2x by year after.
+[00:34:54] Not just that's probably line of sight,
+[00:34:56] but we know that also work continues
+[00:34:59] beyond that. A really exciting
+[00:35:01] development. So, I thought we'd spend a
+[00:35:03] moment just to look at our partnership
+[00:35:07] and what's been the result of that
+[00:35:09] partnership. So, I'm going to play a
+[00:35:11] video for you.
+[00:35:15] >> It started with a vision to connect
+[00:35:17] people.
+[00:35:18] Now, Nokia and Nvidia are taking that
+[00:35:21] vision further. From connecting people
+[00:35:24] to connecting intelligence.
+[00:35:30] Together, Nvidia and Nokia are building
+[00:35:32] a new wireless network [music] on AI RAN
+[00:35:35] architecture.
+[00:35:37] Software-defined, programmable, and
+[00:35:40] optimized for signal processing and AI
+[00:35:42] inference. Built for 5G today and ready
+[00:35:45] for 6G tomorrow.
+[00:35:48] In 1 year, that vision has become a
+[00:35:50] reality. Nokia AnyRAN software is
+[00:35:53] running on the Nvidia accelerated
+[00:35:55] computing platform.
+[00:35:57] Dynamically improving spectral
+[00:35:59] efficiency.
+[00:36:01] Running [music] AI inference at the
+[00:36:02] edge. And turning telcos into AI service
+[00:36:06] providers.
+[00:36:07] Leading operators are collaborating with
+[00:36:09] Nvidia and Nokia to bring AI RAN into 5G
+[00:36:13] networks today.
+[00:36:16] Powering physical AI at industrial
+[00:36:18] scale.
+[00:36:20] Bringing natural conversation to AI
+[00:36:22] [music] assistants.
+[00:36:25] Helping cities become safer with vision
+[00:36:27] AI.
+[00:36:30] Expanding access to health care in
+[00:36:32] remote areas.
+[00:36:35] Providing real-time voice AI for
+[00:36:37] emergency services.
+[00:36:39] >> Firefighters are already on their way.
+[00:36:40] >> Coordinating [music]
+[00:36:41] autonomous robots in real-time.
+[00:36:46] Operators are even [music] transforming
+[00:36:48] network operations with AI agents that
+[00:36:50] help keep networks reliable and secure.
+[00:36:54] And this is just the beginning.
+[00:36:56] Nvidia and Nokia are building the
+[00:36:59] foundation for AI native networks. One
+[00:37:02] platform, software defined,
+[00:37:04] programmable, built for the AI [music]
+[00:37:06] and 6G future.
+[00:37:15] >> So, a quick wrap-up. Thank you to our
+[00:37:17] partners, Nokia, but thank you to all of
+[00:37:19] our partners. Without you,
+[00:37:23] this transformation wouldn't have
+[00:37:24] existed.
+[00:37:26] We are into this chapter. It's not a new
+[00:37:29] chapter that's about to open. It's a
+[00:37:31] chapter that is open.
+[00:37:33] And we're well into the
+[00:37:35] benefits,
+[00:37:37] new companies,
+[00:37:39] new divisions,
+[00:37:41] new learnings,
+[00:37:43] new revenue streams.
+[00:37:46] Let me close in saying there has never
+[00:37:48] been a better time to be in telecoms.
+[00:37:51] Thank you.
+[00:37:53] >> [applause]
