@@ -35,3 +35,13 @@
 - **修復執行**：
   - 更新 `wiki/videos/All_Code_Is_Slop_Except_Mine_Lauren_Tan.md` 為精確的 5 層倒金字塔模型（Codebase $\to$ Static Analysis $\to$ Verification $\to$ Prose $\to$ Human Review）。
   - 重構 `slides.html` 第 4 頁投影片，採用等比例縮進寬度（95% $\to$ 82% $\to$ 68% $\to$ 54% $\to$ 38%），在 HTML 簡報中直觀呈現完美的倒三角形視覺層級。
+
+## [2026-11-23] extract-keyframes | 執行 YouTube 串流影格抽取 (Keyframe Extraction)
+- 使用 `yt-dlp` 與 `ffmpeg` 針對 `https://youtu.be/O_zcc6Xl12g` 串流直接進行毫秒級無損抽幀。
+- 成功截取 7 張關鍵演講 PPT 投影片並存入 `wiki/assets/All_Code_Is_Slop_Except_Mine_Lauren_Tan/`：
+  - `02_poteto_pyramid.png` (原創倒金字塔 5 層架構)
+  - `03_garden_analogy.png` (Code is memory 理念)
+  - `04_use_effect_ban.png` (Dune 框架禁用規範)
+  - `06_ban_comments.png` (183 個定時器踩坑時間軸)
+  - `07_summary_golden_rule.png` (黃金反饋法則)
+- 已將原版 PPT 截圖完整嵌入至 `wiki/videos/All_Code_Is_Slop_Except_Mine_Lauren_Tan.md` 筆記中。
