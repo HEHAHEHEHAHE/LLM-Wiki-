@@ -237,7 +237,7 @@
       <!-- Slide 6: 生產環境踩坑實錄 3 & 4 (禁用註解) -->
       <section>
         <h2>顛覆認知：為什麼要「禁用 99% 的註解」？</h2>
-        <div class="card-grid">
+        <div class="card-grid" style="margin-top: 15px;">
           <div class="card" style="border-left: 4px solid var(--warn-color);">
             <h4>🚫 註解是「垃圾的溫床」</h4>
             <p>• <strong>逃生門</strong>：Agent 遇到難題時，極喜歡加上註解解釋「為什麼自己使用非正規手段」。<br>
@@ -249,11 +249,12 @@
             • 當 Agent 違規時，Linter 輸出詳盡錯誤訊息：<strong>「請修復根源問題，嚴禁以此補丁繞過！」</strong></p>
           </div>
         </div>
-        <div class="highlight-box" style="text-align: center; margin-top:20px;">
-          <strong>代碼註解不能約束行為；只有機器能攔截的規則，才是真實的信任。</strong>
+        <div style="text-align: center; margin-top: 15px;">
+          <img src="wiki/assets/All_Code_Is_Slop_Except_Mine_Lauren_Tan/06_ban_comments.png" style="max-height: 200px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2);" alt="183 Timers Incident">
+          <p style="font-size: 0.55em; color: #94a3b8; margin-top: 4px;">▲ 實戰警示：一行帶有自我合理化註解的 setTimeout，在 5 週內瘋狂繁衍成 183 個定時器！</p>
         </div>
         <div class="slide-footer">
-          出處章節：<a href="wiki/videos/All_Code_Is_Slop_Except_Mine_Lauren_Tan.md">III. 實戰踩坑 - 案例 4：代碼註解是垃圾的溫床</a>
+          出處章節：<a href="wiki/videos/All_Code_Is_Slop_Except_Mine_Lauren_Tan.md">Figure 4: Quick fixes considered harmful</a>
         </div>
       </section>
 
