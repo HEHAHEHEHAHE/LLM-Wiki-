@@ -26,3 +26,12 @@
   - `wiki/concepts/ai-agents-code-generation.md`
   - `wiki/concepts/formal-verification-llm.md`
 - 同步更新總目錄 `wiki/index.md` 與導覽側邊欄。
+
+## [2026-11-23] lint & fix | 對齊 Poteto 倒金字塔 5 層真實架構
+- **觸發檢查**：人工比對演講原版投影片（Ground Truth 截圖）。
+- **發現衝突與缺陷**：
+  1. 原版倒金字塔共有 **5 層**，原先筆記與簡報遺漏了最底部的第 5 層 `human review`。
+  2. 原版為真正的倒三角形（$\nabla$），先前的 ASCII 與敘述存在正反方向與層級混淆。
+- **修復執行**：
+  - 更新 `wiki/videos/All_Code_Is_Slop_Except_Mine_Lauren_Tan.md` 為精確的 5 層倒金字塔模型（Codebase $\to$ Static Analysis $\to$ Verification $\to$ Prose $\to$ Human Review）。
+  - 重構 `slides.html` 第 4 頁投影片，採用等比例縮進寬度（95% $\to$ 82% $\to$ 68% $\to$ 54% $\to$ 38%），在 HTML 簡報中直觀呈現完美的倒三角形視覺層級。
