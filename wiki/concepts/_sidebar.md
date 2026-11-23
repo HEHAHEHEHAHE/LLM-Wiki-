@@ -2,6 +2,9 @@
   - [首頁與影片目錄](wiki/index.md)
   - [時間活動日誌](wiki/log.md)
 
+- 核心成果展示
+  - [🎬 開啟教學 HTML 簡報 (Reveal.js)](slides.html)
+
 - 影片深度精讀 (Videos)
   - [01 | All Code Is Slop (Lauren Tan)](wiki/videos/All_Code_Is_Slop_Except_Mine_Lauren_Tan.md)
 
