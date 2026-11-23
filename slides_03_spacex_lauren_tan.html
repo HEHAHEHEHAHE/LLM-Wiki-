@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <title>教學簡報 03：Shipping 1,000s of PRs a Month at SpaceX - Lauren Tan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+
+  <style>
+    :root {
+      --r-main-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      --r-heading-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      --accent-color: #38bdf8;
+      --warn-color: #f87171;
+      --success-color: #4ade80;
+    }
+    .reveal {
+      font-size: 28px;
+    }
+    .reveal h1, .reveal h2, .reveal h3 {
+      text-transform: none;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    .reveal h1 { font-size: 2.1em; color: #ffffff; }
+    .reveal h2 { font-size: 1.6em; color: var(--accent-color); margin-bottom: 0.8em; }
+    .reveal h3 { font-size: 1.25em; color: #e2e8f0; }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 25px;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: left;
+    }
+    .card h4 {
+      margin: 0 0 10px 0;
+      font-size: 1.1em;
+      color: var(--accent-color);
+    }
+    .card p, .card li {
+      font-size: 0.82em;
+      line-height: 1.6;
+      color: #cbd5e1;
+      margin: 0;
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(99, 102, 241, 0.15));
+      border-left: 5px solid var(--accent-color);
+      border-radius: 8px;
+      padding: 16px 22px;
+      text-align: left;
+      margin: 20px 0;
+      font-size: 0.9em;
+      line-height: 1.6;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.7em;
+      font-weight: 600;
+      background: var(--accent-color);
+      color: #0f172a;
+      margin-bottom: 12px;
+    }
+
+    .slide-footer {
+      position: absolute;
+      bottom: -35px;
+      left: 0;
+      width: 100%;
+      text-align: left;
+      font-size: 0.55em;
+      color: #64748b;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 6px;
+    }
+    .slide-footer a {
+      color: #94a3b8;
+      text-decoration: underline;
+    }
+
+    .metric-container {
+      display: flex;
+      justify-content: space-around;
+      margin: 30px 0;
+    }
+    .metric-box {
+      text-align: center;
+    }
+    .metric-num {
+      font-size: 2.8em;
+      font-weight: 800;
+      color: var(--success-color);
+      line-height: 1;
+    }
+    .metric-label {
+      font-size: 0.75em;
+      color: #94a3b8;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Slide 1: 標題頁 -->
+      <section>
+        <span class="badge">第 3 講 · 深度工程訪談</span>
+        <h1>Shipping 1,000s of<br><span style="font-size:0.85em; color:var(--accent-color);">PRs a Month at SpaceX</span></h1>
+        <p style="font-size: 0.85em; color: #94a3b8; margin-top: 20px;">
+          航太級極限工程實戰：如何退居幕後成為軟體工廠經理？
+        </p>
+        <p style="font-size: 0.65em; color: #64748b; margin-top: 30px;">
+          受訪者：Lauren Tan (Potato) · 前 Cursor 工程師 / SpaceX & xAI 團隊 / pstack 創作者<br>
+          本簡報由 LLM Wiki 知識庫即時驅動生成
+        </p>
+        <div class="slide-footer">
+          資料來源：<a href="index.html#/wiki/videos/Shipping_1000s_Of_PRs_A_Month_At_SpaceX_Lauren_Tan">wiki/videos/Shipping_1000s_Of_PRs_A_Month_At_SpaceX_Lauren_Tan.md</a>
+        </div>
+      </section>
+
+      <!-- Slide 2: 工廠經理的心態轉移 -->
+      <section>
+        <h2>工程師角色的代際轉移</h2>
+        <div class="highlight-box">
+          瓶頸從來不是「AI 能不能寫代碼」，而是<strong>人類能否以機器速度驗證其正確性，並建構免除重複探索的高信任環境</strong>。
+        </div>
+        <div class="card-grid">
+          <div class="card">
+            <h4>舊工程師思維 (手動碼農)</h4>
+            <p>• 以自己親手撰寫每一行演算法為傲。<br>• 花費大量時間在格式排版、手動測試與逐行 PR 審查。<br>• 產能受限於人類打字與閱讀生理極限。</p>
+          </div>
+          <div class="card">
+            <h4>新工程師角色 (工廠設計師)</h4>
+            <p>• 退居幕後，擔任軟體工廠流水線的「工具打磨者」。<br>• 設計可重複調用的 Skills、客製化 Linter 與架構約束。<br>• 讓同類型的錯誤在發生當下就被環境制度化阻斷。</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          出處章節：<a href="index.html#/wiki/videos/Shipping_1000s_Of_PRs_A_Month_At_SpaceX_Lauren_Tan">I. 核心訪談背景與演進</a>
+        </div>
+      </section>
+
+      <!-- Slide 3: 商業後廚與備料台隱喻 -->
+      <section>
+        <h2>核心隱喻：商業後廚與備料台 (Mise en Place)</h2>
+        <div class="card-grid" style="margin-top: 25px;">
+          <div class="card" style="border-left: 4px solid var(--warn-color);">
+            <h4>鈍刀與混亂廚房 (Dull Knives)</h4>
+            <p>• <strong>混亂現場</strong>：刀具生鏽遲鈍、砧板污穢、食材隨處堆放。<br>
+            • <strong>代碼對應</strong>：型別缺失、測試龜速、目錄邊界混亂。<br>
+            • <strong>結果</strong>：廚師即使廚藝再高，在出餐壓力下也只能手忙腳亂陷入救火。</p>
+          </div>
+          <div class="card" style="border-left: 4px solid var(--success-color);">
+            <h4>頂級備料台 (Mise en Place)</h4>
+            <p>• <strong>標準規範</strong>：所有食材精確切片歸位，刀具打磨鋒利。<br>
+            • <strong>代碼對應</strong>：乾淨的架構合約、即時報錯的編譯器、一鍵重現腳本。<br>
+            • <strong>結果</strong>：環境純淨無摩擦，Agent 如米其林主廚般行雲流水穩定交付。</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          出處章節：<a href="index.html#/wiki/videos/Shipping_1000s_Of_PRs_A_Month_At_SpaceX_Lauren_Tan">II. 核心架構與隱喻拆解 - 1. 商業後廚</a>
+        </div>
+      </section>
+
+      <!-- Slide 4: Context, Not Control -->
+      <section>
+        <h2>治理哲學：給予上下文，而非微觀控制</h2>
+        <div class="highlight-box">
+          「Context, Not Control」借鑒自頂級極客文化：對待 AI Agent 亦應如此，絕非依靠微觀控制。
+        </div>
+        <div class="card-grid">
+          <div class="card">
+            <h4>微觀控制的死胡同 (Micro-management)</h4>
+            <p>• 在 Prompt 中塞入上百條瑣碎禁令（「不要動 A，不要寫 B」）。<br>• Context 嚴重膨脹，模型注意力渙散，反覆違規。</p>
+          </div>
+          <div class="card">
+            <h4>上下文驅動的自主性 (Context-Driven)</h4>
+            <p>• 提供充沛、精確的系統狀態與架構依賴圖。<br>• 建立硬性環境約束（編譯器與型別系統），讓 Agent 在安全邊界內自主探索最佳解法。</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          出處章節：<a href="index.html#/wiki/videos/Shipping_1000s_Of_PRs_A_Month_At_SpaceX_Lauren_Tan">II. 核心架構 - 2. Context, Not Control</a>
+        </div>
+      </section>
+
+      <!-- Slide 5: pstack 與 Skills 本質 -->
+      <section>
+        <h2>pstack 理念：Agent Skills 是軟體合約</h2>
+        <div class="card-grid">
+          <div class="card">
+            <h4>痛點：Agent 重複探索世界的浪費</h4>
+            <p>• 每個新 Agent 都像失憶者，反覆浪費 10 輪對話摸索專案如何運行。<br>• 每個 Agent 採取不同做法，導致工程行為無法標準化。</p>
+          </div>
+          <div class="card">
+            <h4>解答：Skills 作為可組合合約 (Contracts)</h4>
+            <p>• Skills 沒有魔法，是自然語言與確定性腳本的標準化封裝。<br>• 將最佳操作路徑固化為可組合合約，消除認知摩擦。</p>
+          </div>
+        </div>
+        <div class="highlight-box" style="margin-top: 20px; text-align: center;">
+          <strong>高階範式</strong>：Bug 分診 Skill $\to$ 調用本地重現 Skill $\to$ 調用修復測試 Skill，形成確定性流水線。
+        </div>
+        <div class="slide-footer">
+          出處章節：<a href="index.html#/wiki/videos/Shipping_1000s_Of_PRs_A_Month_At_SpaceX_Lauren_Tan">III. pstack 與 Agent Skills 的本質</a> ｜ 概念：<a href="index.html#/wiki/concepts/agent-skills-architecture">agent-skills-architecture</a>
+        </div>
+      </section>
+
+      <!-- Slide 6: 盯緊 Agent 與卡帕西閉環 -->
+      <section>
+        <h2>實戰閉環：盯緊 Agent 與自主改進閉環</h2>
+        <div class="card-grid">
+          <div class="card" style="border-left: 4px solid var(--accent-color);">
+            <h4>盯緊你的 Agent 如同實習生</h4>
+            <p>• <strong>觀察猶豫軌跡</strong>：初期親自觀察 Agent 的每一步思維鏈，找出它在哪裡試圖走捷徑或加註解。<br>
+            • <strong>環境回饋原則</strong>：看到 Agent 寫出壞味道代碼，<strong>絕對不責怪模型，而是檢討環境缺少了哪一條 Linter 規則</strong>！</p>
+          </div>
+          <div class="card" style="border-left: 4px solid var(--success-color);">
+            <h4>卡帕西評分閉環 (Karpathy Loop)</h4>
+            <p>• <strong>客觀評判標準 (Objective Judge)</strong>：為任務建立機器可執行的打分機制（測試通過率、效能指標）。<br>
+            • <strong>自主收斂重構</strong>：只要評判標準明確，Agent 就能在無人值守狀態下自我循環重構，直至達標。</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          出處章節：<a href="index.html#/wiki/videos/Shipping_1000s_Of_PRs_A_Month_At_SpaceX_Lauren_Tan">IV. 每月交付數千 PR 的實戰閉環</a>
+        </div>
+      </section>
+
+      <!-- Slide 7: 量化指標與極限吞吐 -->
+      <section>
+        <h2>SpaceX 實戰量化指標與工程效益</h2>
+        <div class="metric-container">
+          <div class="metric-box">
+            <div class="metric-num">1,000s</div>
+            <div class="metric-label">工程師月均引領 Agent 交付之 PR 數</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-num" style="color:var(--accent-color);">10x</div>
+            <div class="metric-label">大規模代碼庫架構重構速度提升</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-num" style="color:#e2e8f0;">0</div>
+            <div class="metric-label">人工手動除錯與重現重複 Bug 之耗時</div>
+          </div>
+        </div>
+        <div class="highlight-box" style="text-align: center;">
+          核心定律：<strong>任何繁瑣的手動操作（Slack Bug 分診、日誌比對、本地重現），皆應透過特化 Agent 實現零摩擦流轉！</strong>
+        </div>
+        <div class="slide-footer">
+          出處章節：<a href="index.html#/wiki/videos/Shipping_1000s_Of_PRs_A_Month_At_SpaceX_Lauren_Tan">V. 關鍵量化指標與工程洞察</a>
+        </div>
+      </section>
+
+      <!-- Slide 8: 總結頁 -->
+      <section>
+        <span class="badge">第 3 講總結 · 知識庫查閱</span>
+        <h2>感謝聆聽 · 歡迎查閱完整訪談筆記</h2>
+        <p style="font-size: 0.85em; color: #94a3b8; margin-top: 25px;">
+          本簡報僅為核心精華提煉，完整訪談逐字稿、時間軸拆解與架構合約實戰，請參閱：
+        </p>
+        <div style="background: rgba(255,255,255,0.06); border-radius: 8px; padding: 18px; margin: 25px auto; max-width: 650px; text-align: left; font-size: 0.82em; line-height: 1.8;">
+          <strong>AI Video-to-Wiki 首頁</strong>：<a href="index.html">index.html (Docsify)</a><br>
+          <strong>第 3 講深度訪談筆記</strong>：<a href="index.html#/wiki/videos/Shipping_1000s_Of_PRs_A_Month_At_SpaceX_Lauren_Tan">Shipping 1,000s of PRs (Lauren Tan)</a><br>
+          <strong>核心概念網絡</strong>：<a href="index.html#/wiki/concepts/agent-skills-architecture">Agent Skills 架構哲學與可組合合約</a>
+        </div>
+        <div class="slide-footer">
+          產出系統：AI Video-to-Wiki Automated Slide Generator ｜ 格式：Reveal.js
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: 'c/t',
+      transition: 'slide',
+      transitionSpeed: 'fast',
+      controls: true,
+      progress: true,
+      center: true,
+      plugins: [ RevealHighlight ]
+    });
+  </script>
+</body>
+</html>

@@ -11,6 +11,7 @@
 | :- | :--- | :--- | :--- | :--- | :--- |
 | **01** | All Code Is Slop (Except Mine) | Lauren Tan (Potato) | 10 頁 | [開啟第 1 講獨立簡報](wiki/presentation_01.md) | [第 1 講精讀筆記](wiki/videos/All_Code_Is_Slop_Except_Mine_Lauren_Tan.md) |
 | **02** | What's Next for AI Agentic Workflows | Andrew Ng (吳恩達) | 8 頁 | [開啟第 2 講獨立簡報](wiki/presentation_02.md) | [第 2 講精讀筆記](wiki/videos/Whats_Next_For_AI_Agentic_Workflows_Andrew_Ng.md) |
+| **03** | Shipping 1,000s of PRs a Month at SpaceX | Lauren Tan (Potato) | 8 頁 | [開啟第 3 講獨立簡報](wiki/presentation_03.md) | [第 3 講深度訪談筆記](wiki/videos/Shipping_1000s_Of_PRs_A_Month_At_SpaceX_Lauren_Tan.md) |
 
 ---
 

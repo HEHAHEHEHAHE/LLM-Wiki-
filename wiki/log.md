@@ -98,3 +98,17 @@
   - `wiki/presentation.md` 升級為「教學簡報總覽目錄（Presentation Hub）」。
   - 新增 `wiki/presentation_01.md` 與 `wiki/presentation_02.md` 專屬獨立預覽與全螢幕播放頁面。
   - 在側邊欄 `_sidebar.md` 列出獨立簡報項，並在各影片精讀筆記頂部提供直接播放入口。
+
+
+## [2026-11-24] ingest | Shipping 1,000s of PRs a Month at SpaceX — Lauren Tan
+- 原始英文字幕存入 `raw/Shipping_1000s_Of_PRs_A_Month_At_SpaceX_Lauren_Tan.txt`（URL: https://www.youtube.com/live/MN9dGgmLyso，共 1,707 行，時長 65 分鐘）。
+- **依據使用者要求全面免除影片截圖**：專注於高純度文本分析、隱喻拆解、架構合約、以及純卡片排版。
+- **撰寫結構化深度訪談精讀筆記**：`wiki/videos/Shipping_1000s_Of_PRs_A_Month_At_SpaceX_Lauren_Tan.md`：
+  - 核心哲學：解析 Commercial Kitchen & Mise en Place（備料台）隱喻，揭秘鈍刀與摩擦如何摧毀生產力。
+  - 組織治理：提煉「Context, Not Control」原則，解釋為何微觀控制必然失敗，以及充沛上下文與硬約束的結合方式。
+  - 實戰閉環：解析「Watch Your Agent Like a Hawk」與客觀評分體系（Karpathy Loop）如何推動單月數千 PR 交付。
+- **建立全新核心概念頁面**：
+  - `wiki/concepts/agent-skills-architecture.md`（Agent Skills 架構哲學與可組合合約）。
+- **產出專屬獨立教學 HTML 簡報**：
+  - 建立專屬獨立簡報 `slides_03_spacex_lauren_tan.html`（共 8 頁，無 Emoji 圖標、無截圖、純卡片指標排版）。
+  - 新增 `wiki/presentation_03.md` 專屬獨立預覽與外連頁面，並同步登錄至 Presentation Hub 與全域側邊欄。

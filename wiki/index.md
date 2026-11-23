@@ -22,11 +22,13 @@
 | :- | :--- | :--- | :--- | :--- | :--- | :--- |
 | 1 | All Code Is Slop (Except Mine) | Lauren Tan (Potato) | AI Engineer / xAI Grok Bot | 倒金字塔確定性防護模型、全面禁用逃避性註解與高危語法 | 單月交付 11,000 PRs，Revert 率約 0.5% | [閱讀精讀筆記](wiki/videos/All_Code_Is_Slop_Except_Mine_Lauren_Tan.md) |
 | 2 | What's Next for AI Agentic Workflows | Andrew Ng (吳恩達) | AI Fund / Sequoia AI Ascent | 迭代式 Agent 工作流、四大設計模式 (Reflection, Tools, Planning, Multi-agent) | GPT-3.5 + 工作流超越 GPT-4 Zero-shot，HumanEval > 80% | [閱讀精讀筆記](wiki/videos/Whats_Next_For_AI_Agentic_Workflows_Andrew_Ng.md) |
+| 3 | Shipping 1,000s of PRs a Month at SpaceX | Lauren Tan (Potato) | SpaceX / xAI / pstack | 商業後廚備料台隱喻 (Mise en place)、Context Not Control 哲學、Skills 即軟體合約 | 單月數千 PR 交付、架構重構速度提升 10 倍 | [閱讀深度訪談筆記](wiki/videos/Shipping_1000s_Of_PRs_A_Month_At_SpaceX_Lauren_Tan.md) |
 
 ---
 
 ## 核心概念索引 (Core Concepts)
 
+- [Agent Skills 架構哲學與可組合合約 (Agent Skills Architecture)](wiki/concepts/agent-skills-architecture.md)：pstack 理念、消除重複探索世界浪費、合約化封裝實踐。
 - [AI Agentic 四大設計模式 (Agentic Design Patterns)](wiki/concepts/agentic-design-patterns.md)：Reflection、Tool Use、Planning 與 Multi-agent 之架構成熟度與權衡。
 - [確定性防護欄 (Deterministic Guardrails)](wiki/concepts/deterministic-guardrails.md)：為何機械化 Linter 與編譯器檢查遠勝於自然語言 Prompt。
 - [AI Agents 規模化代碼生成 (Scaling AI Coding Agents)](wiki/concepts/ai-agents-code-generation.md)：從 Copilot 到數千個 Agent 並行的軟體工廠範式轉變。

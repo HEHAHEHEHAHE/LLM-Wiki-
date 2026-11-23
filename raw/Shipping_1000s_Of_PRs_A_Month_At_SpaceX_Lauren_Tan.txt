@@ -1,0 +1,1707 @@
+[000.40 - 005.68] So, hello folks. I've got another treat
+[002.88 - 007.60] for you today. Last time on this kind of
+[005.68 - 009.20] podcasty thing, I suppose, we had Uncle
+[007.60 - 010.80] Bob and we talked about software
+[009.20 - 013.44] quality. We talked about agents. We
+[010.80 - 015.52] talked about lots of cool stuff. Now, we
+[013.44 - 018.08] have uh an incredible guest, someone who
+[015.52 - 021.28] I'm delighted to welcome on, who's been
+[018.08 - 024.48] exploding on Twitter recently about
+[021.28 - 026.00] software factories, um about increasing
+[024.48 - 028.56] the quality of your work, about
+[026.00 - 030.56] increasing your velocity and climbing
+[028.56 - 032.64] the trust ladder with agents so that you
+[030.56 - 035.92] can ship more and more and more. And it
+[032.64 - 036.96] is potato. Welcome. Thank you so much
+[035.92 - 038.48] for joining.
+[036.96 - 041.12] >> Thanks for having me. Yeah, very excited
+[038.48 - 042.64] to be here. Yeah, big fan of yours
+[041.12 - 044.24] >> and a huge fan of yours. I [laughter]
+[042.64 - 045.84] think people have been talking about
+[044.24 - 049.12] this like it's like the meeting of the
+[045.84 - 050.48] skill minds, the skill Mount Olympus or
+[049.12 - 052.80] something because both of us have very
+[050.48 - 054.48] popular skill libraries. Um I've not, as
+[052.80 - 057.60] I was saying before we started, I've not
+[054.48 - 059.36] used a ton of yours and like I want to
+[057.60 - 061.52] get all of the juice out of your brain
+[059.36 - 064.08] so that I can go and use it properly and
+[061.52 - 066.40] use it better. And I think where I want
+[064.08 - 068.80] to start with this is you gave a talk um
+[066.40 - 070.96] pretty recently like um about 10 days
+[068.80 - 073.12] ago and posted on X which went
+[070.96 - 076.40] absolutely nuts as about how I shipped
+[073.12 - 079.12] 2,500 PRs last month to production got
+[076.40 - 081.76] about 3 million views or something on X
+[079.12 - 084.16] and I watched it and I loved it and I
+[081.76 - 086.08] recommended it and I kind of want to run
+[084.16 - 089.60] this as almost like a Q&A of that talk
+[086.08 - 091.44] basically of giving you because it just
+[089.60 - 093.52] I just had tons of questions about it
+[091.44 - 096.00] and I wanted to dive into it. And I
+[093.52 - 099.12] think where I want to start is you talk
+[096.00 - 102.00] about a trust ladder with agents where
+[099.12 - 104.80] you as you trust agents more, you can
+[102.00 - 107.44] get them to do better and better things
+[104.80 - 110.32] and or scale them to up to use more and
+[107.44 - 113.60] more agents. So what is your story of
+[110.32 - 115.60] how you climbed the trust ladder and how
+[113.60 - 116.24] did that work when like you got SpaceX
+[115.60 - 118.64] and
+[116.24 - 120.80] >> started climbing more and more?
+[118.64 - 123.60] So I think this the the journey sort of
+[120.80 - 126.56] began even before I joined cursor uh
+[123.60 - 129.60] which is now SpaceX AI. Uh [snorts] so
+[126.56 - 132.56] the story is um
+[129.60 - 134.64] after Meta so I I used to work at Meta
+[132.56 - 136.40] on the React team. [snorts] Uh I took a
+[134.64 - 139.04] month off uh because I was feeling kind
+[136.40 - 140.24] of burnt out and of course when what
+[139.04 - 142.80] what do you do when you're burnt out?
+[140.24 - 144.72] You go and start a new side project. Um
+[142.80 - 147.44] and so I started a side project. you
+[144.72 - 149.36] know, I was uh of course using AI to to
+[147.44 - 151.44] write code. Uh [snorts] but then I
+[149.36 - 153.44] started to realize uh you know, I was
+[151.44 - 156.64] spending like so many hours just
+[153.44 - 158.72] micromanaging one agent, right? And you
+[156.64 - 161.12] know, at the time, this was back in
+[158.72 - 163.52] February, maybe February, early February
+[161.12 - 164.64] or January, you know, people were really
+[163.52 - 166.48] obsessed with this idea of like
+[164.64 - 168.48] orchestration. This was like, you know,
+[166.48 - 170.40] before, you know, things like cursor,
+[168.48 - 173.12] you know, like the agents window was had
+[170.40 - 175.12] become popular. So people were still in
+[173.12 - 176.96] like like 2 land you know in their
+[175.12 - 178.40] terminal and they were all talking about
+[176.96 - 181.04] okay here you know I built a custom
+[178.40 - 183.40] orchestrator right and so of course I
+[181.04 - 184.96] had I was a bit nerd sniped by that
+[183.40 - 188.08] [snorts] and you know as I was building
+[184.96 - 190.72] my toy project uh I got nerd sniped by
+[188.08 - 193.76] oh how do I make my AI coding setup more
+[190.72 - 196.80] efficient and so you know I I kind of
+[193.76 - 198.88] started the journey there where I just
+[196.80 - 200.64] you know took a step back and realized
+[198.88 - 203.04] you know I was spending all this time
+[200.64 - 204.64] micromanaging a single agent you know I
+[203.04 - 206.64] was [snorts] creating skills and I was
+[204.64 - 209.76] like finding it quite difficult to
+[206.64 - 212.32] measure the output or the the result the
+[209.76 - 214.56] impact of the skill as well so I was
+[212.32 - 219.68] kind of flying blind but I was you know
+[214.56 - 222.88] iterating really fast um and um so that
+[219.68 - 224.96] project eventually sort of became the
+[222.88 - 228.40] basis of PAC even though I didn't know
+[224.96 - 230.80] it at the time um and a lot of some
+[228.40 - 232.32] tricks I had learned like building that
+[230.80 - 234.16] early set of skills. Actually, it's
+[232.32 - 236.16] still open source if you want to if
+[234.16 - 238.56] anybody wants to take a look. It's on my
+[236.16 - 242.40] GitHub like potato
+[238.56 - 244.24] noodle n o d l e. Um, and in there you
+[242.40 - 246.00] will see some skills and a brain
+[244.24 - 249.20] directory. [snorts] And so I was really
+[246.00 - 252.40] interested in this idea of how do I, you
+[249.20 - 254.56] know, extract my own ability, if that
+[252.40 - 256.88] makes sense, and give it to the agent,
+[254.56 - 258.16] right? cuz I was I I realized that you
+[256.88 - 259.84] know all I was trying to do was trying
+[258.16 - 262.00] to teach the agent to write code more
+[259.84 - 264.88] like me you know do do you do do
+[262.00 - 267.28] workflows more like me. So you know the
+[264.88 - 268.96] skills were like an entry point to doing
+[267.28 - 271.28] that.
+[268.96 - 273.68] Um and then you know after I joined
+[271.28 - 276.40] cursor uh I was starting to work on the
+[273.68 - 279.12] agents window and uh it had a lot of
+[276.40 - 281.92] performance issues. Uh it was it was it
+[279.12 - 283.92] was pretty laggy. Uh and so since I had
+[281.92 - 285.28] experience working in React, I was asked
+[283.92 - 288.00] like, "Hey, do you want to come and help
+[285.28 - 292.40] out uh with the agents window?" Um and
+[288.00 - 295.52] so the the this beginning of the cursor
+[292.40 - 298.16] journey was very manual. [snorts] Uh I
+[295.52 - 300.96] was deep in like looking at like flame
+[298.16 - 303.84] graphs and heap snapshots and trying to
+[300.96 - 305.68] see like why exactly is the app so slow.
+[303.84 - 307.28] Uh but then coming back to the same
+[305.68 - 309.44] realization like you know I was sort of
+[307.28 - 311.52] the bottleneck. I was doing everything
+[309.44 - 313.44] manually. I was sort of the meat proxy
+[311.52 - 316.56] in a way, right? I was the meat proxy
+[313.44 - 318.72] between my agent and Chrome DevTools. Uh
+[316.56 - 320.64] and I was like really annoyed by that.
+[318.72 - 322.80] >> And what month of the year is that?
+[320.64 - 325.68] Let's say where are we in the timeline?
+[322.80 - 328.48] >> Uh so I joined Cursor in March. So this
+[325.68 - 330.72] was like early early April probably
+[328.48 - 332.48] early April is when [snorts] you know uh
+[330.72 - 335.12] I joined and I didn't have any skills,
+[332.48 - 336.40] right? I had I I sort of abandoned my
+[335.12 - 339.20] personal skills because I didn't think
+[336.40 - 341.26] they'd be relevant anymore. Uh but then
+[339.20 - 344.32] working on the agents window uh and
+[341.26 - 346.80] [snorts] now working on grockbot uh I
+[344.32 - 348.64] sort of realized that a lot of the
+[346.80 - 350.32] lessons I had learned from those skill
+[348.64 - 352.80] time building the the initial set of
+[350.32 - 355.84] skills were very relevant especially
+[352.80 - 357.76] around things like verification
+[355.84 - 361.84] uh you know being very rigorous in your
+[357.76 - 364.64] work um [clears throat] because I think
+[361.84 - 367.68] from my experience even the the frontier
+[364.64 - 370.88] ones tend to
+[367.68 - 374.64] tend to take shortcuts. Uh they tend to
+[370.88 - 376.80] do the easy thing. Uh so uh a lot of the
+[374.64 - 379.20] skills that I've built have been around
+[376.80 - 380.96] how do I make the easy thing the right
+[379.20 - 382.64] thing? You know, how do I make that the
+[380.96 - 385.12] best thing?
+[382.64 - 388.96] >> The idea of sort of distilling your
+[385.12 - 390.80] expertise and turning what you do every
+[388.96 - 392.48] day into processes, that's something
+[390.80 - 394.24] that feels super familiar to me. That's
+[392.48 - 397.04] exactly what I've been doing with the
+[394.24 - 399.12] skills. And I suppose there's something
+[397.04 - 401.36] in that which is a lot of people think
+[399.12 - 404.08] domain expertise is getting less useful
+[401.36 - 407.20] now as people uh start to rely more on
+[404.08 - 409.20] AI where what do you think about that
+[407.20 - 411.04] just as a sort of vibe check before we
+[409.20 - 412.88] start talking [laughter]
+[411.04 - 416.96] >> I actually feel like domain expertise is
+[412.88 - 418.96] is more important than ever you know uh
+[416.96 - 421.84] I think I wrote this on my ex at some
+[418.96 - 425.12] point but you know at times I sometimes
+[421.84 - 426.88] think of you know AI as is like
+[425.12 - 428.24] especially as the models get smarter and
+[426.88 - 430.80] smarter and more capable and the
+[428.24 - 433.60] frontier models are just getting so good
+[430.80 - 437.12] like I [snorts] love Opus 5.5 by the way
+[433.60 - 439.20] um uh you know as the models get really
+[437.12 - 441.44] really really good it almost becomes
+[439.20 - 444.80] like the bottleneck is no longer the
+[441.44 - 447.36] agent right it becomes your ability to
+[444.80 - 449.60] express your intent and your goals in a
+[447.36 - 453.44] clear way that [snorts] the agent can
+[449.60 - 454.80] understand and actually carry out and
+[453.44 - 457.12] That's why I think you know like people
+[454.80 - 459.84] with a lot of domain expertise are
+[457.12 - 462.08] extremely have a have a huge advantage
+[459.84 - 464.32] in my opinion especially if you're a
+[462.08 - 466.40] little bit like you know tech technoc
+[464.32 - 469.52] curious you know so I I think of people
+[466.40 - 472.08] like you know like uh like a doctor or a
+[469.52 - 474.24] lawyer or you know someone who who has a
+[472.08 - 476.48] deep expertise in a particular
+[474.24 - 477.92] non-engineering domain and [snorts] if
+[476.48 - 479.84] they're actually just a little bit
+[477.92 - 481.92] techsavvy and they can figure out how to
+[479.84 - 484.48] use agents they can actually build
+[481.92 - 486.72] really really great products, right? If
+[484.48 - 489.04] they if they have a clear enough vision
+[486.72 - 491.60] in their head and they can articulate it
+[489.04 - 494.80] in a way that the agent can build it,
+[491.60 - 497.84] you know, I think that that is really
+[494.80 - 500.40] the the bottleneck these days is is like
+[497.84 - 503.44] the transfer of your intent, right, and
+[500.40 - 505.20] your vision to the agent.
+[503.44 - 507.76] >> Yeah. I've been obsessed with language
+[505.20 - 510.56] basically since agents um dropped. are
+[507.76 - 512.72] just obsessed 100% and thinking
+[510.56 - 515.04] constantly about the the composition of
+[512.72 - 517.84] words, how I can make things sharper,
+[515.04 - 520.16] what um what might be hidden in the
+[517.84 - 522.96] phrases that I'm using. And it's and
+[520.16 - 525.60] finding what I love is when you find a
+[522.96 - 527.36] word that the agent then hooks on to and
+[525.60 - 529.44] then goes, "Okay, I'm going to reinforce
+[527.36 - 531.44] that word. I'm going to reuse that in my
+[529.44 - 533.52] thinking traces." You know, I found that
+[531.44 - 535.52] with um TDD was an early example of
+[533.52 - 537.04] that. a lot of chat about TDD recently
+[535.52 - 539.04] of like, you know, people say, should
+[537.04 - 540.72] you use TDD with agents? Doesn't matter.
+[539.04 - 543.20] What you're doing is you're getting the
+[540.72 - 544.96] agent to think about TDD, getting it to
+[543.20 - 546.64] write tests, getting it to prioritize
+[544.96 - 548.32] things in a different way than it did
+[546.64 - 550.88] before. And that's why sort of grilling,
+[548.32 - 551.20] I think, works effectively. Grilling is
+[550.88 - 553.60] a
+[551.20 - 556.16] >> Yeah. Yeah. It it draws those words out
+[553.60 - 559.28] of you, right? or or at least it helps
+[556.16 - 560.96] the agent understand your thinking so
+[559.28 - 562.88] that they can propose those words to you
+[560.96 - 563.76] and you can pick up and say yes exactly
+[562.88 - 565.44] that.
+[563.76 - 567.04] >> Uh I've actually copied some of the the
+[565.44 - 568.40] tips that you've shared as well where
+[567.04 - 570.48] you know one of my favorite ones that
+[568.40 - 572.48] you've shared recently or or not or like
+[570.48 - 574.48] maybe in the past couple weeks is
+[572.48 - 577.52] [snorts] about uh reducing or
+[574.48 - 579.44] eliminating tautological tests. Like one
+[577.52 - 581.52] of my pet peeves of agents is like all
+[579.44 - 584.00] of the useless tests that they write.
+[581.52 - 585.84] And so, you know, that was one thing
+[584.00 - 587.68] where, you know, the word tutology,
+[585.84 - 589.76] right, is is is I guess, you know, not
+[587.68 - 591.28] many people necessarily know that if if
+[589.76 - 593.60] especially if English isn't your first
+[591.28 - 596.88] language, but there's a lot of meaning
+[593.60 - 598.24] to that word. And it's like it's almost
+[596.88 - 600.48] like compressed, right? Like you
+[598.24 - 604.08] compress a lot of intent and meaning
+[600.48 - 606.08] into words. And so I I I totally agree
+[604.08 - 608.40] with you. I think language I've always
+[606.08 - 611.12] been interested in language actually uh
+[608.40 - 613.36] like programming languages natural human
+[611.12 - 615.68] languages and how they came to be and
+[613.36 - 618.00] it's so interesting that now with agents
+[615.68 - 620.00] it's sort of like this meeting of
+[618.00 - 621.84] natural language with programming
+[620.00 - 623.60] language but it's all it's all language
+[621.84 - 625.52] out of the hood it's all communication
+[623.60 - 626.64] >> totally I did a drama degree right so
+[625.52 - 628.56] you know I've been thinking about
+[626.64 - 629.84] language and Shakespeare and stuff for a
+[628.56 - 631.68] long time [laughter] and so this all
+[629.84 - 634.24] feels very familiar
+[631.68 - 636.88] >> um so okay there's sort
+[634.24 - 638.80] before we get into like because I think
+[636.88 - 640.72] the thing I want from you is like
+[638.80 - 642.48] software factory stuff, right? Software
+[640.72 - 643.84] factory is the big buzzword. Software
+[642.48 - 645.20] factory is the thing that I'm thinking
+[643.84 - 647.12] about too. I'm sort of releasing a
+[645.20 - 650.24] course in that direction too.
+[647.12 - 653.92] >> And it's this sort of scaling yourself
+[650.24 - 656.08] up to un unrealistic numbers of PRs
+[653.92 - 657.76] basically or PR numbers that sound
+[656.08 - 659.84] ridiculous to people who don't
+[657.76 - 661.60] understand how this works. So where I
+[659.84 - 663.92] want to get to is sort of from people
+[661.60 - 666.16] who are doing kind of like one to five
+[663.92 - 668.16] agents today up to, you know, hundreds
+[666.16 - 670.32] of agents running at once and how that
+[668.16 - 672.80] sort of functions. And so I'd love to
+[670.32 - 675.04] hear about your metaphor of the Michelin
+[672.80 - 676.56] Kitchen instead of the software factory
+[675.04 - 678.56] because I think that says a bit about
+[676.56 - 680.08] the way you think about this stuff.
+[678.56 - 682.56] >> Yes.
+[680.08 - 685.28] Yeah. I I I've I've never really liked
+[682.56 - 688.08] the term software factory. Not because
+[685.28 - 689.68] you know it's not accurate but I think I
+[688.08 - 691.20] think the a lot of people when they
+[689.68 - 694.72] think factory right they don't
+[691.20 - 696.96] necessarily equate that with quality or
+[694.72 - 699.20] craft right things which are very
+[696.96 - 701.44] important to me and a lot of people and
+[699.20 - 704.00] technologists who work you know building
+[701.44 - 705.44] products we care about the user
+[704.00 - 708.24] experience we care about the things
+[705.44 - 711.44] we're building. So while so while I do
+[708.24 - 713.44] think software factory is an apt term,
+[711.44 - 715.76] it also I guess maybe conjures up
+[713.44 - 718.00] negative, you know, maybe sometimes
+[715.76 - 720.08] negative connotations. So Michelin
+[718.00 - 722.40] Kitchen is the thing that I've sort of
+[720.08 - 725.12] landed on where it's much more I feel
+[722.40 - 726.80] like it's much more aspirational and uh
+[725.12 - 729.02] I like the metaphor a lot cuz you know I
+[726.80 - 730.64] like food. I'm called potato of course
+[729.02 - 733.28] [snorts] and I like cooking [laughter]
+[730.64 - 735.68] and I see a lot of parallels right like
+[733.28 - 737.54] with food right when you're cooking a
+[735.68 - 739.04] meal for yourself for example
+[737.54 - 740.80] [clears throat] it's both utilitarian
+[739.04 - 743.60] like you're trying to just feed yourself
+[740.80 - 745.84] right and and survive uh but it can
+[743.60 - 748.56] actually be transformed into art right
+[745.84 - 751.04] and that's what what a Michelin starred
+[748.56 - 753.68] chef or even just a chef or a cook can
+[751.04 - 756.00] do with food is take something very
+[753.68 - 758.16] ordinary and turn it into a delicious
+[756.00 - 759.68] meal that you know takes you back to
+[758.16 - 763.52] your childhood days or something like
+[759.68 - 765.60] that. Um and so it almost like mirrors
+[763.52 - 768.08] that trust letter that I talk about
+[765.60 - 770.96] where uh you can sort of imagine your
+[768.08 - 772.80] own journey as a home cook, right? Uh as
+[770.96 - 775.28] a home cook, you are doing all of the
+[772.80 - 777.04] food, the cooking yourself. You cut all
+[775.28 - 779.44] the vegetables, you do all the prep
+[777.04 - 783.76] work, you do all the cleanup, you know,
+[779.44 - 787.52] you are the one man or one woman show
+[783.76 - 789.20] really. Um, and it's an interesting
+[787.52 - 791.68] thought experiment like, okay, if you
+[789.20 - 794.00] were to cook a meal and then you add
+[791.68 - 796.80] people, right, your your your partner
+[794.00 - 798.24] trying to your brother, your sister, and
+[796.80 - 799.60] now suddenly you have your whole family
+[798.24 - 801.44] in the kitchen. I think most people
+[799.60 - 803.12] would get very stressed by that, right?
+[801.44 - 804.96] The thought of, oh, so many people are
+[803.12 - 806.88] just mocking around in my kitchen. They
+[804.96 - 807.44] have no no idea where all the utensils
+[806.88 - 808.88] are.
+[807.44 - 811.12] >> I have a max capacity of one person in
+[808.88 - 813.76] the kitchen. Yeah, absolutely. So, I
+[811.12 - 815.28] feel like that that's really apt because
+[813.76 - 817.76] when you ask yourself that question of
+[815.28 - 821.12] how do I go from being a solo cook,
+[817.76 - 824.16] right, to having an army or even not not
+[821.12 - 825.52] even an army but a few sue chefs, right,
+[824.16 - 828.40] that that are helping me in the kitchen.
+[825.52 - 830.72] How do I think about dividing the work
+[828.40 - 832.24] in a way that makes sense? You know, I'm
+[830.72 - 835.36] not dividing work just for the sake of
+[832.24 - 837.60] it, but in a way that actually makes the
+[835.36 - 840.16] sum the to the better than, you know,
+[837.60 - 842.96] the total of its parts. And so the
+[840.16 - 845.12] Michelin kitchen metaphor to me like
+[842.96 - 848.24] works really well in that regard because
+[845.12 - 850.00] you know as a chef you're you know if
+[848.24 - 852.32] you become a chef you're in a position
+[850.00 - 854.80] where you're not necessarily cooking all
+[852.32 - 857.28] the food yourself anymore but you are
+[854.80 - 860.16] thinking you're almost like the tech
+[857.28 - 861.68] lead right for the kitchen where uh you
+[860.16 - 863.36] know chefs have to think about you know
+[861.68 - 865.12] not just cooking but they have to
+[863.36 - 867.28] basically organize the whole kitchen and
+[865.12 - 869.20] they're like the CEO of the kitchen they
+[867.28 - 870.96] have to think about when do you order
+[869.20 - 872.80] ingredients, how do you store them, how
+[870.96 - 874.72] do you prepare them, when do they have
+[872.80 - 876.56] to be prepared, you know, it's a whole
+[874.72 - 879.04] it's a whole job, right? That's not just
+[876.56 - 882.40] cooking. Um, and I think that again it
+[879.04 - 885.28] mirrors so much of how engineers write
+[882.40 - 887.12] code today where you are not writing the
+[885.28 - 889.44] code yourself anymore. You have agents,
+[887.12 - 891.44] right? But you as the human are still
+[889.44 - 893.76] responsible for the final outcome,
+[891.44 - 895.12] right? your name still is associated
+[893.76 - 898.56] with the work that you do, your
+[895.12 - 901.44] reputation and you know so how you set
+[898.56 - 903.52] up your kitchen right and how you set up
+[901.44 - 907.12] your skills your environment your
+[903.52 - 910.64] codebase I think are ultimately the new
+[907.12 - 912.56] ingredients that go into um building
+[910.64 - 914.48] product
+[912.56 - 916.32] >> yeah I think what I love about your
+[914.48 - 918.24] approach is the amount of focus that you
+[916.32 - 920.40] put into the environment that the agent
+[918.24 - 922.64] operates in right because I think a lot
+[920.40 - 925.12] of people they think, right, the agent
+[922.64 - 927.12] is good. I'm probably not going to be
+[925.12 - 929.60] able to make it better. Let's just trust
+[927.12 - 931.12] what these magic model people have put
+[929.60 - 933.52] into the harness and the model
+[931.12 - 935.04] combination. Uh, there's nothing I can
+[933.52 - 936.72] really do, like I can't mess about with
+[935.04 - 940.24] claw codes internals or something or
+[936.72 - 942.08] whatever you're using. Um, but what I
+[940.24 - 943.92] love about your approach, and it's
+[942.08 - 945.68] something I advocate for too, is that
+[943.92 - 948.48] you can change the environment the agent
+[945.68 - 951.12] operates in, right? you can make changes
+[948.48 - 954.00] in the codebase and also give it tools
+[951.12 - 956.96] for verification as well and allow it to
+[954.00 - 958.64] verify its own work. So the thing I I
+[956.96 - 961.44] loved about watching that talk is the
+[958.64 - 963.68] amount of focus you put in verification
+[961.44 - 965.84] and like that is the lever that you can
+[963.68 - 967.52] start to generate trust. Can you talk
+[965.84 - 969.12] about that and what that concretely
+[967.52 - 970.96] looks like? Let's start like looking at
+[969.12 - 974.48] practical ways that people can improve
+[970.96 - 976.32] their own processes, their own kitchens.
+[974.48 - 978.56] Yeah, I've I've I've said this a lot
+[976.32 - 981.76] actually that you know even if you don't
+[978.56 - 984.56] use PAC or you know your skills I think
+[981.76 - 987.44] that the single most important skill
+[984.56 - 989.44] that should be in your toolkit is
+[987.44 - 992.08] verification because without
+[989.44 - 993.68] verification and for for by the way for
+[992.08 - 995.76] those watching who don't know what that
+[993.68 - 998.88] means it's this idea that you can give
+[995.76 - 1002.16] you can sort of give your agent uh hands
+[998.88 - 1003.52] and eyes in a way that's the the analogy
+[1002.16 - 1006.72] I
+[1003.52 - 1008.06] where the agent is able to run the code,
+[1006.72 - 1008.24] right? And actually
+[1008.06 - 1010.64] >> [snorts]
+[1008.24 - 1013.20] >> uh interact with it like a normal human
+[1010.64 - 1016.16] user would and also do things like you
+[1013.20 - 1020.08] know debug it, you know, take traces and
+[1016.16 - 1021.28] snapshots. Um and uh funnily enough like
+[1020.08 - 1023.52] that was actually the first skill I
+[1021.28 - 1025.28] built when I joined Cursor. uh that gave
+[1023.52 - 1027.28] me a lot of that was that was the thing
+[1025.28 - 1029.12] that actually started to let me ascend
+[1027.28 - 1031.12] the trust ladder a little bit in a way
+[1029.12 - 1034.00] that some of the other skills I had
+[1031.12 - 1037.36] looked at or built had not really let me
+[1034.00 - 1039.12] do because no matter how good you know
+[1037.36 - 1041.76] some of the other skills were like the
+[1039.12 - 1044.96] how skill, the why skill, the unsop
+[1041.76 - 1047.68] skill were, I was still relying on me
+[1044.96 - 1050.08] right as the proxy between my agent and
+[1047.68 - 1051.84] the output. So that you know if the
+[1050.08 - 1054.00] agent can't actually see the result of
+[1051.84 - 1056.24] its work there's no way it can actually
+[1054.00 - 1058.00] iterate right and so this is where
+[1056.24 - 1060.64] people start to talk about loops this
+[1058.00 - 1063.76] idea of a loop and really I think the
+[1060.64 - 1066.32] term loop you know seems kind of uh
+[1063.76 - 1067.92] almost abstract like people like what
+[1066.32 - 1070.40] what what is a loop what is an agent
+[1067.92 - 1072.96] loop but really to me like the most
+[1070.40 - 1075.52] important part of a loop that allows it
+[1072.96 - 1078.72] to be a loop is the verification part
+[1075.52 - 1081.68] because the agent is able to to verify
+[1078.72 - 1084.08] by its own work and uh you know that
+[1081.68 - 1086.32] takes you out of the equation where now
+[1084.08 - 1087.84] I can actually do something like so the
+[1086.32 - 1089.76] very one of the very first use cases I
+[1087.84 - 1091.44] had for verification was you know like
+[1089.76 - 1094.24] the performance work that I was doing on
+[1091.44 - 1095.60] cursors agent window and I want I wanted
+[1094.24 - 1097.92] to get to a point where I could do
+[1095.60 - 1100.80] something called hill climbing uh which
+[1097.92 - 1102.88] is a term that I I think the labs uh
+[1100.80 - 1105.44] talk about a lot which is this idea that
+[1102.88 - 1108.56] you know you have some kind of rubric or
+[1105.44 - 1110.48] a way to judge or score something And
+[1108.56 - 1113.04] now because you have a loop, you can
+[1110.48 - 1115.44] have an agent continually try to make
+[1113.04 - 1118.40] improvements to that. Uh I think
+[1115.44 - 1120.24] Carpathy, Andre Carpathy also famously
+[1118.40 - 1123.68] released uh something called auto
+[1120.24 - 1126.08] research that has a lot of these ideas.
+[1123.68 - 1129.76] Um but yeah, verification I would say is
+[1126.08 - 1131.60] probably the most important skill in PAC
+[1129.76 - 1135.20] uh and many [clears throat] other you
+[1131.60 - 1137.84] know tool sets. Uh and I think it's the
+[1135.20 - 1140.48] most important thing to focus on. So a
+[1137.84 - 1142.64] lot of the a lot of I spent a lot of
+[1140.48 - 1145.28] time actually you know tuning the
+[1142.64 - 1149.20] verification the creative verification
+[1145.28 - 1150.88] skill um and also internally the the we
+[1149.20 - 1152.80] have so many verification skills now
+[1150.88 - 1156.24] like every app that cursor has or
+[1152.80 - 1159.36] spaceexai has has a uh verification
+[1156.24 - 1159.60] skill that is automaintained as well
+[1159.36 - 1161.04] [clears throat]
+[1159.60 - 1162.64] >> uh and it's become critical
+[1161.04 - 1164.64] infrastructure for our team because
+[1162.64 - 1166.24] everybody uses it
+[1164.64 - 1168.72] >> and you went pretty far with that too
+[1166.24 - 1170.24] right like you had a um in your talk I
+[1168.72 - 1172.56] saw that you actually built a custom CLI
+[1170.24 - 1173.60] for that too. So what does that CLI do?
+[1172.56 - 1175.52] Like how does it [clears throat] execute
+[1173.60 - 1177.44] things and why did you I mean that's
+[1175.52 - 1179.76] proof of how deep you're going right of
+[1177.44 - 1182.40] how much you're pushing that.
+[1179.76 - 1185.84] >> Yeah. So this is actually a tip I
+[1182.40 - 1189.36] learned early on where
+[1185.84 - 1191.92] um I guess you know back in January or
+[1189.36 - 1194.08] or late last year the thing that people
+[1191.92 - 1196.08] were concerned about was context window,
+[1194.08 - 1198.88] right? That was the big the big topic at
+[1196.08 - 1200.32] the time was how do I you know manage
+[1198.88 - 1202.64] the context window because you know
+[1200.32 - 1205.12] compaction summarization wasn't really
+[1202.64 - 1207.12] that good yet [snorts] and people were
+[1205.12 - 1209.52] always people had this there was almost
+[1207.12 - 1212.96] this meme in the community that you know
+[1209.52 - 1215.36] once your agent summarized or compacted
+[1212.96 - 1217.68] once it would become sort of stupid
+[1215.36 - 1220.80] right for the rest of your session. So
+[1217.68 - 1222.40] there was a lot of thinking around like
+[1220.80 - 1225.12] you know being very efficient with your
+[1222.40 - 1228.56] context usage and so that was actually
+[1225.12 - 1231.20] the inspiration for some of the uh the
+[1228.56 - 1234.24] CLI work inside of the verification
+[1231.20 - 1238.16] skills. I guess now it's less so about
+[1234.24 - 1240.08] context because uh you know agents are
+[1238.16 - 1242.40] much better or harnesses have gotten a
+[1240.08 - 1245.20] lot better with summarization.
+[1242.40 - 1249.04] Um, I still think there's some benefits
+[1245.20 - 1251.44] to, you know, uh, having a clean context
+[1249.04 - 1253.84] window. Uh, so the CLI is really just
+[1251.44 - 1256.16] more of a way for me to take the
+[1253.84 - 1258.80] deterministic parts of what the skill
+[1256.16 - 1263.20] does and encode that into a script or
+[1258.80 - 1265.44] CLI to reduce to kind of take away the
+[1263.20 - 1268.16] judgment that would otherwise
+[1265.44 - 1270.72] unnecessarily be used because with
+[1268.16 - 1273.60] judgment so I also think of you know
+[1270.72 - 1275.76] agents and skills in sort of like it's
+[1273.60 - 1278.56] like a gradient
+[1275.76 - 1280.72] you have some parts of the work that are
+[1278.56 - 1282.56] entirely judge measurement based right
+[1280.72 - 1284.08] you know something that requires thought
+[1282.56 - 1287.04] you know putting together multiple
+[1284.08 - 1288.56] pieces of context thinking um and then
+[1287.04 - 1291.84] you have the more deterministic parts
+[1288.56 - 1294.00] like I don't know if you wanted to uh
+[1291.84 - 1295.84] refactor some code right from one
+[1294.00 - 1297.68] pattern to another that's very
+[1295.84 - 1300.56] mechanical right you don't you don't
+[1297.68 - 1303.84] need an agent to think about it and come
+[1300.56 - 1305.52] up with it in a novel way each time
+[1303.84 - 1307.28] right and so that that was really the
+[1305.52 - 1308.80] inspiration for the CLI and you'll see
+[1307.28 - 1312.08] this in a lot of the other skills that I
+[1308.80 - 1314.08] built is like I try to extract out the
+[1312.08 - 1316.72] deterministic parts and turn that into
+[1314.08 - 1320.00] code and just leave only the parts that
+[1316.72 - 1321.52] actually require judgment to the agent.
+[1320.00 - 1323.28] So in a way I think of the seal as kind
+[1321.52 - 1324.96] of like your wrapper, right? It's a
+[1323.28 - 1326.88] wrapper with some light instructions
+[1324.96 - 1330.48] around how to use these custom tools
+[1326.88 - 1331.84] that are inside of the skill. Um but
+[1330.48 - 1333.76] yeah, I don't think the CL is really
+[1331.84 - 1336.08] that interesting in its own really. It's
+[1333.76 - 1337.92] not like a novel piece of software. It's
+[1336.08 - 1340.08] just something that interacts with like
+[1337.92 - 1342.72] Playright and the Chrome DevTools
+[1340.08 - 1344.08] protocol and calls a bunch of APIs. It's
+[1342.72 - 1345.52] like it's just a bunch of glue.
+[1344.08 - 1347.20] >> No, it's fascinating because it's a way
+[1345.52 - 1348.80] of hiding information from the skill,
+[1347.20 - 1351.04] right? It's a way of conserving the
+[1348.80 - 1352.64] skill, keeping the skill quite small, I
+[1351.04 - 1353.92] imagine, and then you're able to
+[1352.64 - 1356.48] delegate more of the complicated
+[1353.92 - 1358.56] deterministic stuff into a script within
+[1356.48 - 1361.60] the skill. So it's almost you're
+[1358.56 - 1364.32] compressing information and making the
+[1361.60 - 1365.60] agent do more consistent things more
+[1364.32 - 1365.84] consistently.
+[1365.60 - 1367.28] >> Yeah,
+[1365.84 - 1369.04] >> that's fascinating.
+[1367.28 - 1370.72] And it it [clears throat] also helps I
+[1369.04 - 1373.28] guess if you care about context window
+[1370.72 - 1376.48] it it does help because now the agent
+[1373.28 - 1379.36] doesn't need to uh you know re reinvent
+[1376.48 - 1382.48] uh things cuz uh one thing I had noticed
+[1379.36 - 1385.76] early on when we didn't have a CLI
+[1382.48 - 1387.44] was that uh well the the agent would try
+[1385.76 - 1389.76] to verify it work but it would basically
+[1387.44 - 1391.44] rebuild the world each time and then
+[1389.76 - 1392.72] every agent did it differently and I was
+[1391.44 - 1394.96] starting to notice like that's very
+[1392.72 - 1396.56] inefficient right I was wasting it it
+[1394.96 - 1398.40] was actually not just about context
+[1396.56 - 1399.68] usage but also speed, right? Like
+[1398.40 - 1402.16] because now an agent had to actually go
+[1399.68 - 1404.48] off and write the scripts or the CLI and
+[1402.16 - 1406.40] test it and you know and it doesn't work
+[1404.48 - 1408.80] and the last agent did it and it worked
+[1406.40 - 1410.40] but it discarded it. So it was just very
+[1408.80 - 1412.80] obvious at that point like I should just
+[1410.40 - 1415.52] turn this into a CLI and put that inside
+[1412.80 - 1418.64] of the skill uh so that every agent that
+[1415.52 - 1422.00] uses it now benefits from that same
+[1418.64 - 1423.92] piece. Um but I I also think like you
+[1422.00 - 1426.56] know it's a good push for people to
+[1423.92 - 1428.32] think about is how much of your skills
+[1426.56 - 1430.48] and rules could actually be
+[1428.32 - 1433.60] deterministic.
+[1430.48 - 1435.44] Um that's like another core thing or or
+[1433.60 - 1439.44] one of my core principles that I like to
+[1435.44 - 1442.24] think about is yeah how do I uh make
+[1439.44 - 1444.08] very efficient use of determinism and
+[1442.24 - 1447.28] non-determinism
+[1444.08 - 1449.12] and you know let Asians shine at the
+[1447.28 - 1451.68] non-deterministic parts right because
+[1449.12 - 1454.32] that's what they're trained to do. Um
+[1451.68 - 1456.56] and the other parts which are much more
+[1454.32 - 1459.44] mechanical or you know straightforward
+[1456.56 - 1461.36] can be just pure determinism. Um, and
+[1459.44 - 1464.32] you'll see this as well for things like
+[1461.36 - 1466.00] doing migrations. Um, which is another
+[1464.32 - 1469.76] big thing that I've I've talked about
+[1466.00 - 1472.00] is, you know, going from one technology
+[1469.76 - 1474.32] to another, especially one that is
+[1472.00 - 1476.08] better for agents, right? And a lot of
+[1474.32 - 1478.48] how you can do that migration is, I
+[1476.08 - 1480.48] think, through things like scripts and
+[1478.48 - 1484.32] CLIs, like the deterministic parts like
+[1480.48 - 1486.80] code mods, you know, like crawling the
+[1484.32 - 1488.48] abstract syntax tree and transforming
+[1486.80 - 1490.40] code literally mechanically, right? like
+[1488.48 - 1492.40] a script does it for you instead of the
+[1490.40 - 1495.44] agent.
+[1492.40 - 1497.60] >> Totally makes sense. I I mean I think
+[1495.44 - 1500.72] what there's another thing there which
+[1497.60 - 1503.36] is you're taking stuff away from the
+[1500.72 - 1505.92] agent and you're kind of putting it in
+[1503.36 - 1508.48] the environment too a little bit which
+[1505.92 - 1510.64] is let's say you have a a thing that you
+[1508.48 - 1513.28] notice the agent always gets wrong. You
+[1510.64 - 1515.92] want to make that um just impossible
+[1513.28 - 1518.96] within the environment. And that sort of
+[1515.92 - 1522.16] comes down to code quality as well. I
+[1518.96 - 1524.80] mean, I talk about a lot like having a
+[1522.16 - 1526.80] what a good codebase means, right? What
+[1524.80 - 1528.64] is a good codebase? And there's a
+[1526.80 - 1530.40] definition I like which is a a good
+[1528.64 - 1534.16] codebase is a codebase that's easy to
+[1530.40 - 1536.32] make changes in, right? Easy to um
+[1534.16 - 1537.84] change stuff without things screwing up.
+[1536.32 - 1540.32] And that means that you have a lot of
+[1537.84 - 1542.80] guard rails that you have a lot of um
+[1540.32 - 1544.72] the agent or the human is constrained to
+[1542.80 - 1546.80] very narrow paths. And that's again
+[1544.72 - 1548.96] something you talk about in your talk.
+[1546.80 - 1552.00] >> And you talk about this not only on the
+[1548.96 - 1553.52] kind of sort of automated checks side of
+[1552.00 - 1555.36] things. So linting and type checking
+[1553.52 - 1558.16] blah blah blah but also in the way you
+[1555.36 - 1559.92] design abstractions. And you guys even I
+[1558.16 - 1561.84] think built a framework uh for your
+[1559.92 - 1564.72] agent to work in too.
+[1561.84 - 1566.24] >> I think what I'd love to hear is you
+[1564.72 - 1568.88] obviously think of that as very
+[1566.24 - 1570.48] important, right? And that's how
+[1568.88 - 1571.92] important is that compared to other
+[1570.48 - 1574.48] things you could be doing like building
+[1571.92 - 1577.20] features or shipping work.
+[1574.48 - 1579.44] Yeah, I think that's a um I almost feel
+[1577.20 - 1581.12] like the new job of the engineer is
+[1579.44 - 1583.60] really to to spend time on the
+[1581.12 - 1585.28] environment. Um I almost actually wrote
+[1583.60 - 1589.76] a tweet about this yesterday, but I but
+[1585.28 - 1591.52] I didn't. But I think that
+[1589.76 - 1593.28] I think that you you know if you if you
+[1591.52 - 1594.80] haven't really spent time, you know,
+[1593.28 - 1597.20] building trust in your agents and
+[1594.80 - 1599.44] building skills and tools, you can get
+[1597.20 - 1601.52] stuck in this mode where you're very low
+[1599.44 - 1603.60] on that trust ladder, right? you don't
+[1601.52 - 1607.04] have a lot of trust in your agents work.
+[1603.60 - 1608.96] And so the only way to cope in that when
+[1607.04 - 1611.76] you're in that situation is just to kind
+[1608.96 - 1613.84] of lock in and micromanage your agents.
+[1611.76 - 1615.12] And that's very time consuming. And when
+[1613.84 - 1618.40] you're stuck in that mode, you don't
+[1615.12 - 1620.32] really have the luxury to think about,
+[1618.40 - 1623.28] you know,
+[1620.32 - 1625.60] uh higher level things like like making
+[1623.28 - 1629.44] yourself more productive. In the same
+[1625.60 - 1631.12] way that uh I guess analogy would be
+[1629.44 - 1633.36] like if you've never taken the time to
+[1631.12 - 1634.56] learn like your tools right as a
+[1633.36 - 1637.36] developer when you were writing code
+[1634.56 - 1639.60] yourself and you know you've never heard
+[1637.36 - 1642.08] of VS Code, you've never heard of Vim,
+[1639.60 - 1643.76] you only knew about Notepad [laughter]
+[1642.08 - 1645.20] uh and you had hadn't even heard about
+[1643.76 - 1647.20] Git. That's sort of the analogy. It's
+[1645.20 - 1649.92] like you you haven't spent the time
+[1647.20 - 1652.00] sharpening your own knives, right? And
+[1649.92 - 1653.60] so, of course, if you have a dull knife,
+[1652.00 - 1656.56] then everything's going to take a long
+[1653.60 - 1658.72] time. Um, and you're going to be you're
+[1656.56 - 1661.04] just going to be and and especially if
+[1658.72 - 1662.88] you know deadlines are looming, then you
+[1661.04 - 1665.44] don't have the now you're stuck in this
+[1662.88 - 1667.60] rut, right? Where where you you you
+[1665.44 - 1669.68] don't have sharp knives, you don't have
+[1667.60 - 1671.20] good tools, but you're under all this
+[1669.68 - 1674.08] pressure to ship, right? And so, all you
+[1671.20 - 1675.68] can do is just focus on that. But I do
+[1674.08 - 1678.24] think that, you know, if you can find
+[1675.68 - 1680.72] yourself the time to actually spend time
+[1678.24 - 1682.64] thinking about your setup, it's again
+[1680.72 - 1684.40] going back to the cooking, you know,
+[1682.64 - 1686.48] analogy,
+[1684.40 - 1689.52] it's like uh, you know, if you, for
+[1686.48 - 1691.52] example, if if cutting cutting cutting
+[1689.52 - 1693.28] the garlic is like super slow, right?
+[1691.52 - 1694.88] There are garlic mashers, right? You can
+[1693.28 - 1697.04] you can buy and you put it in the thing
+[1694.88 - 1700.08] and you like squeeze it out, right? It's
+[1697.04 - 1702.56] super fast. Uh, machines and tools were
+[1700.08 - 1705.04] invented for a reason, right? And so if
+[1702.56 - 1707.92] you're operating a Michelin kitchen and
+[1705.04 - 1709.20] your your your cooks had no tools, then
+[1707.92 - 1711.44] of course everything's going to be
+[1709.20 - 1713.44] extremely inefficient, very very, you
+[1711.44 - 1715.84] know, every every every cook is going to
+[1713.44 - 1717.84] make something up of their own. So I
+[1715.84 - 1721.20] think the tools and the determinism to
+[1717.84 - 1722.72] me are you know taking that part away
+[1721.20 - 1724.64] and and just like you said about
+[1722.72 - 1728.24] constraints as well. It's the
+[1724.64 - 1730.96] constraints are are to me as well like
+[1728.24 - 1733.12] uh actually a slight tangent on that is
+[1730.96 - 1735.52] uh I think we should talk about
+[1733.12 - 1737.04] TypeScript cuz like we we actually both
+[1735.52 - 1738.96] share like a background in Typescript
+[1737.04 - 1740.40] where you know you obviously have done a
+[1738.96 - 1742.16] lot of work with TypeScript and total
+[1740.40 - 1745.68] TypeScript and you know you're a leader
+[1742.16 - 1747.92] in that space and I uh had adopted
+[1745.68 - 1750.32] TypeScript pretty early and I had given
+[1747.92 - 1753.04] like a talk or two at Typescript conf uh
+[1750.32 - 1755.12] many years ago and so one of the the
+[1753.04 - 1758.08] talk that I did actually was about type
+[1755.12 - 1760.32] systems and constraining the
+[1758.08 - 1762.08] constraining types. Like one of my most
+[1760.32 - 1763.76] favorite things about Typescript is
+[1762.08 - 1766.24] actually type narrowing, right? This
+[1763.76 - 1768.16] idea that you go from a very broad type,
+[1766.24 - 1771.84] right? That could be anything and then
+[1768.16 - 1773.68] you through type guards and you know
+[1771.84 - 1775.76] type narrowing and you know runtime
+[1773.68 - 1778.24] checks you can actually narrow the space
+[1775.76 - 1780.16] and say like oh this isn't just a string
+[1778.24 - 1782.48] this is a very special type of string.
+[1780.16 - 1785.04] It's a constant, right? like I but I I
+[1782.48 - 1787.12] determine that through the type system
+[1785.04 - 1789.68] and in a way it's like uh there's a lot
+[1787.12 - 1792.40] of parallels I think to that with
+[1789.68 - 1795.68] constraints in your codebase where is it
+[1792.40 - 1797.28] you're you're constraining the space
+[1795.68 - 1798.88] right if you if you think about category
+[1797.28 - 1801.76] theory as well you know you're
+[1798.88 - 1805.04] constraining the the number of possible
+[1801.76 - 1807.52] types right that can can exist
+[1805.04 - 1810.24] and you're saying there's only one type
+[1807.52 - 1813.68] right and for for us like that framework
+[1810.24 - 1815.44] that I'm called Dune. Uh it's not an
+[1813.68 - 1817.76] open source framework. It's the the way
+[1815.44 - 1820.32] I describe it to people. It's it's kind
+[1817.76 - 1823.52] of like a internal Nex.js for our
+[1820.32 - 1825.60] Electron apps. Uh but it comes with a
+[1823.52 - 1828.24] lot of really really restrictive lit
+[1825.60 - 1830.32] rules and the codebase is designed in a
+[1828.24 - 1832.96] way that there's really only one way to
+[1830.32 - 1835.52] do something. So we make use a we make
+[1832.96 - 1838.96] use of a lot of conventional
+[1835.52 - 1841.12] patterns. So like features all go into a
+[1838.96 - 1843.28] specific directory. Well, every feature
+[1841.12 - 1844.80] has its own directory. As an example,
+[1843.28 - 1846.80] you know, there's like a a thing that
+[1844.80 - 1848.96] discovers features like through a
+[1846.80 - 1851.92] registry and like crawling the codebase
+[1848.96 - 1855.76] and stuff like that. But this
+[1851.92 - 1857.44] conventional pattern and the lint rules
+[1855.76 - 1861.52] make for an environment where it's
+[1857.44 - 1864.88] actually very hard to write bad code.
+[1861.52 - 1869.04] And that sort of frees up the it both
+[1864.88 - 1871.92] frees up your own mental uh you know
+[1869.04 - 1874.00] capacity as well as the agent sort of
+[1871.92 - 1875.76] doesn't have to think about that anymore
+[1874.00 - 1877.28] where it's just like oh there's only
+[1875.76 - 1878.80] there's I should just if I want to add a
+[1877.28 - 1880.64] new feature it just goes in the feature
+[1878.80 - 1882.64] the new feature directory and all the
+[1880.64 - 1885.44] code goes in there and I'm not going to
+[1882.64 - 1886.88] append to a god file right that was
+[1885.44 - 1889.84] really actually the inspiration for
+[1886.88 - 1892.32] those feature directories is the very
+[1889.84 - 1896.24] first couple of versions of Grockbot
+[1892.32 - 1898.32] were composed of like eight god files
+[1896.24 - 1900.72] which were like at least 10,000 lines
+[1898.32 - 1903.84] long if not longer and so I kind of had
+[1900.72 - 1906.24] to break it up into smaller pieces.
+[1903.84 - 1907.44] Uh but it was just observing you know
+[1906.24 - 1910.32] actually that's another important part
+[1907.44 - 1912.80] is observing how agents fail and then
+[1910.32 - 1914.08] every time you see a mistake every time
+[1912.80 - 1917.04] you see something that could be done
+[1914.08 - 1918.72] better you think you step back and think
+[1917.04 - 1921.12] how do I turn this into a lint rule? How
+[1918.72 - 1923.44] do I make it so that the code base makes
+[1921.12 - 1925.68] this impossible? Right? And it comes
+[1923.44 - 1928.72] back to me for my you know my background
+[1925.68 - 1932.72] learning Typescript and types uh type
+[1928.72 - 1935.12] systems is how do I constrain the space
+[1932.72 - 1936.48] so that you know I know precisely what
+[1935.12 - 1938.24] I'm working with and I think yeah
+[1936.48 - 1941.12] there's a lot of parallels there.
+[1938.24 - 1942.56] >> Totally makes sense. And don't I mean
+[1941.12 - 1943.92] it's funny that you mentioned TypeScript
+[1942.56 - 1945.44] and Goth files in the same sentence
+[1943.92 - 1949.30] because Typescript famously has a
+[1945.44 - 1950.00] 25,000line type uh file.
+[1949.30 - 1950.80] >> [laughter]
+[1950.00 - 1952.40] >> Although I don't know if they've
+[1950.80 - 1954.96] rewritten that and go as they probably
+[1952.40 - 1958.08] have, haven't they? Um,
+[1954.96 - 1959.92] okay. So, environment is important. You
+[1958.08 - 1962.24] should watch your agent like a hawk to
+[1959.92 - 1964.08] make sure that any mistakes it makes.
+[1962.24 - 1965.60] You turn them into things in the
+[1964.08 - 1967.20] environment. And the benefit of the
+[1965.60 - 1969.68] environment is you're not overloading
+[1967.20 - 1971.60] your agent, right, in terms of rules, in
+[1969.68 - 1973.12] terms of things it has to remember. It's
+[1971.60 - 1976.08] just in the environment. And so it
+[1973.12 - 1977.84] stumbles into the rules and exactly um
+[1976.08 - 1979.12] you know bounces off them and hits them
+[1977.84 - 1981.20] at the right moment.
+[1979.12 - 1983.76] >> So okay, we still haven't talked about
+[1981.20 - 1986.08] the 2,500 PRs. Where do those come from?
+[1983.76 - 1987.28] Like how do you you've built your trust
+[1986.08 - 1989.76] ladder, you've worked on your
+[1987.28 - 1993.12] environment, and you understand, okay,
+[1989.76 - 1996.64] um I now want to scale up. So what are
+[1993.12 - 1999.36] the mechanics of that scaling? Are you
+[1996.64 - 2001.76] um initiating 2500
+[1999.36 - 2003.60] like chats per month? That can't be
+[2001.76 - 2006.16] right. So there must be are there any
+[2003.60 - 2008.80] kind of automated triggers that trigger
+[2006.16 - 2010.72] stuff in your repo? Like how do you get
+[2008.80 - 2012.56] the software factory kind of triggering
+[2010.72 - 2014.24] work by itself?
+[2012.56 - 2016.56] >> Right.
+[2014.24 - 2020.16] Um I'll definitely say that the
+[2016.56 - 2023.60] prerequisite to you know something like
+[2020.16 - 2026.24] a very high volume of of pull requests
+[2023.60 - 2028.16] um is the environment. you know, the the
+[2026.24 - 2029.36] stuff we just talked about where I
+[2028.16 - 2032.16] definitely would not have been able to
+[2029.36 - 2033.44] do this if I had not spent the time, you
+[2032.16 - 2035.36] know, thinking about the kitchen, right,
+[2033.44 - 2038.80] and the knives and the tools for my
+[2035.36 - 2040.48] Asians. And so, in a way, I I think of
+[2038.80 - 2042.40] this as
+[2040.48 - 2045.52] I've spent the time building one kitchen
+[2042.40 - 2047.60] and one restaurant. And now I I'm in a
+[2045.52 - 2050.32] position where I don't actually have to
+[2047.60 - 2052.00] be there anymore because the
+[2050.32 - 2054.10] environment, you know, that the same
+[2052.00 - 2055.84] analogy, right? It works really well.
+[2054.10 - 2056.96] [laughter] Yeah. You open chain of
+[2055.84 - 2059.04] restaurants, right? That's
+[2056.96 - 2061.12] >> Yeah. Exactly. Yeah. Exactly. It's like
+[2059.04 - 2063.76] you're Gordon Ramsay and you know, you
+[2061.12 - 2065.92] you've taught your executive chef like
+[2063.76 - 2068.64] all the tricks of the of coming up with
+[2065.92 - 2070.08] great menu. Uh and like the kitchen is
+[2068.64 - 2072.16] set up really well. Everything's just
+[2070.08 - 2073.68] perfect and you're now in a position
+[2072.16 - 2076.48] where you can open your second your
+[2073.68 - 2078.72] third restaurant. And [snorts]
+[2076.48 - 2081.12] I guess I I sort of see each project
+[2078.72 - 2083.04] that I work on, like each big chat is
+[2081.12 - 2085.44] sort of like a restaurant, right? and
+[2083.04 - 2088.00] and I'm I'm I have multiple of them
+[2085.44 - 2090.48] operating at the same time and I'm sort
+[2088.00 - 2092.96] of like helicoptering between them
+[2090.48 - 2095.12] sometimes some more than others
+[2092.96 - 2096.64] depending on how in the loop I am but
+[2095.12 - 2100.48] yeah definitely I think there's there
+[2096.64 - 2105.68] there are external triggers and context
+[2100.48 - 2108.24] that those projects don't have that
+[2105.68 - 2110.56] for a long time I was the proxy for that
+[2108.24 - 2111.68] so uh the best example I have is like
+[2110.56 - 2113.36] you know you have a project that's
+[2111.68 - 2115.52] working on a feature
+[2113.36 - 2117.44] uh or you're trying to fix a bug and
+[2115.52 - 2119.28] you're getting bug reports, but the bug
+[2117.44 - 2124.16] reports are going to things like Slack
+[2119.28 - 2126.40] or linear or X, right? And these are
+[2124.16 - 2128.80] external systems that aren't connected
+[2126.40 - 2130.80] to your inner loop. So, I like to talk
+[2128.80 - 2132.32] about this outer loop and the inner
+[2130.80 - 2133.60] loop.
+[2132.32 - 2135.20] Uh I don't know if I'm using the
+[2133.60 - 2138.48] definition correctly but to me my inner
+[2135.20 - 2141.84] loop is like basically my engineers my
+[2138.48 - 2145.04] agent engineers working on the code to
+[2141.84 - 2148.24] an building towards an intent or
+[2145.04 - 2150.00] snapshot of my intent right and the
+[2148.24 - 2152.64] thing about that is that the snapshot
+[2150.00 - 2154.88] can go stale right new information comes
+[2152.64 - 2157.12] to light that I then have to be the
+[2154.88 - 2159.36] proxy of and you know transfer that
+[2157.12 - 2162.00] context to my agent so you know if you
+[2159.36 - 2164.24] if you don't have these triggers pulling
+[2162.00 - 2167.52] information back into the interloop,
+[2164.24 - 2169.28] then you sort of have to play that role
+[2167.52 - 2172.40] where you're you're off, you know, in
+[2169.28 - 2174.56] Slack or X or or whatever and you're
+[2172.40 - 2176.80] gathering context, right? You're getting
+[2174.56 - 2179.12] context about bug reports, about feature
+[2176.80 - 2180.48] requests, about, you know, something
+[2179.12 - 2182.08] someone said about, you know, our
+[2180.48 - 2184.24] backend infrastructure has some
+[2182.08 - 2187.12] limitation, you know, all that
+[2184.24 - 2189.52] information, you have to f that across
+[2187.12 - 2192.32] to your agent. So that's where I think
+[2189.52 - 2195.20] like tools like Grogbot are really good
+[2192.32 - 2197.44] because they help you automate the outer
+[2195.20 - 2199.44] loop as well. And when you connect those
+[2197.44 - 2201.92] two loops, it's very very powerful
+[2199.44 - 2204.80] because now all of a sudden your agents
+[2201.92 - 2208.88] have the ability to get context for this
+[2204.80 - 2211.44] for themselves, right? If for example
+[2208.88 - 2212.96] uh you know either through just as a
+[2211.44 - 2216.16] simple example like maybe you have the
+[2212.96 - 2218.48] Slack MCP, right? Or you have uh your
+[2216.16 - 2220.72] own harness, right, that you've built a
+[2218.48 - 2223.84] Slack subscription into for a particular
+[2220.72 - 2225.52] Slack channel. Now all of a sudden you
+[2223.84 - 2228.80] can tell your agents, okay, subscribe to
+[2225.52 - 2231.12] the Slack channel. Every time there's a
+[2228.80 - 2234.00] uh, you know, bug report about
+[2231.12 - 2236.24] something, go off and triage that thing,
+[2234.00 - 2238.00] right? Go reproduce the issue, right?
+[2236.24 - 2240.64] Using the verification skills that we've
+[2238.00 - 2242.72] already spent time building and all of
+[2240.64 - 2244.24] those other skills that we've set up so
+[2242.72 - 2245.76] that I have a lot of trust, right? I
+[2244.24 - 2248.08] have a lot of trust that these agents
+[2245.76 - 2251.68] can actually go off and understand the
+[2248.08 - 2254.00] bug, you know, uh verify that the bug
+[2251.68 - 2255.60] actually still exists on main and it
+[2254.00 - 2258.08] wasn't
+[2255.60 - 2260.40] something about you maybe the users
+[2258.08 - 2262.64] setup or their data or maybe I don't
+[2260.40 - 2265.20] know they didn't install a dependency or
+[2262.64 - 2269.68] something like that like uh basically I
+[2265.20 - 2272.16] think uh creating that yeah creating
+[2269.68 - 2273.92] those two loops and connecting them is
+[2272.16 - 2276.32] really a very important part of the job
+[2273.92 - 2278.96] these days. Um, especially if you are
+[2276.32 - 2281.60] thinking about how to scale yourself.
+[2278.96 - 2284.56] So, a big theme here is really just like
+[2281.60 - 2287.12] always thinking about like what where am
+[2284.56 - 2289.20] I the bottleneck in this process? Why do
+[2287.12 - 2291.04] my agents need me, you know, to answer
+[2289.20 - 2293.28] this question? I I always like to think
+[2291.04 - 2295.04] about that. And so I try to think about
+[2293.28 - 2297.20] how do I actually get the agent to
+[2295.04 - 2299.28] answer its own question, right? But not
+[2297.20 - 2302.56] by hallucinating, not by guessing, but
+[2299.28 - 2303.92] actually real data. And you know, a lot
+[2302.56 - 2305.84] of people talk about this idea of a
+[2303.92 - 2307.76] company brain, right, or a context
+[2305.84 - 2309.28] graph. I feel like those terms are
+[2307.76 - 2313.76] unnecessarily
+[2309.28 - 2317.12] complex uh or even abstract. To me, it's
+[2313.76 - 2319.20] just about um how do I take information
+[2317.12 - 2322.48] that my agent needs that I would
+[2319.20 - 2324.80] otherwise have to go and pass it myself
+[2322.48 - 2327.36] and just teach it how to do it, right?
+[2324.80 - 2330.16] And that removes me from the equation.
+[2327.36 - 2333.28] And so how I arrive at 2,000 or however
+[2330.16 - 2337.28] many PRs is the fact that I have all
+[2333.28 - 2340.32] these loops set up, right? And so uh it
+[2337.28 - 2342.32] allows me to open chain restaurants,
+[2340.32 - 2344.40] right? I can I can really parallels
+[2342.32 - 2346.88] myself. So yeah, I'm not sitting there
+[2344.40 - 2350.48] creating 2,500 chats, right? Of course,
+[2346.88 - 2352.16] it's really like these projects are um
+[2350.48 - 2353.52] actually cursor has a new feature called
+[2352.16 - 2357.28] projects which are these like
+[2353.52 - 2359.44] coordinator agents. Um and so the
+[2357.28 - 2361.76] coordination co coordinator agents are
+[2359.44 - 2363.20] really good at sort of delegating and
+[2361.76 - 2365.44] not doing work of their own but they
+[2363.20 - 2368.00] manage and supervise like almost a list
+[2365.44 - 2370.48] of tasks and they spawn sub agents to go
+[2368.00 - 2372.40] and do them. And so I'm just constantly
+[2370.48 - 2373.68] feeding context or teaching the agents
+[2372.40 - 2375.84] how to get their own context and then
+[2373.68 - 2378.40] they're going off and doing the work for
+[2375.84 - 2380.40] me. Uh and really the big the last thing
+[2378.40 - 2383.92] I'll say to this is like the big unlock
+[2380.40 - 2385.52] for me for getting to 2,000 PRs is
+[2383.92 - 2388.88] starting from the question and working
+[2385.52 - 2391.68] backwards of how do I get to the point
+[2388.88 - 2393.36] where my agent can merge its own code?
+[2391.68 - 2395.44] Because
+[2393.36 - 2396.80] the obvious thing people ask me when
+[2395.44 - 2399.28] when they when I tell them, "Oh, I
+[2396.80 - 2400.96] shipped 2,000 and 2,500 pull requests
+[2399.28 - 2402.96] last month." They'll be like, "How did
+[2400.96 - 2404.56] you review that?" Right? That that's a
+[2402.96 - 2405.68] lot of PRs to review. Like your team
+[2404.56 - 2407.12] must hate you.
+[2405.68 - 2409.20] >> Do do you mind if we go there in a
+[2407.12 - 2409.52] second? Because a good question about
+[2409.20 - 2410.40] that.
+[2409.52 - 2412.32] >> Yeah. Yeah. Yeah.
+[2410.40 - 2415.04] >> I want to like this analogy is great. I
+[2412.32 - 2417.12] want to like deepen it a bit which is
+[2415.04 - 2418.64] before if you're like manually
+[2417.12 - 2420.80] initiating all those chats it's like
+[2418.64 - 2422.88] you're bringing the orders to your chefs
+[2420.80 - 2425.52] manually right whereas if you've got an
+[2422.88 - 2426.80] agent sort of like doing the expo then
+[2425.52 - 2430.08] you're able to sort of run it yourself
+[2426.80 - 2431.60] itself what is what does that concretely
+[2430.08 - 2433.76] look like then you've got these sort of
+[2431.60 - 2436.00] grock bots that are um subscribing to
+[2433.76 - 2437.68] channels pulling in Slack messages and
+[2436.00 - 2439.60] you it sounds like have a couple of
+[2437.68 - 2443.36] coordinator agents or like chief of
+[2439.60 - 2445.12] staff agents that like monitor that or
+[2443.36 - 2447.12] something like when you look at your
+[2445.12 - 2449.76] computer to manage your agents, what
+[2447.12 - 2452.32] does it look like?
+[2449.76 - 2453.92] >> Yeah. So, [clears throat] so uh this is
+[2452.32 - 2455.44] I guess somewhat confusing but we're
+[2453.92 - 2459.76] working on you know simplifying and
+[2455.44 - 2461.20] unifying but so uh there's graphbot uh
+[2459.76 - 2463.52] which or you know you can use other
+[2461.20 - 2465.28] tools of course as well but I I largely
+[2463.52 - 2467.28] think of these tools as like your outer
+[2465.28 - 2469.68] loop. These are tools like you know
+[2467.28 - 2471.68] Grabbot that have connectors right these
+[2469.68 - 2474.48] are connectors I guess they a lot of
+[2471.68 - 2476.00] people call them personal agents um but
+[2474.48 - 2480.64] they're connectors to things like your
+[2476.00 - 2481.68] email your calendar slack uh plaid I
+[2480.64 - 2484.40] don't know like all these different
+[2481.68 - 2489.44] services and they are a great source of
+[2484.40 - 2491.28] pulling context in to your work so the
+[2489.44 - 2494.00] same way that a human like you know if I
+[2491.28 - 2497.20] were if I was a manager and I was
+[2494.00 - 2498.72] leading a team of engineers years. Um,
+[2497.20 - 2500.32] you know, like when I used to work in
+[2498.72 - 2502.00] Netflix, one of the biggest things that
+[2500.32 - 2505.20] managers would talk about was this idea
+[2502.00 - 2508.80] of context not control, which funnily
+[2505.20 - 2511.60] enough, you know, has so much uh has so
+[2508.80 - 2514.64] much uh carry over to the agents world.
+[2511.60 - 2516.40] Uh, of you know, you you know, you you
+[2514.64 - 2518.32] of course can drive to an outcome you
+[2516.40 - 2520.64] want by control, right? Like by
+[2518.32 - 2522.72] micromanaging, but what you want is to
+[2520.64 - 2524.56] provide context instead, right? like
+[2522.72 - 2526.80] teach the agent, teach your engineers
+[2524.56 - 2529.36] how to be self-sufficient and then you
+[2526.80 - 2531.52] don't have to micromanage them.
+[2529.36 - 2533.76] >> Um, and so I see a lot of parallels
+[2531.52 - 2536.72] there. Uh, but yeah, graphbot. So,
+[2533.76 - 2539.60] concretely, I have some graph bots that
+[2536.72 - 2543.28] look at my Slack channels, look at my X,
+[2539.60 - 2544.56] uh, or my emails, uh, or linear, and
+[2543.28 - 2546.80] they're just constantly they have
+[2544.56 - 2549.44] routines that subscribe. So they're
+[2546.80 - 2551.28] constantly watching and I have I I'll
+[2549.44 - 2554.56] tell them things like you know uh I'll
+[2551.28 - 2557.04] watch for issues with uh bugs in the
+[2554.56 - 2560.08] graphbot desktop app as an example. Uh
+[2557.04 - 2562.08] and whenever you find that send it to my
+[2560.08 - 2563.84] cursor project. So one of the really
+[2562.08 - 2567.92] cool things about grabbot is it connects
+[2563.84 - 2569.68] to cursor. So cursor has uh like I I
+[2567.92 - 2572.88] just mentioned this new feature called
+[2569.68 - 2575.04] projects. And a project is really a uh
+[2572.88 - 2577.12] again like a you get a coordinator agent
+[2575.04 - 2579.36] that's in the cloud. It has its own
+[2577.12 - 2581.60] computer and all it really does is like
+[2579.36 - 2583.28] it's a manager of agents. It's like your
+[2581.60 - 2586.24] executive chef, right? Your your chief
+[2583.28 - 2588.96] of staff. It doesn't do the work itself.
+[2586.24 - 2592.56] It delegates and orchestrates and
+[2588.96 - 2596.00] manages the work of other sub agents to
+[2592.56 - 2600.08] you know that report to your chief your
+[2596.00 - 2602.16] chief uh of staff. And it basically is
+[2600.08 - 2605.68] responsible for driving the work forward
+[2602.16 - 2607.12] and managing things and uh passing
+[2605.68 - 2608.72] context to them.
+[2607.12 - 2610.64] >> So if you get a sudden burst of issues,
+[2608.72 - 2612.40] let's say you get 30 issues at once in
+[2610.64 - 2614.08] one payload or something or very quickly
+[2612.40 - 2614.72] the coordinator agent can figure it out
+[2614.08 - 2616.32] and delegate.
+[2614.72 - 2619.28] >> Yeah, exactly. It gets like uh you know
+[2616.32 - 2621.44] 30 the 30 or so payloads and spawns a
+[2619.28 - 2622.96] sub agent or a single coordinator agent.
+[2621.44 - 2626.00] It can actually do a bunch of different
+[2622.96 - 2628.64] topologies of agents and it will sort of
+[2626.00 - 2632.56] figure out the best way to uh you know
+[2628.64 - 2637.92] efficiently distribute the tasks to your
+[2632.56 - 2641.04] team of agents. Um so I use uh cursor
+[2637.92 - 2643.76] projects a lot um and I also use grapot
+[2641.04 - 2645.92] a lot and cursor projects are my inner
+[2643.76 - 2648.56] loop and grabbot is my outer loop.
+[2645.92 - 2651.04] Grabbot takes all the context, external
+[2648.56 - 2652.16] context, gives it to the projects
+[2651.04 - 2654.40] because it can actually just send
+[2652.16 - 2656.24] messages to those projects, right? You
+[2654.40 - 2658.00] don't even have to open cursor. You can
+[2656.24 - 2660.72] just tell your grabbot, okay, create a
+[2658.00 - 2663.28] project, right, for these series of
+[2660.72 - 2666.53] tasks. They're all related, right? Maybe
+[2663.28 - 2668.24] as an example, you know, you've had a uh
+[2666.53 - 2669.84] [clears throat] a big burst of issues
+[2668.24 - 2673.12] that are all about performance, right?
+[2669.84 - 2674.80] Your app is slow uh and they're all
+[2673.12 - 2678.08] connected, right? Maybe some of them
+[2674.80 - 2680.00] even have a similar fix, right? But and
+[2678.08 - 2682.72] you can certainly go off and just spawn
+[2680.00 - 2685.12] one agent per task, but then you've lost
+[2682.72 - 2687.12] that sort of thread between them, right?
+[2685.12 - 2688.80] And and you may duplicate work or you
+[2687.12 - 2690.48] may not really think about the higher
+[2688.80 - 2692.72] level problem. You know, sometimes when
+[2690.48 - 2694.64] you you you solve bugs, you know, it
+[2692.72 - 2696.64] helps to have multiple bug reports that
+[2694.64 - 2698.16] are are slightly different because it
+[2696.64 - 2699.92] helps you really, you know, zoom out and
+[2698.16 - 2701.28] see actually, you know, the problem when
+[2699.92 - 2703.12] I looked at this one report, I thought
+[2701.28 - 2705.68] the bug was here, but actually when when
+[2703.12 - 2707.28] I see the other multitude of bugs is
+[2705.68 - 2707.68] actually up here,
+[2707.28 - 2709.28] >> right?
+[2707.68 - 2710.96] >> Yeah. Got you. So that that's why you
+[2709.28 - 2713.28] have so many agents in that loop then,
+[2710.96 - 2715.20] right? Because it's not just you have um
+[2713.28 - 2717.04] like you have a bug report comes in, you
+[2715.20 - 2719.28] spawn a single agent to look at that bug
+[2717.04 - 2721.84] report. that a that single agent will be
+[2719.28 - 2723.04] duplicating work with other um other
+[2721.84 - 2724.40] agents, right? Because if there are
+[2723.04 - 2725.84] multiple bug reports coming in through
+[2724.40 - 2726.32] the same thing, that can be duplicated
+[2725.84 - 2726.72] work.
+[2726.32 - 2728.56] >> Yeah.
+[2726.72 - 2730.64] >> Fascinating. [snorts]
+[2728.56 - 2732.24] >> That's really fascinating. Okay. And so
+[2730.64 - 2734.80] this just this endless series of
+[2732.24 - 2738.80] triggers um coming from real users
+[2734.80 - 2740.88] reporting real reports um builds up this
+[2738.80 - 2743.52] sort of and accelerates the factory sort
+[2740.88 - 2744.96] of adds more orders in. Other than bug
+[2743.52 - 2748.08] reports, are there any other sources
+[2744.96 - 2751.60] that you use for like um accelerating
+[2748.08 - 2754.08] for pushing these PRs?
+[2751.60 - 2757.04] >> Uh well, funnily enough, it's some of it
+[2754.08 - 2761.60] comes from uh reading the code, too. So,
+[2757.04 - 2763.76] I guess I have sort of uh well, so to
+[2761.60 - 2766.00] clarify that, you know, the 2,500 PRs,
+[2763.76 - 2768.72] they're not obviously like 2,500
+[2766.00 - 2772.48] features, right? they are a lot of the
+[2768.72 - 2775.84] work actually is spent on gardening like
+[2772.48 - 2777.52] another term that I really love. Uh
+[2775.84 - 2779.68] where
+[2777.52 - 2781.84] so I guess this is more important when
+[2779.68 - 2785.20] you have a big team of engineers human
+[2781.84 - 2786.48] engineers that you work with where and
+[2785.20 - 2787.28] also this goes back a little bit to what
+[2786.48 - 2788.64] I was talking about with the
+[2787.28 - 2789.76] environment. You know, setting up a
+[2788.64 - 2791.36] really good environment that doesn't
+[2789.76 - 2793.12] just help you and your agents, but
+[2791.36 - 2794.72] everybody on your team, right? Think of
+[2793.12 - 2796.80] a new hire who doesn't have a lot of
+[2794.72 - 2799.92] context on all of your engineering
+[2796.80 - 2801.84] practices joining your your team. And if
+[2799.92 - 2803.28] you have a really good environment, they
+[2801.84 - 2804.80] can be productive from day one, right?
+[2803.28 - 2806.96] They can they don't have to like, you
+[2804.80 - 2809.52] know, make open a bunch of lowquality
+[2806.96 - 2812.16] PRs. They can start, you know, they can
+[2809.52 - 2814.16] start just turning out really good code.
+[2812.16 - 2817.76] Um,
+[2814.16 - 2818.80] and uh, yeah, I think I I sort of lost
+[2817.76 - 2820.24] my train of thought.
+[2818.80 - 2822.64] >> I've got a I've got a followup, which is
+[2820.24 - 2823.84] what's what are the mechanics of like
+[2822.64 - 2826.72] triggering
+[2823.84 - 2828.72] >> like how when when do you trigger a a
+[2826.72 - 2830.08] agent
+[2828.72 - 2831.76] to go and look at the code, right?
+[2830.08 - 2833.52] Because some people might say, "Oh,
+[2831.76 - 2835.68] let's just do that every hour or
+[2833.52 - 2836.32] something or like on a chron job or
+[2835.68 - 2839.04] what's
+[2836.32 - 2840.48] >> Oh, yeah. Yeah. Yeah. Yeah. Uh I saw
+[2839.04 - 2842.00] some of your recent tweets as well about
+[2840.48 - 2844.08] like you know the some of the tweets
+[2842.00 - 2847.92] you've been doing which are great for
+[2844.08 - 2852.40] setting up your routines. Uh I have some
+[2847.92 - 2855.52] routines like that as well. Um so uh one
+[2852.40 - 2858.72] of them is uh
+[2855.52 - 2860.48] like looking through just another simple
+[2858.72 - 2863.84] example is you know [clears throat]
+[2860.48 - 2865.84] React has a lot of foot guns. Um, so,
+[2863.84 - 2867.36] uh, as as I'm sure you're aware. And so
+[2865.84 - 2870.72] I have an agent that's just constantly
+[2867.36 - 2872.24] looking for band patterns. And the
+[2870.72 - 2873.60] interesting thing about that one is that
+[2872.24 - 2875.76] I don't actually tell it to fix the
+[2873.60 - 2878.48] issue first. I tell it to append it to a
+[2875.76 - 2880.08] document. And then every couple of days
+[2878.48 - 2882.56] I look at it and I see actually these
+[2880.08 - 2884.48] are all the same thing, you know, and so
+[2882.56 - 2887.04] that gives me, you know, you almost want
+[2884.48 - 2889.04] like a buffer, a queue. Sometimes that's
+[2887.04 - 2890.96] actually more effective than just
+[2889.04 - 2893.28] spawning off a couple of like a lot of
+[2890.96 - 2895.28] sub agents to fix every single thing
+[2893.28 - 2897.44] because when you are [clears throat] in
+[2895.28 - 2900.16] kind of pure execution mode and just
+[2897.44 - 2901.84] trying to like you know f uh you know
+[2900.16 - 2904.00] execute on the orders that are coming in
+[2901.84 - 2906.96] very fast you sometimes miss the big
+[2904.00 - 2908.24] picture. So sometimes having a buffer
+[2906.96 - 2911.60] forces you to think about the big
+[2908.24 - 2913.12] picture because you you you have these
+[2911.60 - 2916.80] artifacts and things that you can look
+[2913.12 - 2919.60] at as a human um and sort of use your
+[2916.80 - 2921.68] own human judgment to or I guess you can
+[2919.60 - 2922.96] use an agent to do that as well. But you
+[2921.68 - 2926.08] give the [clears throat] agent and
+[2922.96 - 2928.00] yourself a way to identify patterns,
+[2926.08 - 2931.52] right, that you might otherwise miss if
+[2928.00 - 2933.44] you're just only solving each bug at a
+[2931.52 - 2934.96] time. And that's also really the benefit
+[2933.44 - 2939.36] of having something like a chief of
+[2934.96 - 2942.40] staff agent is uh it can see the forest
+[2939.36 - 2944.48] right uh in addition to actually doing
+[2942.40 - 2947.04] the execution.
+[2944.48 - 2948.24] >> Fascinating. That's I mean my brain is
+[2947.04 - 2950.16] exploding a bit there with the sort of
+[2948.24 - 2952.24] chief of staff at the software factory.
+[2950.16 - 2953.52] I might have to change some of the
+[2952.24 - 2955.52] course that I'm filming next week.
+[2953.52 - 2956.96] That's [laughter]
+[2955.52 - 2958.48] >> uh all right. Let's talk about let's
+[2956.96 - 2960.88] talk about review, right? because this
+[2958.48 - 2964.64] is the reply that you get, you know, is
+[2960.88 - 2967.52] >> did you read did you taste all 2500 of
+[2964.64 - 2970.72] those dishes as they swept past you?
+[2967.52 - 2974.32] >> And I assume the answer is a variety is
+[2970.72 - 2976.56] a version of no.
+[2974.32 - 2977.92] >> Yeah, I think you you you don't want to
+[2976.56 - 2980.64] be in a position where you're not
+[2977.92 - 2982.48] tasting your food ever again. Uh but you
+[2980.64 - 2984.40] also, you know, for scale, you cannot be
+[2982.48 - 2986.16] tasting every single dish that comes out
+[2984.40 - 2988.24] of your kitchen, especially if you have
+[2986.16 - 2990.96] multiple restaurants. So it becomes more
+[2988.24 - 2993.44] about sampling right and thinking about
+[2990.96 - 2995.76] the processes in the same way that you
+[2993.44 - 2998.64] know if I guess maybe this is where the
+[2995.76 - 3001.44] the the factory analogy is a bit more
+[2998.64 - 3004.72] apt is you know as a quality supervisor
+[3001.44 - 3006.88] on a factory you you can't look at every
+[3004.72 - 3009.60] single item you sample right you take
+[3006.88 - 3011.12] you you you go in there every day and
+[3009.60 - 3012.96] you look at the quality of the pull
+[3011.12 - 3016.32] requests you look at the code that the
+[3012.96 - 3019.36] agents are writing and you scrutinize it
+[3016.32 - 3021.84] very rig rigorously and you think about
+[3019.36 - 3024.00] all the inefficiencies, the bad patterns
+[3021.84 - 3026.48] that the agents are doing and then you
+[3024.00 - 3028.96] think about how to course correct the
+[3026.48 - 3033.04] environment, right? Not not that single
+[3028.96 - 3035.28] agent. Uh because if maybe if it if it
+[3033.04 - 3036.96] was a one-off incident, it's fine. You
+[3035.28 - 3039.68] know that maybe there's nothing to fix
+[3036.96 - 3041.84] there. But if you actually notice that
+[3039.68 - 3043.28] multiple agents are are having the same
+[3041.84 - 3045.36] issue, right? They're taking the same
+[3043.28 - 3048.40] shortcut. they're they're propagating
+[3045.36 - 3050.56] the same workaround everywhere. Uh
+[3048.40 - 3053.68] that's a sign that you should go off and
+[3050.56 - 3055.60] think about how to uh amend your kitchen
+[3053.68 - 3057.76] or your factory, right? Like thinking
+[3055.60 - 3062.24] about your skills, your constraints,
+[3057.76 - 3064.48] your lints, your type systems um and
+[3062.24 - 3066.72] setting or adjusting it so that that
+[3064.48 - 3068.32] problem doesn't happen again. And when
+[3066.72 - 3070.72] you do that enough times, then you get
+[3068.32 - 3073.36] to a place where the codebase is again
+[3070.72 - 3076.64] like the environment is so constrained
+[3073.36 - 3079.36] and so it guides you so well that you
+[3076.64 - 3080.88] can just you can just step away, right?
+[3079.36 - 3083.68] That's the dream. And I'll I'll
+[3080.88 - 3086.00] definitely say it um it's very hard to
+[3083.68 - 3087.84] get to this point. I don't want to sell
+[3086.00 - 3090.40] this as like, you know, something that
+[3087.84 - 3092.64] you can just do easily by using PAC.
+[3090.40 - 3095.20] Like it takes a lot of time and effort
+[3092.64 - 3098.16] to think about your code and where you
+[3095.20 - 3100.72] see your agents failing and thinking
+[3098.16 - 3103.28] very thoughtfully, intentionally and
+[3100.72 - 3105.92] setting up guard rails and constraints
+[3103.28 - 3107.12] so that they do the right thing by
+[3105.92 - 3109.84] default.
+[3107.12 - 3111.28] >> And you're not [clears throat] like if
+[3109.84 - 3113.52] to go back to the software factory
+[3111.28 - 3115.52] analogy, this isn't a dark factory,
+[3113.52 - 3116.88] right? This the lights are on, right?
+[3115.52 - 3117.68] >> It kind of is. Yeah, actually.
+[3116.88 - 3119.28] >> Is it?
+[3117.68 - 3122.40] >> Yeah. Well, it's dark in the sense that
+[3119.28 - 3124.80] so um it's dark in the sense that well I
+[3122.40 - 3127.20] think if my agents are merging their own
+[3124.80 - 3129.92] pull requests it's sort of become dark
+[3127.20 - 3131.60] where I go to sleep my agents now work
+[3129.92 - 3134.24] 24/7
+[3131.60 - 3136.72] uh I have I have the equivalent of like
+[3134.24 - 3138.72] more than 10 chiefs of staff right each
+[3136.72 - 3140.80] working on a different area like for
+[3138.72 - 3143.12] example I have one that's working on
+[3140.80 - 3145.84] performance of the Grockbot desktop app
+[3143.12 - 3148.56] I have one that's working on uh fixing
+[3145.84 - 3151.04] bugs that users report I have one that's
+[3148.56 - 3152.96] exploring rewriting it in a different
+[3151.04 - 3154.24] language just for fun, you know, like
+[3152.96 - 3155.92] what if what if, you know, just
+[3154.24 - 3158.48] reimagining what what it would be if it
+[3155.92 - 3161.84] was like a native app. It's just a toy.
+[3158.48 - 3163.44] Um, but the idea is like yeah, I uh I
+[3161.84 - 3165.68] when you spend the time setting up your
+[3163.44 - 3167.68] environment, I've gotten to a point
+[3165.68 - 3170.64] where I review the pull request after
+[3167.68 - 3172.88] it's landed, right? I I tell my agents
+[3170.64 - 3176.32] full autopilot is is something that you
+[3172.88 - 3178.32] can do in in PAC and that will trigger
+[3176.32 - 3180.24] off this very intense rigorous
+[3178.32 - 3183.28] verification loop where it will spawn a
+[3180.24 - 3186.16] bunch of verifier agents for every pull
+[3183.28 - 3187.60] request and it will fuzz right fuzzing
+[3186.16 - 3189.28] meaning that it will actually run the
+[3187.60 - 3191.36] application. It's going to click around
+[3189.28 - 3193.68] and try to use it like a real human.
+[3191.36 - 3197.60] look for regressions, look for bugs in
+[3193.68 - 3199.52] your implementation and um it will try
+[3197.60 - 3201.84] to find issues with the thing and then
+[3199.52 - 3204.16] it will fix it itself. It'll do that
+[3201.84 - 3206.80] again and eventually get the PR to a
+[3204.16 - 3209.92] state where it can land.
+[3206.80 - 3212.48] Uh so it does it does it is quite token
+[3209.92 - 3214.48] intensive. You can tune this of course.
+[3212.48 - 3217.04] Uh so you know instead of like 10
+[3214.48 - 3219.28] verifier agents you might do like one,
+[3217.04 - 3221.28] right? Or you just tell the agent to
+[3219.28 - 3224.56] verify it's done work. But yeah, the key
+[3221.28 - 3226.48] thing is the verification part is really
+[3224.56 - 3228.00] the key piece that gives me a lot of
+[3226.48 - 3229.52] confidence
+[3228.00 - 3231.20] that I guess verification plus the
+[3229.52 - 3232.72] environment, right? It's these the
+[3231.20 - 3234.88] combination of these two things that
+[3232.72 - 3236.80] allow me to step away and say agents go
+[3234.88 - 3238.72] off and merge your thing. I'll review it
+[3236.80 - 3239.76] in the morning by looking at my commit
+[3238.72 - 3242.08] history
+[3239.76 - 3242.96] >> and if I see problems, I go and course
+[3242.08 - 3246.64] correct,
+[3242.96 - 3250.40] >> right? And I'll go and revert or modify,
+[3246.64 - 3252.00] add new link rules and whatever. Um, so
+[3250.40 - 3254.40] it does it does take time to get to that
+[3252.00 - 3257.44] point, but once you get it, oh, it's so
+[3254.40 - 3259.36] it feels so magical. Uh, I I I tell
+[3257.44 - 3262.88] people like I'm sleeping so much better
+[3259.36 - 3264.56] now because, you know, it took it the
+[3262.88 - 3266.24] very first day I turned on the sort of
+[3264.56 - 3268.16] dark factory was very scary because I
+[3266.24 - 3269.68] was like, "Ooh, what if I call the SE,
+[3268.16 - 3270.88] right? What if I break something
+[3269.68 - 3274.16] overnight?"
+[3270.88 - 3277.12] >> Uh, and it took a lot of it took a lot
+[3274.16 - 3279.28] of uh bravery, I think, to do that, but
+[3277.12 - 3282.16] >> somehow I did it. And yeah, now I'm in a
+[3279.28 - 3283.76] place where my Asians are are merging
+[3282.16 - 3284.40] their own code while I sleep.
+[3283.76 - 3286.08] >> It sounds like
+[3284.40 - 3288.08] >> I think it's dark in that sense.
+[3286.08 - 3288.72] >> Yes, it's dark sometimes, right? You do
+[3288.08 - 3289.84] sometimes.
+[3288.72 - 3291.28] >> That's true. That's true.
+[3289.84 - 3293.60] >> Because I think of a dark factory is
+[3291.28 - 3295.60] like almost like if you take the
+[3293.60 - 3297.76] original definition of Kapathy's vibe
+[3295.60 - 3299.20] coding, right, which is the code almost
+[3297.76 - 3301.28] doesn't exist. You forget that code
+[3299.20 - 3303.44] might be a thing. I think your approach
+[3301.28 - 3306.16] is totally different from that, which is
+[3303.44 - 3307.92] that code and the environment is
+[3306.16 - 3309.60] essential. And if the code in the
+[3307.92 - 3312.56] environment are bad, then you will get
+[3309.60 - 3315.28] bad outputs. Garbage in, garbage out. So
+[3312.56 - 3318.64] I I I think this is a this is a
+[3315.28 - 3320.40] different thing. It's like, you know,
+[3318.64 - 3321.76] the I don't know, maybe there's a dimmer
+[3320.40 - 3323.52] switch or something, right? Like, you
+[3321.76 - 3324.88] know, some parts of dark, some parts
+[3323.52 - 3327.92] were light. This is why the maybe the
+[3324.88 - 3329.92] the kitchen is a better analogy
+[3327.92 - 3332.32] >> the restaurant because you know even as
+[3329.92 - 3333.44] a as a as a
+[3332.32 - 3336.40] as a [clears throat] restaurant
+[3333.44 - 3337.92] restaurant you still might go to your
+[3336.40 - 3340.72] restaurants every now and then to take
+[3337.92 - 3341.28] take a peek in taste the food right
+[3340.72 - 3342.88] >> uh I think that's
+[3341.28 - 3344.48] >> the idea of sampling instead of blocking
+[3342.88 - 3346.64] I think is really important
+[3344.48 - 3349.04] >> I think what would you say to people who
+[3346.64 - 3350.96] are in I guess you're obviously in a
+[3349.04 - 3352.32] pretty security conscious environment
+[3350.96 - 3353.12] where you're working very security
+[3352.32 - 3356.16] conscious
+[3353.12 - 3358.32] >> mh [clears throat] Um maybe there are
+[3356.16 - 3361.60] folks working in like um medical
+[3358.32 - 3364.64] applications or law or finance or
+[3361.60 - 3366.80] something. I think of the like some PRs
+[3364.64 - 3368.56] are kind of like two-way doors which is
+[3366.80 - 3370.32] you can merge it and then revert it,
+[3368.56 - 3371.76] right? It's cheap back through. But
+[3370.32 - 3373.60] there are some PRs that are one-way
+[3371.76 - 3376.80] doors, right? That will cause data loss
+[3373.60 - 3378.64] of some kind that will
+[3376.80 - 3381.36] >> do something that can't be easily walked
+[3378.64 - 3383.76] back. How do you deal with situations
+[3381.36 - 3385.52] where most of your PRs, let's say, are
+[3383.76 - 3387.20] one-way doors? Like, is this something
+[3385.52 - 3388.64] you just wouldn't recommend or like what
+[3387.20 - 3390.16] do you think?
+[3388.64 - 3392.56] >> Yeah, I think that's a really good
+[3390.16 - 3394.40] question. I think that
+[3392.56 - 3397.92] it all comes back to me to the quality
+[3394.40 - 3401.84] of the verification that you're able to
+[3397.92 - 3404.24] um get out of your agent. And I think
+[3401.84 - 3406.08] for domains where the work is
+[3404.24 - 3408.96] verifiable,
+[3406.08 - 3411.52] this is easier, right? and the the
+[3408.96 - 3413.04] oneway doors become two-way doors in a
+[3411.52 - 3414.16] sense.
+[3413.04 - 3416.08] But I guess I don't know if you're
+[3414.16 - 3417.60] working on something that is like
+[3416.08 - 3420.80] extremely
+[3417.60 - 3422.40] is very hard to verify programmatically
+[3420.80 - 3424.64] then I think yeah you're definitely in a
+[3422.40 - 3427.92] position where it's very hard to get to
+[3424.64 - 3430.16] that point. Um so I do think like yeah
+[3427.92 - 3433.12] verifiability of the domain is an
+[3430.16 - 3435.04] important aspect to be able to do this.
+[3433.12 - 3436.80] Um and software engineering is just one
+[3435.04 - 3439.44] of those things where it's quite
+[3436.80 - 3442.08] verifiable in in a lot of cases maybe
+[3439.44 - 3444.16] not totally um you know like other
+[3442.08 - 3446.96] domains like mathematics I think are
+[3444.16 - 3450.24] another example of not all of it of
+[3446.96 - 3452.48] course but some aspects of mathematics
+[3450.24 - 3455.36] can be verifiable
+[3452.48 - 3458.48] if you write a proof for example um and
+[3455.36 - 3460.08] so yeah I think it's a great question
+[3458.48 - 3461.68] that I don't really have the answer to
+[3460.08 - 3463.92] and I think that this is something the
+[3461.68 - 3468.08] industry and us as engineers will have
+[3463.92 - 3469.92] to figure out is you know my sort of uh
+[3468.08 - 3472.48] hope and prediction for the future is
+[3469.92 - 3476.16] that we'll see more and more interesting
+[3472.48 - 3477.68] new agentoriented programming languages
+[3476.16 - 3479.20] and one of the most fascinating ones
+[3477.68 - 3484.96] that I've seen so far is this one called
+[3479.20 - 3488.96] bend bend d bend um and that language is
+[3484.96 - 3492.24] one where it kind of marries programming
+[3488.96 - 3494.32] with proofs right there used to be a
+[3492.24 - 3496.16] time, you know, where you actually had
+[3494.32 - 3498.24] to write your proofs in a different
+[3496.16 - 3500.88] language. And proofs, by the way, for
+[3498.24 - 3504.08] those uh who who aren't familiar is this
+[3500.88 - 3506.96] idea of uh that you can sort of formally
+[3504.08 - 3509.28] verify that some code is correct
+[3506.96 - 3511.20] mathematically, right? Especially if
+[3509.28 - 3514.72] you've written your code in a very
+[3511.20 - 3516.56] functional programming way.
+[3514.72 - 3518.40] uh but for the longest time you had to
+[3516.56 - 3522.32] do that in a separate language like lean
+[3518.40 - 3525.04] or tla+ or uh I'm blanking on some of
+[3522.32 - 3526.32] the other other examples but uh like
+[3525.04 - 3528.08] languages like that where you would
+[3526.32 - 3532.00] construct the mathematical proof and
+[3528.08 - 3534.48] then use a solver essentially to det
+[3532.00 - 3536.08] that that you've covered all the cases
+[3534.48 - 3538.24] you don't have like a race condition or
+[3536.08 - 3542.08] or whatever.
+[3538.24 - 3543.68] So yeah, I think
+[3542.08 - 3545.36] trying to sum up the question, I think
+[3543.68 - 3547.84] yeah, if you are in a position where you
+[3545.36 - 3550.32] can figure out how your agents can truly
+[3547.84 - 3553.92] verify the work in a way that gives you
+[3550.32 - 3556.72] confidence, you can actually, you know,
+[3553.92 - 3558.88] uh have the PRs merge cuz if it
+[3556.72 - 3561.12] compiles, right, if it if the proofs
+[3558.88 - 3564.56] show you that it's correct, then why
+[3561.12 - 3566.56] wouldn't you just merge it? Um but of
+[3564.56 - 3571.52] course, yeah, not all the means are
+[3566.56 - 3574.08] verifiable. Yeah, it's a tough one. Um,
+[3571.52 - 3575.76] okay. I think we've got to think about
+[3574.08 - 3576.88] wrapping up because we are nearly on the
+[3575.76 - 3578.64] hour. Have you Have you got something
+[3576.88 - 3580.64] after this? I mean, I've got something
+[3578.64 - 3582.48] before I give my son dinner, but
+[3580.64 - 3583.92] >> I I can go a bit longer after you.
+[3582.48 - 3586.40] >> Okay, let's let's go five minutes longer
+[3583.92 - 3589.12] then. Um I think I just want to have one
+[3586.40 - 3595.28] more question which is
+[3589.12 - 3597.92] I think I want to ask how you see Pstack
+[3595.28 - 3600.40] and how you see skills in general like
+[3597.92 - 3602.24] in terms of we talked about this before
+[3600.40 - 3605.04] we went on air which is like people
+[3602.24 - 3608.80] think of as like my skills versus your
+[3605.04 - 3611.44] skills and how do you combine frameworks
+[3608.80 - 3613.36] together? How do you use Pstack with my
+[3611.44 - 3616.32] stuff? like what should you take from
+[3613.36 - 3619.60] each one and because I think I see
+[3616.32 - 3621.52] skills as sort of just derived from
+[3619.60 - 3625.44] process basically like they're just
+[3621.52 - 3627.44] processes turned into words and I would
+[3625.44 - 3629.52] love to know
+[3627.44 - 3631.60] how you recommend people take Pstack and
+[3629.52 - 3635.00] take my stuff as well and turn it into
+[3631.60 - 3635.00] their own processes.
+[3635.04 - 3638.16] I think you shared a tip actually today
+[3636.72 - 3640.40] that I thought was actually very
+[3638.16 - 3642.00] relevant, which is this idea that you go
+[3640.40 - 3644.32] off and look at your previous
+[3642.00 - 3648.24] transcripts, right? And you sort of mine
+[3644.32 - 3650.16] for information of, you know, your own
+[3648.24 - 3651.84] look through your own your own prompts,
+[3650.16 - 3653.84] right, to the agents where you correct
+[3651.84 - 3657.28] them where you have to constantly
+[3653.84 - 3659.20] intervene and uh you know take that
+[3657.28 - 3660.96] higher level learning and turn that into
+[3659.20 - 3664.32] a a reusable skill, right? So that
+[3660.96 - 3668.32] agents stop repeating that mistake. I
+[3664.32 - 3670.16] think that uh PAC and your skills are
+[3668.32 - 3672.16] very complimementaryary. I I totally
+[3670.16 - 3674.00] agree with you that they're like a skill
+[3672.16 - 3675.68] is really much just process. I mean it's
+[3674.00 - 3678.08] just at the end of the day a skill is
+[3675.68 - 3679.36] just English or or language. It's just
+[3678.08 - 3681.52] markdown.
+[3679.36 - 3684.16] >> Um and I think you can you can
+[3681.52 - 3687.20] definitely weave them, combine them in a
+[3684.16 - 3690.40] way that makes sense to you. But I do
+[3687.20 - 3693.68] think that uh everyone should have their
+[3690.40 - 3695.36] own set of knives, right?
+[3693.68 - 3697.44] I I keep going back to the the the
+[3695.36 - 3699.84] cooking analogy, but it's so apt because
+[3697.44 - 3701.20] like, you know, every chef when they go
+[3699.84 - 3702.64] to a different job, right, when they go
+[3701.20 - 3704.24] to a different restaurant, they carry
+[3702.64 - 3706.64] they bring their knives with them. The
+[3704.24 - 3708.32] tools go with them, right? And so trust
+[3706.64 - 3711.28] to me is really about trust in your own
+[3708.32 - 3712.88] tools. And when you spend the time
+[3711.28 - 3714.16] sharpening them and understanding them
+[3712.88 - 3716.96] really, really well, you can do great
+[3714.16 - 3718.80] things. And everybody's skills and tool
+[3716.96 - 3720.48] set is going to look different. you
+[3718.80 - 3723.04] know, someone might find a lot of
+[3720.48 - 3725.92] success combining, you know, like your
+[3723.04 - 3727.68] grill me with docs, uh, or wayfinder
+[3725.92 - 3730.24] skill with some of the execution skills
+[3727.68 - 3731.84] in Pstack as an example. Some people
+[3730.24 - 3733.92] might use more of your skills, some
+[3731.84 - 3735.60] people might use more of my skills. I
+[3733.92 - 3737.68] think at the end end of the day, it
+[3735.60 - 3739.92] really just comes back to how much do
+[3737.68 - 3741.76] you trust, you know, me and Matt, right?
+[3739.92 - 3743.84] Like if you if you trust us both, of
+[3741.76 - 3745.12] course, use our skills, but I also
+[3743.84 - 3749.36] encourage you to, you know, look at your
+[3745.12 - 3751.36] own transcripts. Um um tell the agent to
+[3749.36 - 3753.76] look through, you know, some of the all
+[3751.36 - 3756.24] of the patterns that you've used, the
+[3753.76 - 3758.56] the times you've had to intervene, you
+[3756.24 - 3761.92] know, suggest turning them into lint
+[3758.56 - 3764.96] rules or new skills, right? The the past
+[3761.92 - 3766.80] chats I I often say is like a a treasure
+[3764.96 - 3771.52] trove of context because that, you know,
+[3766.80 - 3773.04] it's it's like the process materialized,
+[3771.52 - 3775.68] right? Like it's the real process. It's
+[3773.04 - 3777.68] not an abstract idea in your head. it's
+[3775.68 - 3779.44] the actual thing right and you can
+[3777.68 - 3781.28] actually see how it happened in practice
+[3779.44 - 3782.88] and extract so much information from
+[3781.28 - 3784.64] that and there's so much so that I
+[3782.88 - 3787.68] actually turn I have a skill in pac
+[3784.64 - 3790.80] called recall which is exactly that um
+[3787.68 - 3792.88] where this was a pattern where
+[3790.80 - 3794.88] you know I was working in I was working
+[3792.88 - 3797.04] on a similar problem so specifically I
+[3794.88 - 3798.96] was working on virtualization for the
+[3797.04 - 3801.44] cursor application and there were a lot
+[3798.96 - 3802.80] of bugs and so you know every time I
+[3801.44 - 3804.24] started a new chat I was like ah this
+[3802.80 - 3805.76] there's so much good context from the
+[3804.24 - 3807.52] last one So, you know, I want to bring
+[3805.76 - 3809.20] it over to the new chat. How do I do
+[3807.52 - 3811.36] that? And that's where the transcript
+[3809.20 - 3813.12] came, uh, you know, looking at the past
+[3811.36 - 3815.68] transcript came about. And then recall
+[3813.12 - 3817.68] was just a way for me to collapse
+[3815.68 - 3819.84] collapse and compress that workflow into
+[3817.68 - 3822.08] a skill. So that I didn't have to just
+[3819.84 - 3823.76] say I didn't have to write a long essay
+[3822.08 - 3825.68] every time. Go look at all these chats,
+[3823.76 - 3827.44] right? And, you know, blah blah blah.
+[3825.68 - 3830.40] So, I I largely think of skills,
+[3827.44 - 3832.80] especially as agents get more capable as
+[3830.40 - 3834.64] really encoding workflows. you know
+[3832.80 - 3836.64] skills from last year were really more
+[3834.64 - 3839.52] about like almost like implementation
+[3836.64 - 3842.24] details like here are the exact script
+[3839.52 - 3844.56] commands you know you should use right I
+[3842.24 - 3846.72] think with the latest models you can
+[3844.56 - 3849.04] just delete those parts and just really
+[3846.72 - 3851.04] focus on the workflow right until it
+[3849.04 - 3853.28] it's more the skill becomes more like a
+[3851.04 - 3856.40] series of steps
+[3853.28 - 3858.56] a series of your process uh and I think
+[3856.40 - 3860.72] over time we'll see that skills get
+[3858.56 - 3864.80] smaller and smaller you know more
+[3860.72 - 3866.96] compact Um, and yeah, they're very
+[3864.80 - 3869.52] compatible. Or you can, you know, if you
+[3866.96 - 3871.84] want, why not read our skills, right,
+[3869.52 - 3874.40] and com and combine them in your of your
+[3871.84 - 3876.00] own, right? Combine Wfinder with potato
+[3874.40 - 3878.64] mode and make your own custom mode,
+[3876.00 - 3880.48] right? Like like skills are the the
+[3878.64 - 3882.96] thing I love about skills that is are
+[3880.48 - 3884.96] that they're so malleable. You can do
+[3882.96 - 3886.40] anything you want. It's just language.
+[3884.96 - 3888.08] >> Absolutely. There's nothing magical in
+[3886.40 - 3889.84] them, right? They're just words. And
+[3888.08 - 3892.72] >> Exactly. If if there is any magic in
+[3889.84 - 3895.92] them, it's just the words chosen and the
+[3892.72 - 3899.52] phrases used and the thinking that's
+[3895.92 - 3901.52] been done to turn those like take
+[3899.52 - 3904.24] abstract process and turn them into
+[3901.52 - 3905.44] language. And once that thinking has
+[3904.24 - 3906.88] been done, then it's just there. It's
+[3905.44 - 3910.24] available. It's on the surface and you
+[3906.88 - 3911.76] just nick it. Um Lauren, thank you so
+[3910.24 - 3914.40] much. This has been glorious.
+[3911.76 - 3916.64] >> Yeah, this has been super fun. I really
+[3914.40 - 3919.04] enjoyed talking to you. Hope we can do
+[3916.64 - 3920.96] it again. I'd love to do it again. I'd
+[3919.04 - 3922.72] love to do it again. Absolutely. Um
+[3920.96 - 3925.84] yeah, we'll check in in uh
+[3922.72 - 3928.48] >> I don't know. Yeah, Monday. Let's do it.
+[3925.84 - 3929.44] >> Yeah, [laughter] let's do it. Part two.
+[3928.48 - 3931.36] >> Well, thank you so much. I'm going to
+[3929.44 - 3933.28] close the stream here. Laura and I will
+[3931.36 - 3934.88] uh chat a little bit and stay here. But
+[3933.28 - 3937.36] thank you guys so much for watching. The
+[3934.88 - 3937.36] glorious.
