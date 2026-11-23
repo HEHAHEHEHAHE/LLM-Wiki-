@@ -181,30 +181,36 @@
         </div>
       </section>
 
-      <!-- Slide 4: 倒金字塔模型 -->
+      <!-- Slide 4: 倒金字塔模型 (Poteto Pyramid) -->
       <section>
-        <h2>核心解方：環境投資的「倒金字塔模型」</h2>
-        <p style="font-size:0.75em; color:#94a3b8;">由底而上，投資越底層，信任度與回報越高：</p>
-        <div style="text-align: left; margin-top: 20px;">
-          <div style="background: rgba(56, 189, 248, 0.25); padding: 12px 18px; border-radius: 6px; margin-bottom: 8px;">
-            <strong>Layer 1 (底層基石)：代碼庫本體 (Codebase Architecture)</strong><br>
-            <span style="font-size:0.75em; color:#cbd5e1;">極致的 API 設計與重構，直接從根源消滅錯誤發生的可能（Categorical Elimination）。</span>
+        <h2>核心解方：環境投資的「Poteto 倒金字塔」</h2>
+        <p style="font-size:0.75em; color:#94a3b8; margin-bottom: 15px;">面積越寬代表投入的工程心力越多，由上而下逐層過濾：</p>
+        
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; margin: 15px 0;">
+          <!-- Layer 1 -->
+          <div style="width: 95%; background: rgba(56, 189, 248, 0.28); border: 1px solid #38bdf8; padding: 8px 16px; border-radius: 6px; text-align: left;">
+            <strong style="color:#ffffff;">1. Codebase (投資最大/頂部最寬)</strong>：極致 API 設計、架構重構（根除錯誤發生）
           </div>
-          <div style="background: rgba(56, 189, 248, 0.18); padding: 12px 18px; border-radius: 6px; margin-bottom: 8px;">
-            <strong>Layer 2：確定性防護欄 (Deterministic Guardrails)</strong><br>
-            <span style="font-size:0.75em; color:#cbd5e1;">編譯器、嚴格型別、自動化測試、靜態分析與客製化 Lint 規則（100% 可重現）。</span>
+          <!-- Layer 2 -->
+          <div style="width: 82%; background: rgba(56, 189, 248, 0.22); border: 1px solid rgba(56, 189, 248, 0.7); padding: 8px 16px; border-radius: 6px; text-align: left;">
+            <strong style="color:#ffffff;">2. Static Analysis</strong>：Lints、嚴格型別、Compilers、自動化測試（100% 確定性）
           </div>
-          <div style="background: rgba(56, 189, 248, 0.12); padding: 12px 18px; border-radius: 6px; margin-bottom: 8px;">
-            <strong>Layer 3：驗證體系 (Runtime & Formal Verification)</strong><br>
-            <span style="font-size:0.75em; color:#cbd5e1;">運行時不變量（Invariants）檢驗、TLA+ 與 Lean 形式化數學驗證狀態機。</span>
+          <!-- Layer 3 -->
+          <div style="width: 68%; background: rgba(56, 189, 248, 0.16); border: 1px solid rgba(56, 189, 248, 0.5); padding: 8px 16px; border-radius: 6px; text-align: left;">
+            <strong style="color:#ffffff;">3. Verification</strong>：Formal (TLA+, Lean) 與 Runtime Invariants 狀態機驗證
           </div>
-          <div style="background: rgba(248, 113, 113, 0.15); padding: 10px 18px; border-radius: 6px;">
-            <strong>Layer 4 (最少投入)：自然語言提示詞 (Prose: Prompts & AGENTS.md)</strong><br>
-            <span style="font-size:0.75em; color:#cbd5e1;">依賴隨機概率與文字判斷，最脆弱且無法保證可重現，應極小化其使用。</span>
+          <!-- Layer 4 -->
+          <div style="width: 54%; background: rgba(248, 113, 113, 0.18); border: 1px solid rgba(248, 113, 113, 0.6); padding: 7px 14px; border-radius: 6px; text-align: left;">
+            <strong style="color:#fca5a5;">4. Prose (極小化)</strong>：Prompts、Rules、AGENTS.md（脆弱且充滿模糊）
+          </div>
+          <!-- Layer 5 (Tip) -->
+          <div style="width: 38%; background: rgba(248, 113, 113, 0.32); border: 1px solid #f87171; padding: 6px 10px; border-radius: 6px; text-align: center;">
+            <strong style="color:#fecaca;">5. Human Review (尖端)</strong>：追求壓縮至趨近於零
           </div>
         </div>
+
         <div class="slide-footer">
-          出處章節：<a href="wiki/videos/All_Code_Is_Slop_Except_Mine_Lauren_Tan.md">II. 核心架構：倒金字塔模型</a> ｜ 概念：<a href="wiki/concepts/deterministic-guardrails.md">deterministic-guardrails</a>
+          出處章節：<a href="wiki/videos/All_Code_Is_Slop_Except_Mine_Lauren_Tan.md">II. 核心架構：倒金字塔模型 (The Poteto Pyramid)</a> ｜ 概念：<a href="wiki/concepts/deterministic-guardrails.md">deterministic-guardrails</a>
         </div>
       </section>
 
