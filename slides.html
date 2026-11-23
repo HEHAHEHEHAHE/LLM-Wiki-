@@ -165,11 +165,11 @@
         <h2>深刻警示：花園隱喻 (The Garden Analogy)</h2>
         <div class="card-grid">
           <div class="card" style="border-left: 4px solid var(--warn-color);">
-            <h4>⚠️ Agent 的「模仿本能」</h4>
+            <h4>Agent 的「模仿本能」</h4>
             <p>• 代碼庫（Codebase）是 Agent 最大、最直接的輸入來源。<br>• 專案中的任何臨時 Workaround、廢棄寫法或壞味道，都被 Agent 視為<strong>標準範式</strong>並瘋狂複製！</p>
           </div>
           <div class="card" style="border-left: 4px solid var(--success-color);">
-            <h4>🌱 園丁的工作 (Gardening)</h4>
+            <h4>園丁的工作 (Gardening)</h4>
             <p>• 雜草若不清除，幾天內就會淹沒整座花園。<br>• 工程師的工作本質正變成<strong>園丁</strong>：維護土壤純淨，並為藤蔓架設鋼筋混凝土支架（Constraints）！</p>
           </div>
         </div>
@@ -237,24 +237,22 @@
       <!-- Slide 6: 生產環境踩坑實錄 3 & 4 (禁用註解) -->
       <section>
         <h2>顛覆認知：為什麼要「禁用 99% 的註解」？</h2>
-        <div class="card-grid" style="margin-top: 15px;">
+        <div class="card-grid" style="margin-top: 25px;">
           <div class="card" style="border-left: 4px solid var(--warn-color);">
-            <h4>🚫 註解是「垃圾的溫床」</h4>
+            <h4>註解是「垃圾的溫床」</h4>
             <p>• <strong>逃生門</strong>：Agent 遇到難題時，極喜歡加上註解解釋「為什麼自己使用非正規手段」。<br>
-            • <strong>不可強制執行</strong>：註解無法被編譯器檢驗，且會迅速過期（Stale），人類根本沒時間逐行看註解。</p>
+            • <strong>不可強制執行</strong>：註解無法被編譯器檢驗，且會迅速過期（Stale），人類根本沒時間逐行看註解。<br>
+            • <strong>真實案例警示</strong>：一行帶有自我合理化註解的 <code>setTimeout</code>，在 5 週內瘋狂繁衍成 183 個定時器！</p>
           </div>
           <div class="card" style="border-left: 4px solid var(--success-color);">
-            <h4>✅ 替代方案：行動化 Lint 報錯</h4>
-            <p>• 將不可碰的邊界寫成客製化 Lint 規則。<br>
-            • 當 Agent 違規時，Linter 輸出詳盡錯誤訊息：<strong>「請修復根源問題，嚴禁以此補丁繞過！」</strong></p>
+            <h4>替代方案：行動化 Lint 報錯</h4>
+            <p>• <strong>邊界代碼化</strong>：將不可碰的架構邊界轉化為客製化 Lint 規則與型別系統。<br>
+            • <strong>阻斷模糊空間</strong>：當 Agent 違規時，Linter 輸出詳盡錯誤訊息：<strong>「請修復根源問題，嚴禁以此補丁繞過！」</strong><br>
+            • <strong>確定性保證</strong>：讓約束具備機器可執行的防禦力，消除口頭提醒的不確定性。</p>
           </div>
         </div>
-        <div style="text-align: center; margin-top: 15px;">
-          <img src="wiki/assets/All_Code_Is_Slop_Except_Mine_Lauren_Tan/06_ban_comments.png" style="max-height: 200px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2);" alt="183 Timers Incident">
-          <p style="font-size: 0.55em; color: #94a3b8; margin-top: 4px;">▲ 實戰警示：一行帶有自我合理化註解的 setTimeout，在 5 週內瘋狂繁衍成 183 個定時器！</p>
-        </div>
         <div class="slide-footer">
-          出處章節：<a href="wiki/videos/All_Code_Is_Slop_Except_Mine_Lauren_Tan.md">Figure 4: Quick fixes considered harmful</a>
+          出處章節：<a href="wiki/videos/All_Code_Is_Slop_Except_Mine_Lauren_Tan.md">Figure 4: Quick fixes considered harmful</a> ｜ 概念：<a href="wiki/concepts/deterministic-guardrails.md">deterministic-guardrails</a>
         </div>
       </section>
 
@@ -334,9 +332,9 @@
           本簡報僅為核心精華提煉，完整影片逐字稿、時間軸拆解與形式化驗證數學原理，請參閱：
         </p>
         <div style="background: rgba(255,255,255,0.06); border-radius: 8px; padding: 15px; margin: 25px auto; max-width: 600px; text-align: left; font-size: 0.8em;">
-          📖 <strong>AI Video-to-Wiki 首頁</strong>：<a href="index.html">index.html (Docsify)</a><br>
-          🎬 <strong>第 1 講精讀筆記</strong>：<a href="index.html#/wiki/videos/All_Code_Is_Slop_Except_Mine_Lauren_Tan">All Code Is Slop (Lauren Tan)</a><br>
-          🧩 <strong>核心概念網絡</strong>：<a href="index.html#/wiki/concepts/deterministic-guardrails">Deterministic Guardrails</a>
+          <strong>AI Video-to-Wiki 首頁</strong>：<a href="index.html">index.html (Docsify)</a><br>
+          <strong>第 1 講精讀筆記</strong>：<a href="index.html#/wiki/videos/All_Code_Is_Slop_Except_Mine_Lauren_Tan">All Code Is Slop (Lauren Tan)</a><br>
+          <strong>核心概念網絡</strong>：<a href="index.html#/wiki/concepts/deterministic-guardrails">Deterministic Guardrails</a>
         </div>
         <div class="slide-footer">
           產出系統：AI Video-to-Wiki Automated Slide Generator ｜ 格式：Reveal.js
