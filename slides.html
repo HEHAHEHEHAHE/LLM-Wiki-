@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <title>教學簡報：All Code Is Slop (Except Mine) - 現代 AI 軟體工程實戰</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
+  <!-- Reveal.js 核心 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <!-- 主題樣式 (簡潔現代暗黑科技風格) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css" id="theme">
+  <!-- 程式碼高亮樣式 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+
+  <style>
+    :root {
+      --r-main-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      --r-heading-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      --accent-color: #38bdf8;
+      --warn-color: #f87171;
+      --success-color: #4ade80;
+    }
+    .reveal {
+      font-size: 28px;
+    }
+    .reveal h1, .reveal h2, .reveal h3 {
+      text-transform: none;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    .reveal h1 { font-size: 2.2em; color: #ffffff; }
+    .reveal h2 { font-size: 1.6em; color: var(--accent-color); margin-bottom: 0.8em; }
+    .reveal h3 { font-size: 1.25em; color: #e2e8f0; }
+
+    /* 重點卡片容器 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 25px;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: left;
+    }
+    .card h4 {
+      margin: 0 0 10px 0;
+      font-size: 1.1em;
+      color: var(--accent-color);
+    }
+    .card p, .card li {
+      font-size: 0.82em;
+      line-height: 1.6;
+      color: #cbd5e1;
+      margin: 0;
+    }
+
+    /* 金句與醒目標註 */
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(99, 102, 241, 0.15));
+      border-left: 5px solid var(--accent-color);
+      border-radius: 8px;
+      padding: 16px 22px;
+      text-align: left;
+      margin: 20px 0;
+      font-size: 0.9em;
+      line-height: 1.6;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.7em;
+      font-weight: 600;
+      background: var(--accent-color);
+      color: #0f172a;
+      margin-bottom: 12px;
+    }
+
+    /* 投影片底部出處標記 (嚴格落實作業 Citation 規範) */
+    .slide-footer {
+      position: absolute;
+      bottom: -35px;
+      left: 0;
+      width: 100%;
+      text-align: left;
+      font-size: 0.55em;
+      color: #64748b;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 6px;
+    }
+    .slide-footer a {
+      color: #94a3b8;
+      text-decoration: underline;
+    }
+
+    /* 數字量化展示 */
+    .metric-container {
+      display: flex;
+      justify-content: space-around;
+      margin: 30px 0;
+    }
+    .metric-box {
+      text-align: center;
+    }
+    .metric-num {
+      font-size: 2.8em;
+      font-weight: 800;
+      color: var(--success-color);
+      line-height: 1;
+    }
+    .metric-label {
+      font-size: 0.75em;
+      color: #94a3b8;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Slide 1: 標題頁 -->
+      <section>
+        <span class="badge">AI 軟體工程實戰精讀</span>
+        <h1>All Code Is Slop<br><span style="font-size:0.7em; color:var(--accent-color);">(Except Mine)</span></h1>
+        <p style="font-size: 0.85em; color: #94a3b8; margin-top: 20px;">
+          從單兵 AI 輔助到規模化軟體工廠：如何讓 Agent 每月交付萬個 PR 卻零垃圾？
+        </p>
+        <p style="font-size: 0.65em; color: #64748b; margin-top: 30px;">
+          講者：Lauren Tan (Potato) · 前 Cursor 工程師 / xAI Grok Bot 團隊<br>
+          本簡報由 LLM Wiki 知識庫即時驅動生成
+        </p>
+        <div class="slide-footer">
+          資料來源：<a href="wiki/videos/All_Code_Is_Slop_Except_Mine_Lauren_Tan.md">wiki/videos/All_Code_Is_Slop_Except_Mine_Lauren_Tan.md</a>
+        </div>
+      </section>
+
+      <!-- Slide 2: 目標與新範式 -->
+      <section>
+        <h2>軟體工程的新使命 (The New Meta)</h2>
+        <div class="highlight-box">
+          過去工程師每天審查 3 個 PR；現在每個工程師身後運作著上千個 AI Agents，每天代碼以數千 PR 的規模持續湧入。
+        </div>
+        <div class="card-grid">
+          <div class="card">
+            <h4>舊時代思維 (Manual Coding)</h4>
+            <p>• 追求手寫代碼的打字速度與產出量<br>• 人工手動進行逐行 Code Review<br>• 將品質寄託在工程師的個人專注力</p>
+          </div>
+          <div class="card">
+            <h4>AI 時代使命 (Software Factory)</h4>
+            <p>• 打造能約束與引導 Agent 的高信任環境<br>• 在代碼量暴增的同時，<strong>維持甚至提升系統品質</strong><br>• 核心瓶頸從「產能」轉為「信任與驗證」</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          出處章節：<a href="wiki/videos/All_Code_Is_Slop_Except_Mine_Lauren_Tan.md">I. 核心論點與背景動機</a> ｜ 概念：<a href="wiki/concepts/ai-agents-code-generation.md">ai-agents-code-generation</a>
+        </div>
+      </section>
+
+      <!-- Slide 3: 花園隱喻 -->
+      <section>
+        <h2>深刻警示：花園隱喻 (The Garden Analogy)</h2>
+        <div class="card-grid">
+          <div class="card" style="border-left: 4px solid var(--warn-color);">
+            <h4>⚠️ Agent 的「模仿本能」</h4>
+            <p>• 代碼庫（Codebase）是 Agent 最大、最直接的輸入來源。<br>• 專案中的任何臨時 Workaround、廢棄寫法或壞味道，都被 Agent 視為<strong>標準範式</strong>並瘋狂複製！</p>
+          </div>
+          <div class="card" style="border-left: 4px solid var(--success-color);">
+            <h4>🌱 園丁的工作 (Gardening)</h4>
+            <p>• 雜草若不清除，幾天內就會淹沒整座花園。<br>• 工程師的工作本質正變成<strong>園丁</strong>：維護土壤純淨，並為藤蔓架設鋼筋混凝土支架（Constraints）！</p>
+          </div>
+        </div>
+        <div class="highlight-box" style="margin-top:25px; text-align:center;">
+          <strong>「任何需要精細判斷（Nuance）才能寫好的語法，交給 Agent 都會變成 Slop（垃圾）。」</strong>
+        </div>
+        <div class="slide-footer">
+          出處章節：<a href="wiki/videos/All_Code_Is_Slop_Except_Mine_Lauren_Tan.md">I. 核心論點 - 2. 花園隱喻</a>
+        </div>
+      </section>
+
+      <!-- Slide 4: 倒金字塔模型 -->
+      <section>
+        <h2>核心解方：環境投資的「倒金字塔模型」</h2>
+        <p style="font-size:0.75em; color:#94a3b8;">由底而上，投資越底層，信任度與回報越高：</p>
+        <div style="text-align: left; margin-top: 20px;">
+          <div style="background: rgba(56, 189, 248, 0.25); padding: 12px 18px; border-radius: 6px; margin-bottom: 8px;">
+            <strong>Layer 1 (底層基石)：代碼庫本體 (Codebase Architecture)</strong><br>
+            <span style="font-size:0.75em; color:#cbd5e1;">極致的 API 設計與重構，直接從根源消滅錯誤發生的可能（Categorical Elimination）。</span>
+          </div>
+          <div style="background: rgba(56, 189, 248, 0.18); padding: 12px 18px; border-radius: 6px; margin-bottom: 8px;">
+            <strong>Layer 2：確定性防護欄 (Deterministic Guardrails)</strong><br>
+            <span style="font-size:0.75em; color:#cbd5e1;">編譯器、嚴格型別、自動化測試、靜態分析與客製化 Lint 規則（100% 可重現）。</span>
+          </div>
+          <div style="background: rgba(56, 189, 248, 0.12); padding: 12px 18px; border-radius: 6px; margin-bottom: 8px;">
+            <strong>Layer 3：驗證體系 (Runtime & Formal Verification)</strong><br>
+            <span style="font-size:0.75em; color:#cbd5e1;">運行時不變量（Invariants）檢驗、TLA+ 與 Lean 形式化數學驗證狀態機。</span>
+          </div>
+          <div style="background: rgba(248, 113, 113, 0.15); padding: 10px 18px; border-radius: 6px;">
+            <strong>Layer 4 (最少投入)：自然語言提示詞 (Prose: Prompts & AGENTS.md)</strong><br>
+            <span style="font-size:0.75em; color:#cbd5e1;">依賴隨機概率與文字判斷，最脆弱且無法保證可重現，應極小化其使用。</span>
+          </div>
+        </div>
+        <div class="slide-footer">
+          出處章節：<a href="wiki/videos/All_Code_Is_Slop_Except_Mine_Lauren_Tan.md">II. 核心架構：倒金字塔模型</a> ｜ 概念：<a href="wiki/concepts/deterministic-guardrails.md">deterministic-guardrails</a>
+        </div>
+      </section>
+
+      <!-- Slide 5: 生產環境踩坑實錄 1 & 2 -->
+      <section>
+        <h2>生產環境真實案例拆解 (Part 1)</h2>
+        <div class="card-grid">
+          <div class="card">
+            <h4>案例 1：React useEffect 氾濫</h4>
+            <p>• <strong>痛點</strong>：Agent 不具備細膩心智模型，濫用 useEffect 引發狀態無限重渲染。<br>
+            • <strong>解法</strong>：在產品代碼中<strong>全面禁用（Ban）useEffect</strong>，僅允許在底層框架內調用，徹底消除審查負擔！</p>
+          </div>
+          <div class="card">
+            <h4>案例 2：Electron 跨執行緒污染</h4>
+            <p>• <strong>痛點</strong>：在 Cursor 開發中，Agent 常常把 Main 執行緒代碼引入 Renderer，導致介面凍結。<br>
+            • <strong>解法</strong>：在檔案目錄設立 <code>electron-main</code> 與 <code>electron-renderer</code>，用 Dependency Linter 直接阻斷跨層引用！</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          出處章節：<a href="wiki/videos/All_Code_Is_Slop_Except_Mine_Lauren_Tan.md">III. 實戰踩坑與反模式案例 - 案例 1 & 2</a>
+        </div>
+      </section>
+
+      <!-- Slide 6: 生產環境踩坑實錄 3 & 4 (禁用註解) -->
+      <section>
+        <h2>顛覆認知：為什麼要「禁用 99% 的註解」？</h2>
+        <div class="card-grid">
+          <div class="card" style="border-left: 4px solid var(--warn-color);">
+            <h4>🚫 註解是「垃圾的溫床」</h4>
+            <p>• <strong>逃生門</strong>：Agent 遇到難題時，極喜歡加上註解解釋「為什麼自己使用非正規手段」。<br>
+            • <strong>不可強制執行</strong>：註解無法被編譯器檢驗，且會迅速過期（Stale），人類根本沒時間逐行看註解。</p>
+          </div>
+          <div class="card" style="border-left: 4px solid var(--success-color);">
+            <h4>✅ 替代方案：行動化 Lint 報錯</h4>
+            <p>• 將不可碰的邊界寫成客製化 Lint 規則。<br>
+            • 當 Agent 違規時，Linter 輸出詳盡錯誤訊息：<strong>「請修復根源問題，嚴禁以此補丁繞過！」</strong></p>
+          </div>
+        </div>
+        <div class="highlight-box" style="text-align: center; margin-top:20px;">
+          <strong>代碼註解不能約束行為；只有機器能攔截的規則，才是真實的信任。</strong>
+        </div>
+        <div class="slide-footer">
+          出處章節：<a href="wiki/videos/All_Code_Is_Slop_Except_Mine_Lauren_Tan.md">III. 實戰踩坑 - 案例 4：代碼註解是垃圾的溫床</a>
+        </div>
+      </section>
+
+      <!-- Slide 7: 形式化與數學驗證 -->
+      <section>
+        <h2>終極防線：形式化驗證 (Formal Verification)</h2>
+        <div class="highlight-box">
+          即使代碼通過了單元測試，面對高並發與分散式狀態機，AI Agent 仍可能引入罕見的競態死鎖。
+        </div>
+        <div class="card-grid">
+          <div class="card">
+            <h4>TLA+ 狀態機窮舉建模</h4>
+            <p>• 針對複雜協議與並發邏輯進行狀態全空間枚舉驗證。<br>• 確保系統核心不變量（Safety & Liveness）永不被破壞。</p>
+          </div>
+          <div class="card">
+            <h4>Lean 互動式定理證明</h4>
+            <p>• 使用純數學邏輯證明演算法在全邊界條件下的正確性。<br>• 讓 Agent 產出的關鍵代碼具備數學級的確定性。</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          出處章節：<a href="wiki/videos/All_Code_Is_Slop_Except_Mine_Lauren_Tan.md">II. 倒金字塔模型 - Layer 3</a> ｜ 概念：<a href="wiki/concepts/formal-verification-llm.md">formal-verification-llm</a>
+        </div>
+      </section>
+
+      <!-- Slide 8: 驚人實戰成果數據 -->
+      <section>
+        <h2>xAI Grok Bot 團隊的實戰量化成績單</h2>
+        <div class="metric-container">
+          <div class="metric-box">
+            <div class="metric-num">11,000+</div>
+            <div class="metric-label">單月由 Agent 交付之 Pull Requests</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-num" style="color:var(--accent-color);">~0.5%</div>
+            <div class="metric-label">代碼回滾率 (Revert Rate)</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-num" style="color:#e2e8f0;">99%</div>
+            <div class="metric-label">生產環境代碼註解全面禁用消除</div>
+          </div>
+        </div>
+        <div class="highlight-box" style="text-align: center;">
+          證明了：<strong>只要投資正確的確定性環境，AI Agent 不僅能提高 10 倍產能，代碼品質甚至高於純人工撰寫！</strong>
+        </div>
+        <div class="slide-footer">
+          出處章節：<a href="wiki/videos/All_Code_Is_Slop_Except_Mine_Lauren_Tan.md">IV. 關鍵量化成效與法則</a>
+        </div>
+      </section>
+
+      <!-- Slide 9: 工程師黃金法則與總結 -->
+      <section>
+        <h2>給現代工程師的「黃金反饋法則」</h2>
+        <div class="highlight-box" style="font-size: 1.05em; border-left-color: var(--success-color);">
+          <strong>The Golden Rule:</strong><br>
+          「每一次當你需要手動糾正 Agent 的錯誤時，<strong>絕對不要只把錯誤寫進對話框或提示詞</strong>；必須將其轉化為一條確定性的 Lint 規則、型別限制，或徹底重構 API 設計！」
+        </div>
+        <div class="card-grid" style="margin-top:20px;">
+          <div class="card">
+            <h4>1. 規則向左移 (Shift-Left)</h4>
+            <p>錯誤要越靠近源頭被攔截越好。編譯期報錯 &gt; 運行時崩潰 &gt; 產線出事。</p>
+          </div>
+          <div class="card">
+            <h4>2. 邁向自動合併</h4>
+            <p>當確定性檢查足夠扎實，人工 Review 清單將歸零，Agent 能安全自動合併 PR。</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          出處章節：<a href="wiki/videos/All_Code_Is_Slop_Except_Mine_Lauren_Tan.md">IV. 關鍵量化成效 - 黃金反饋迴圈</a>
+        </div>
+      </section>
+
+      <!-- Slide 10: 結尾與知識庫導引 -->
+      <section>
+        <span class="badge">持續學習與知識複利</span>
+        <h2>感謝聆聽 · 歡迎查閱完整 Wiki 知識庫</h2>
+        <p style="font-size: 0.85em; color: #94a3b8; margin-top: 25px;">
+          本簡報僅為核心精華提煉，完整影片逐字稿、時間軸拆解與形式化驗證數學原理，請參閱：
+        </p>
+        <div style="background: rgba(255,255,255,0.06); border-radius: 8px; padding: 15px; margin: 25px auto; max-width: 600px; text-align: left; font-size: 0.8em;">
+          📖 <strong>AI Video-to-Wiki 首頁</strong>：<a href="index.html">index.html (Docsify)</a><br>
+          🎬 <strong>第 1 講精讀筆記</strong>：<a href="index.html#/wiki/videos/All_Code_Is_Slop_Except_Mine_Lauren_Tan">All Code Is Slop (Lauren Tan)</a><br>
+          🧩 <strong>核心概念網絡</strong>：<a href="index.html#/wiki/concepts/deterministic-guardrails">Deterministic Guardrails</a>
+        </div>
+        <div class="slide-footer">
+          產出系統：AI Video-to-Wiki Automated Slide Generator ｜ 格式：Reveal.js
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Reveal.js 核心腳本 -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: 'c/t',
+      transition: 'slide',
+      transitionSpeed: 'fast',
+      controls: true,
+      progress: true,
+      center: true,
+      plugins: [ RevealHighlight ]
+    });
+  </script>
+</body>
+</html>
