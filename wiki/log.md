@@ -45,3 +45,11 @@
   - `06_ban_comments.png` (183 個定時器踩坑時間軸)
   - `07_summary_golden_rule.png` (黃金反饋法則)
 - 已將原版 PPT 截圖完整嵌入至 `wiki/videos/All_Code_Is_Slop_Except_Mine_Lauren_Tan.md` 筆記中。
+
+## [2026-11-23] upgrade | 落實圖表四步深度解析與實戰投影片優化
+- 依照 hBN 專案之最高標準，為 `All_Code_Is_Slop_Except_Mine_Lauren_Tan.md` 建立 4 大關鍵投影片之完整深度解析章節（視覺組件、數據流向、設計意圖、量化結論）：
+  1. Figure 1: The Poteto Pyramid（倒金字塔 5 層模型）
+  2. Figure 2: Code is Memory（代碼即記憶與花園本質）
+  3. Figure 3: Dune Framework（三大架構約束支柱）
+  4. Figure 4: Quick Fixes Considered Harmful（183 Timers 指數級擴散踩坑）
+- 在 Reveal.js 簡報第 6 頁嵌入真實的「183 Timers Incident」歷史時間軸投影片截圖，大幅強化簡報說服力與學術厚度。
