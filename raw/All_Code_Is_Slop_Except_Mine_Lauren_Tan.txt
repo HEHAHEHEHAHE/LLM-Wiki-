@@ -1,0 +1,436 @@
+# All Code Is Slop (Except Mine) — Lauren Tan, SpaceXSI
+# Video URL: https://youtu.be/O_zcc6Xl12g
+# Channel: AI Engineer
+# Machine-generated transcript via YouTube API
+
+[00:01] [music]
+[00:12] All right. Um, so again, I'm my name is
+[00:16] Potato. Uh, I work on Graphbot at
+[00:19] SpaceXsi.
+[00:21] And can I ask you a quick show of hands?
+[00:23] How many of you have ever looked at code
+[00:26] that somebody else wrote and you thought
+[00:28] that's all slop?
+[00:31] Well, I have too.
+[00:35] But today, I'm going to convince you
+[00:36] that you can turn that slop into gold.
+[00:42] Uh, and so I did something crazy last
+[00:44] month and I shipped 3,000 ploy requests
+[00:47] to production. Now, before agents, we
+[00:49] never really cared about volume. uh
+[00:52] except for the outliers.
+[00:54] And at my previous company, we call
+[00:56] these people coding machines. People
+[00:58] like Brett Taylor, who famously rewrote
+[01:00] all of Google Maps uh in a weekend, just
+[01:03] an insanely productive engineer. Uh and
+[01:06] well, with agents, anyone can now be a
+[01:08] coding machine. And my thesis is that
+[01:11] the job of a software engineer, the meta
+[01:13] of being a software engineer is figuring
+[01:15] out how to maintain or even improve the
+[01:18] quality of your code while massively
+[01:20] increasing your productivity.
+[01:23] To get there, some people like to call
+[01:25] this a software factory. Uh, but I like
+[01:27] to keep it simple and I think of it as
+[01:30] all about trust.
+[01:32] not blind trust, but investing in your
+[01:35] agents environment so you can trust that
+[01:37] your agents are going to do the right
+[01:39] thing. Now, it takes quite a lot of
+[01:42] effort to get there. Um, and it took me
+[01:45] 6 months to get to a point where I could
+[01:47] ship thousands of pull requests, a lot
+[01:49] of them in my sleep, but it's certainly
+[01:52] possible and it will take you much less
+[01:54] time than I did. So, let's start by
+[01:57] talking about how we move from a low
+[01:59] trust environment to a high trust one.
+[02:03] So this inverse pyramid is how I think
+[02:05] about where to spend time on your agents
+[02:08] environment.
+[02:10] The first two layers are deterministic.
+[02:12] So using your code itself. So things
+[02:14] like good API design architecture
+[02:17] refactoring or using lit rules, type
+[02:20] systems, compilers or you know different
+[02:22] kinds of testing. And you can use both
+[02:25] of these layers together to constrain
+[02:27] what agents can do and force them to do
+[02:30] the right thing by default.
+[02:32] Verification, both runtime and formal,
+[02:35] are great tools to layer on to find bugs
+[02:38] and check properties and the invariance
+[02:40] in your system that you want to hold
+[02:41] true and also help you check whether or
+[02:44] not the agent understood your goals and
+[02:46] your intent.
+[02:48] And then finally, you want to layer with
+[02:50] a little bit of pros. So things like
+[02:52] rules, skills, agents.mmd, things that
+[02:56] require judgment.
+[02:59] But let's start with your codebase.
+[03:01] Agents generate their outputs based on
+[03:03] their inputs. And so the the quality of
+[03:06] the input really matters. And it just so
+[03:08] happens that your codebase is one of the
+[03:10] largest inputs. So whenever you're
+[03:13] correcting your agent, think about how
+[03:15] you can make that a deterministic check
+[03:17] instead of adding another line to your
+[03:19] rules or your agents.mmd because it's
+[03:22] far more reproducible when it's in code
+[03:24] and it lets you trust it more.
+[03:27] And the analogy that I like to use is
+[03:29] that your codebase is kind of like a
+[03:31] garden. You know, code used to arrive a
+[03:34] few pull requests at a time. And uh I
+[03:37] remember going into work in 2024 and
+[03:40] reviewing the three pull requests that
+[03:42] my colleagues wrote colleagues wrote and
+[03:44] today that number is more like 300. So
+[03:48] uh you know every engineer is now a team
+[03:50] of hundreds or even thousands of agents
+[03:53] and code is arriving so rapidly that it
+[03:56] almost feels like a continuous stream
+[03:58] and it almost feels organic like a
+[04:01] living thing.
+[04:03] And in this analogy, your codebase, the
+[04:06] constraints that you impose, the
+[04:08] guardrails that you put up are the
+[04:10] concrete foundations that the new code
+[04:12] that your agents write grow around just
+[04:15] like uh the building in this picture.
+[04:18] And so in many ways, the job of being a
+[04:19] software engineer is kind of becoming
+[04:21] like gardening
+[04:24] because code is the biggest input for
+[04:26] agents. It means that any workarounds,
+[04:29] um, anti-atterns, deprecated code, tech,
+[04:33] it's now likely to be just copied by the
+[04:35] next agent since it looks like the
+[04:37] established pattern in your codebase.
+[04:40] And uh, it's like you have some weeds or
+[04:43] pests growing in your garden and then
+[04:45] they spread everywhere before you know
+[04:47] it.
+[04:51] So you want to make your codebase as
+[04:53] pristine as possible so that agents are
+[04:55] always copying the good stuff. All
+[04:58] right, let's look at some real examples.
+[05:00] Uh so Dune is a client framework that we
+[05:03] created for Grabbot to implement this
+[05:05] idea for organic architecture.
+[05:08] It's not really that interesting
+[05:09] technically. Uh you can kind of think of
+[05:11] Dune as um kind of like Nex.js for
+[05:14] Electron apps. But the interesting part
+[05:16] of Dune is that it has a lot of
+[05:18] constraints and lit rules that we've
+[05:20] encoded uh a lot of the lessons that
+[05:22] we've learned building desktop
+[05:24] applications.
+[05:26] And one such lesson is that anything
+[05:28] that requires nuance to use well often
+[05:31] leads to slop. Uh you know your classic
+[05:34] example is uh you know use effect in
+[05:36] React, right? It has its use cases uh
+[05:39] but it's often misused. You know some
+[05:41] people joke that you need a PhD to use
+[05:43] use effect. Um and in in other words, it
+[05:46] really requires a lot of nuance to use B
+[05:50] and agents are not good at using it. Um
+[05:53] so our solution has been to just ban it
+[05:56] in product code and it's really only
+[05:58] allowed in some places inside of Dune
+[06:00] APIs
+[06:02] and effectively this problem has now
+[06:04] been categorically eliminated and we
+[06:07] never need to catch that during code
+[06:08] review again.
+[06:10] Another interesting pattern that we use
+[06:12] is context through directory structure.
+[06:15] Uh so one anti-attern that we saw with
+[06:17] cursor which is an electron app is that
+[06:20] agents would often import main thread
+[06:22] code into the renderer thread which
+[06:24] would cause long tasks and jank.
+[06:28] So in uh grapot and in dunes we've made
+[06:31] this very very conventional. Uh we have
+[06:33] these two top level directories
+[06:35] literally called electron renderer and
+[06:37] electron main and imports between them
+[06:40] are forbidden or banned by our
+[06:42] dependency graph analyzer and some lint
+[06:45] rules. And again you know these are
+[06:47] simple lint rules to set up but it means
+[06:49] one less thing that we need to review
+[06:51] and think about uh you know during code
+[06:54] review.
+[06:56] And then one more surprising thing that
+[06:59] I've seen is agents using markdown. So
+[07:02] things like documentation, uh, code
+[07:04] comments, rules or skills, and they use
+[07:07] this as a place to write down their
+[07:09] justifications for not doing the right
+[07:11] thing, or I don't know if you've ever
+[07:13] seen this, but they'll over rotate on
+[07:15] some small correction that you made, and
+[07:17] they treat it like a hard rule that can
+[07:19] never be broken ever again.
+[07:22] And here's another example from cursor.
+[07:25] So agents really loved using imperative
+[07:27] timers. So things like set timeout,
+[07:29] request animation frame, request idle
+[07:31] call back. And they were using these as
+[07:33] quick fixes because they were really
+[07:36] patching over an architecture clash
+[07:38] between uh VS Code's imperative style
+[07:41] and React's declarative style.
+[07:44] So our choice of architecture actually
+[07:46] made both the client and the agent
+[07:49] performance much worse. And if you've
+[07:52] ever done any performance work in
+[07:53] JavaScript, you'll know that when you
+[07:54] have tons of timers being rapidly
+[07:56] created and destroyed causes a lot of uh
+[07:59] major garbage collection, which causes a
+[08:01] lot of lag and jen. Uh but the worst
+[08:04] part is that agents wrote a lot of code
+[08:06] comments like you can see in red here
+[08:08] explaining why this quick fix was
+[08:10] justified and before you know it, we had
+[08:14] timers spreading everywhere and the you
+[08:16] know the performance of the app really
+[08:18] suffered.
+[08:20] Now in graphbot uh we learned our lesson
+[08:23] there and we decided to just ban 99% of
+[08:25] comments uh because they go stale easily
+[08:29] uh you know humans just really don't
+[08:30] bother reading the comment slop anyway
+[08:33] and again it gives an agent the an
+[08:36] escape hatch to justify not doing the
+[08:38] right thing because it's hard. Um and
+[08:41] the worst part about comments though is
+[08:43] that they're not enforcable. So what
+[08:45] seems well-intentioned, you know, like
+[08:48] I'm going to tell the the next agent not
+[08:50] to do something, never ends up actually
+[08:52] being anything that you can trust. So in
+[08:56] Grogbot and Dune and in Dune, uh we now
+[08:58] have lint rules that give uh good and
+[09:01] very helpful error messages telling the
+[09:03] agent to fix the root cause, the real
+[09:06] problem, uh rather than just patch
+[09:08] around it.
+[09:10] And so our general principle is that
+[09:12] every time we correct our agents, it
+[09:13] turns into one of these deterministic
+[09:15] checks or we think about how to
+[09:17] categorically eliminate that problem in
+[09:19] the code through better API design,
+[09:21] through better architecture. And if you
+[09:24] do this enough times, you'll find that
+[09:27] you have just less things to look out
+[09:29] for in code review. And at some point
+[09:31] you realize there's there's nothing left
+[09:33] to review and you can just let agents
+[09:35] merge their most of their own pull
+[09:38] requests.
+[09:40] All right. Uh moving on. Verification is
+[09:43] also a really big part of how we make
+[09:45] our agents more autonomous and also
+[09:48] increase our confidence and trust in
+[09:49] their work. And our code review process
+[09:52] has now really shrunk into looking at
+[09:54] verification artifacts instead. So
+[09:56] things like videos, screenshots,
+[09:58] diagrams, formal verification.
+[10:02] Um, and the most basic example of this
+[10:04] is runtime verification. Uh, which is
+[10:06] just a fancy way of saying giving your
+[10:08] agent a way to run the code for itself
+[10:10] and use debugging tools that you know,
+[10:12] human developers use as well, like the
+[10:14] Chrome DevTools protocol. Um, in our
+[10:17] runtime verification skills, we have
+[10:19] this thing that we call a feature map.
+[10:21] And that's basically kind of like a site
+[10:24] map of all of the features that are
+[10:25] available in your application from the
+[10:27] user's point of view. And so with this,
+[10:30] agents don't need to guess when you say,
+[10:32] you know, the thingy in the left
+[10:33] sidebar. It gives you some shared
+[10:35] vocabulary.
+[10:37] And we also make use of custom CLIs
+[10:39] inside these skills so that uh agents
+[10:42] can reuse the the CLI and the driver
+[10:45] every time which cuts down on token
+[10:46] usage and is also testable.
+[10:50] Um and then recently we've also started
+[10:52] looking at formal verification. Uh so we
+[10:55] now use TA plus to do some model
+[10:57] checking of major user flows such as uh
+[10:59] notifications across multiple devices
+[11:01] and platforms. Uh we use a lean as well
+[11:04] for proving certain algorithms. Uh for
+[11:06] example, we have our own we wrote our
+[11:08] own custom virtualization library and we
+[11:10] use lean there to check that we don't
+[11:12] have you know flickering or jittering
+[11:14] problems. Um and we're still
+[11:16] experimenting with this approach.
+[11:18] Overall it seems very promising. Uh
+[11:20] we've already found quite a few bugs uh
+[11:22] with formal verification.
+[11:25] Um but it's certainly not a silver
+[11:26] bullet and we're treating it as another
+[11:30] tool, another layer in our agents uh
+[11:33] environment.
+[11:35] Uh and then this is a very fast video
+[11:37] but uh another thing that we just
+[11:39] started looking at is property based
+[11:41] testing as well for UIs. Uh so we use
+[11:44] this library called Bombadil. Um and
+[11:46] this has also caught a few UI bugs for
+[11:48] us already.
+[11:51] Okay. Okay, so zooming out, I saw this
+[11:53] tweet from Cindy and six months ago she
+[11:56] she said that she was or she was talking
+[11:58] about not being able to trust her agents
+[12:01] because of subtle bugs that were getting
+[12:03] merged.
+[12:05] And really what was missing for her in
+[12:06] being able to trust her agents was the
+[12:08] verification process. And now 6 months
+[12:11] later, she says that 70% of her daily
+[12:13] tokens go into verification. And I'd say
+[12:16] that that tracks with what I see as
+[12:18] well, that most of my token usage goes
+[12:20] to verification.
+[12:22] And if you really look closely at our
+[12:23] process, none of these things here are
+[12:26] new or novel techniques that we've never
+[12:28] had before.
+[12:30] These are just good software engineering
+[12:32] tools, but ones that might have been
+[12:34] prohibitively expensive to use before as
+[12:37] they were hard to understand or write or
+[12:39] maintain. But agents drastically cut
+[12:42] this cost down. And really, we're
+[12:44] entering a golden age of software
+[12:46] testing and verification because agents
+[12:48] let us test everything to a much greater
+[12:50] degree than used to be economical.
+[12:54] And then formal verification can also
+[12:56] help you better reason about how your
+[12:58] product should work and whether your
+[13:00] agents really understand your intent and
+[13:01] goals. Uh I made this new skill called
+[13:04] state chart uh in my plug-in PSAC potato
+[13:07] stack uh which helps you visualize state
+[13:09] machines from uh from the user's point
+[13:12] of view. Uh, and it's I find this much
+[13:14] easier to review alongside the videos
+[13:16] and screenshots that we provide. Um, and
+[13:19] so that's been great. Sorry for the
+[13:21] flashbang. Uh, okay. Now, let's look at
+[13:24] what the promised land looks like. What
+[13:27] do you get in return for all of this,
+[13:29] uh, you know, investment?
+[13:32] So, on the Graphbot team, our velocity
+[13:34] is uh, taking off and rapidly
+[13:36] increasing. And last month, our team
+[13:39] shipped a ridiculous 11,000 pull
+[13:42] requests to production, which is a wild
+[13:44] number. And our pace of releasing the
+[13:48] client has also increased. And we cut a
+[13:50] new stable version about once a day.
+[13:54] And then the core team is also shipping
+[13:56] much more. And we also have uh a lot
+[13:58] more casual or drive by contributors who
+[14:01] don't always have a lot of context uh
+[14:04] but they're also contributing. Um, and
+[14:06] in October we had about 227 people who
+[14:10] contributed at least one pull request.
+[14:14] So despite this velocity accelerating,
+[14:16] you might be thinking to yourself like,
+[14:18] isn't this going to be chaos? You know,
+[14:19] isn't this going to be a bunch of flop?
+[14:21] But actually, the number of uh PRs that
+[14:23] get reverted has actually gotten lower
+[14:25] on a relative basis and it's steady at
+[14:27] about half a percent.
+[14:30] But I think the really interesting thing
+[14:32] about this shipping pace and this volume
+[14:34] of pull requests is that the performance
+[14:38] of Grabbot has stayed not just stable
+[14:40] but has improved on multiple dimensions
+[14:42] compared to when we launched. So startup
+[14:45] typing, opening new chats, switching
+[14:48] chats, all of this has gotten faster and
+[14:51] keep in mind Grothbot is still an
+[14:53] Electron app for now. Uh so there is a
+[14:56] ceiling, right? But it's already much
+[14:58] faster than many other agent UIs out
+[15:01] there. And for an Electron app with this
+[15:05] high velocity and this many people
+[15:07] contributing, I'd say that's pretty
+[15:09] good.
+[15:11] So before you jump into building out a
+[15:13] software factory and you know automating
+[15:15] everything that you can, whenever you
+[15:17] correct your agent, try and do it by
+[15:19] improving your codebase first. you know,
+[15:21] start with a lint rule to prevent new
+[15:23] occurrences of anti-atterns and then
+[15:25] clean up those uh old patterns as well
+[15:28] and then make sure that your
+[15:29] verification story is really strong.
+[15:32] A lot of this work is a prerequisite to
+[15:35] automation anyway. And if your inner
+[15:37] coding loop uh produces slop, then
+[15:40] automating that loop just produces more
+[15:42] slop and you need to throw more and more
+[15:44] and more tokens at the problem, which we
+[15:46] all know is very expensive.
+[15:49] And once you've made these investments
+[15:50] into you know code into your codebase
+[15:53] static analysis runtime informal
+[15:55] verification you'll start to find that
+[15:57] many things become possible with these
+[16:00] foundations and that you can really
+[16:02] easily build your own factory on top of
+[16:04] these foundations
+[16:07] and when you're ready is a great way to
+[16:09] build that uh outer loop. We have tons
+[16:11] of connectors, routines that can kick
+[16:13] off cursor cloud agents and projects uh
+[16:16] which let you orchestrate thousands of u
+[16:18] hundreds or even thousands of agents.
+[16:21] And as a quick example, you know,
+[16:22] whenever we cut a new release now,
+[16:24] Grockbot will automatically spin up a
+[16:26] new cursor project for us that will fuzz
+[16:28] the entire application, the entire
+[16:30] build, and it will find bugs uh by
+[16:33] running the app and using it like a real
+[16:34] user. And then it's going to open fixed
+[16:37] PRs for each of those bugs that it finds
+[16:39] and it's going to automerge it as uh
+[16:42] crazy as that sounds. And that's because
+[16:44] our code base is good enough that pull
+[16:46] requests tend to just be good by
+[16:48] default. And most product code that we
+[16:50] land no longer really requires deep
+[16:52] human review.
+[16:56] So when you have solid foundations and
+[16:59] good organic architecture, you can turn
+[17:01] slop into gold and you can ship with
+[17:04] high quality uh high velocity without
+[17:07] compromising on quality. My name is
+[17:09] Potato, also known as Lauren. Thanks you
+[17:12] again for listening to my talk.
+[17:14] [applause]
