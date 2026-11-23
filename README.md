@@ -1,15 +1,15 @@
-# 🎬 AI Video-to-Wiki Knowledge Base
+# AI Video-to-Wiki Knowledge Base
 
 > **AI Engineering, Autonomous Agents & Software Factory 學術與實戰知識庫**  
 > 採用 **Karpathy LLM Wiki 結構**，將前沿英文 AI 講座轉化為結構化知識網，支援 Obsidian 本機查閱與 Docsify 網頁導覽。
 
 ---
 
-## 🌟 核心成果快速導覽
+## 核心成果快速導覽
 
-- 📖 **[瀏覽影片總目錄與概念索引](wiki/index.md)**
-- 🎬 **[開啟教學 HTML 簡報 (Reveal.js 投影片)](wiki/presentation.md)**
-- ⏱️ **[時間活動日誌](wiki/log.md)**
+- [首頁與影片目錄](wiki/index.md)
+- [教學 HTML 簡報 (Reveal.js 投影片)](wiki/presentation.md)
+- [時間活動日誌](wiki/log.md)
 
 ---
 
