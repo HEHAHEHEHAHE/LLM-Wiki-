@@ -53,3 +53,7 @@
   3. Figure 3: Dune Framework（三大架構約束支柱）
   4. Figure 4: Quick Fixes Considered Harmful（183 Timers 指數級擴散踩坑）
 - 在 Reveal.js 簡報第 6 頁嵌入真實的「183 Timers Incident」歷史時間軸投影片截圖，大幅強化簡報說服力與學術厚度。
+
+## [2026-11-24] fix | 修復側欄簡報白屏與新增背景靜默伺服器
+- **修復簡報跳轉白屏**：Docsify 側邊欄將 `[slides.html]` 誤當作單頁內嵌 Markdown 路由，導致右側渲染空白。改為 `<a href="slides.html" target="_blank">` 原生外鏈，點擊自動於全新分頁開啟全螢幕 Reveal.js 簡報。
+- **解決工作列黑視窗問題**：新增 `啟動預覽(無黑視窗).vbs`（點擊後自動隱藏視窗於背景靜默執行，不佔用工作列），並配套提供 `停止預覽伺服器.bat` 供隨時一鍵終止背景進程。
