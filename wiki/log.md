@@ -63,3 +63,7 @@
   1. 移除不穩定之 VBS 腳本與 raw HTML 語法，全面回歸與 hBN 專案完全一致的標準 Docsify 體系。
   2. 根目錄補足 `README.md`，徹底解決首頁 `404 - Not found` 錯誤。
   3. 側邊欄改回純淨 Markdown 鏈結：新增 `wiki/presentation.md` 專頁，內嵌 Reveal.js 播放器並提供全螢幕切換按鈕，徹底根除點擊簡報側欄白屏問題。
+
+## [2026-11-24] style & fix | 移除所有 Emoji 圖標並修復全螢幕獨立播放按鈕
+- **移除全部 Emoji 圖標**：全面清除側邊欄、標題與內文中的表情符號（如 🖥️、📺、👉 等），回歸純淨、嚴謹的極簡學術風格。
+- **修復全螢幕按鈕失效**：改用原生 HTML 鏈結標籤 `<a href="slides.html" target="_blank">` 並美化為專業按鈕，點擊保證 100% 於新分頁全螢幕開啟 Reveal.js 簡報，徹底解決 Docsify 內部路由攔截導致點擊無反應之問題。
