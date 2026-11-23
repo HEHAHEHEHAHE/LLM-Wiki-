@@ -81,3 +81,21 @@
 
 ## 5. 衝突與矛盾處理原則
 若不同影片講者之觀點產生分歧，必須在對應概念頁面設立「觀點分歧與權衡（Trade-offs & Divergence）」區塊，客觀對比雙方立論條件，不單方面進行取捨。
+
+---
+
+## 6. 演講實踐指導原則：Poteto 防護模型與黃金反饋法則
+依據 Lauren Tan《All Code Is Slop (Except Mine)》演講實戰精髓，本專案在人機協同與知識庫維護中全面貫徹以下工程準則：
+
+1. **倒金字塔資源配置 (The Poteto Pyramid)**：
+   - **Layer 1: Codebase & Architecture (投資最大)**：確保目錄劃分（`raw/`, `wiki/videos/`, `wiki/concepts/`）與檔案命名嚴格物理隔離，杜絕跨層混雜。
+   - **Layer 2: Deterministic Guardrails (確定性檢查)**：語音 ASR 辨識錯誤一律透過專案字典進行確定性置換（如 `ploy crust` $\to$ `Pull Request`），不依賴隨機文字猜測。
+   - **Layer 3: Verification (真實性驗證)**：重要論點、量化數據與架構拆解，必須有影片原生 PPT 抽幀或逐字稿直接佐證，落實圖表四步深度解析。
+   - **Layer 4: Prose (極簡規則法典)**：本規範（`AGENTS.md`）追求明確、確定與機器可執行，避免模糊冗長、充滿主觀詮釋的提示詞。
+   - **Layer 5: Human Review (壓縮人工審查)**：當前置確定性關卡足夠嚴密時，人類審查心力將壓縮至尖端，達成高信任度交付。
+
+2. **工程師的黃金反饋法則 (The Golden Feedback Rule)**：
+   - **「每一次當使用者需要手動糾正 AI 的錯誤時，絕對不要只把修正留在單次對話框中；必須立即將其提煉並寫入 `AGENTS.md` 的確定性檢查關卡或更新模板規範！」**
+
+3. **消除「花園雜草」與「禁用逃生門註解」**：
+   - Codebase 即為 Agent 的長期記憶（Code is memory）。專案內嚴禁遺留任何臨時應急的 Workaround、殘破格式或自我辯解之註解。一旦發現反模式，立即從根源重構消除，杜絕 Agent 進行病毒式自我複製。

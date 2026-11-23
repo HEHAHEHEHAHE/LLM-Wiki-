@@ -8,14 +8,14 @@
 ### 獨立全螢幕播放
 
 <div style="margin: 20px 0;">
-  <a href="slides.html" target="_blank" style="display: inline-block; background-color: #0284c7; color: #ffffff; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 1rem; box-shadow: 0 2px 6px rgba(2, 132, 199, 0.3);">全螢幕開啟 HTML 教學簡報 (另開新分頁)</a>
+  <a href="slides.html?v=clean_20261124" target="_blank" style="display: inline-block; background-color: #0284c7; color: #ffffff; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 1rem; box-shadow: 0 2px 6px rgba(2, 132, 199, 0.3);">全螢幕開啟 HTML 教學簡報 (另開新分頁)</a>
 </div>
 
 ---
 
 ### 簡報內嵌預覽
 
-<iframe src="slides.html" width="100%" height="650px" frameborder="0" allowfullscreen="true" style="border: 1px solid #cbd5e1; border-radius: 8px; margin-top: 15px; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);"></iframe>
+<iframe src="slides.html?v=clean_20261124" width="100%" height="650px" frameborder="0" allowfullscreen="true" style="border: 1px solid #cbd5e1; border-radius: 8px; margin-top: 15px; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);"></iframe>
 
 ---
 
