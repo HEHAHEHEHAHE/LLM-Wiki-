@@ -1,7 +1,11 @@
 - 導覽總覽
   - [首頁與影片目錄](wiki/index.md)
-  - [教學 HTML 簡報 (Reveal.js)](wiki/presentation.md)
   - [時間活動日誌](wiki/log.md)
+
+- 教學 HTML 簡報 (Reveal.js)
+  - [簡報總覽目錄](wiki/presentation.md)
+  - [01 | All Code Is Slop (Lauren Tan)](wiki/presentation_01.md)
+  - [02 | Agentic Workflows (Andrew Ng)](wiki/presentation_02.md)
 
 - 影片深度精讀 (Videos)
   - [01 | All Code Is Slop (Lauren Tan)](wiki/videos/All_Code_Is_Slop_Except_Mine_Lauren_Tan.md)

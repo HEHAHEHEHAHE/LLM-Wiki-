@@ -5,6 +5,7 @@
 - **Video Link**: [YouTube: What's next for AI agentic workflows ft. Andrew Ng](https://youtu.be/sal78ACtGTc)
 - **Duration**: 13 分 39 秒
 - **Keywords / Tags**: #AIAgents #AgenticWorkflows #Reflection #ToolUse #Planning #MultiAgent #HumanEval #FastTokens
+- **Interactive Presentation**: [全螢幕開啟第 2 講教學 HTML 簡報 (Reveal.js)](slides_02_andrew_ng.html?v=clean_20261124)
 
 ---
 

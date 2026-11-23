@@ -5,6 +5,7 @@
 - **Video Link**: [YouTube: All Code Is Slop (Except Mine)](https://youtu.be/O_zcc6Xl12g)
 - **Duration**: 17 分 31 秒
 - **Keywords / Tags**: #AIAgents #CodeSlop #SoftwareArchitecture #LintRules #FormalVerification #DeterministicGuardrails #Cursor #GrokBot #Dune
+- **Interactive Presentation**: [全螢幕開啟第 1 講教學 HTML 簡報 (Reveal.js)](slides_01_lauren_tan.html?v=clean_20261124)
 
 ---
 

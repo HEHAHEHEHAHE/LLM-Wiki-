@@ -87,3 +87,14 @@
 - **同步更新全局導覽與教學簡報**：
   - 更新總目錄 `wiki/index.md` 與多目錄側邊欄 `_sidebar.md`。
   - 擴充 Reveal.js 教學簡報 `slides.html` 至 15 頁，無縫串聯 Lauren Tan（確定性外部邊界約束）與 Andrew Ng（代理內部推論工作流）的雙翼體系，完全保持無 Emoji 圖標、無截圖之極簡現代卡片版面。
+
+
+## [2026-11-24] refactor | 將教學簡報徹底拆解為「一影片一獨立簡報」架構
+- **依據使用者回饋重構簡報架構**：解除先前的簡報接續模式，將每部演講的簡報全面獨立為專屬模組。
+- **產出專屬獨立簡報檔案**：
+  - `slides_01_lauren_tan.html`：專屬第 1 講（10 頁，聚焦倒金字塔與確定性防護）。
+  - `slides_02_andrew_ng.html`：專屬第 2 講（8 頁，聚焦 Agentic Workflows 與四大設計模式）。
+- **重構簡報專區與導覽選單**：
+  - `wiki/presentation.md` 升級為「教學簡報總覽目錄（Presentation Hub）」。
+  - 新增 `wiki/presentation_01.md` 與 `wiki/presentation_02.md` 專屬獨立預覽與全螢幕播放頁面。
+  - 在側邊欄 `_sidebar.md` 列出獨立簡報項，並在各影片精讀筆記頂部提供直接播放入口。

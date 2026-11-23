@@ -1,36 +1,21 @@
-# 教學 HTML 簡報成果 (Reveal.js)
+# 教學 HTML 簡報專區 (Presentation Hub)
 
-> 作業步驟二成果：以本知識庫為唯一真實來源，生成之教學型互動 HTML 簡報。  
-> 支援鍵盤方向鍵翻頁、全螢幕演示（按 F 鍵）與縮圖總覽（按 ESC 或 O 鍵）。
-
----
-
-### 獨立全螢幕播放
-
-<div style="margin: 20px 0;">
-  <a href="slides.html?v=clean_20261124" target="_blank" style="display: inline-block; background-color: #0284c7; color: #ffffff; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 1rem; box-shadow: 0 2px 6px rgba(2, 132, 199, 0.3);">全螢幕開啟 HTML 教學簡報 (另開新分頁)</a>
-</div>
+> 本知識庫落實「一影片一獨立簡報」架構：每部前沿 AI 影片皆由專屬 Wiki 精讀筆記作為唯一真實來源，自動生成獨立的教學互動 HTML 簡報（Reveal.js）。  
+> 簡報支援方向鍵翻頁、全螢幕演示（按 F 鍵）與縮圖總覽（按 ESC 或 O 鍵）。
 
 ---
 
-### 簡報內嵌預覽
+## 獨立簡報清單 (Presentation Catalog)
 
-<iframe src="slides.html?v=clean_20261124" width="100%" height="650px" frameborder="0" allowfullscreen="true" style="border: 1px solid #cbd5e1; border-radius: 8px; margin-top: 15px; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);"></iframe>
+| # | 影片主題 | 講者 | 簡報頁數 | 獨立播放連結 | 筆記對應出處 |
+| :- | :--- | :--- | :--- | :--- | :--- |
+| **01** | All Code Is Slop (Except Mine) | Lauren Tan (Potato) | 10 頁 | [開啟第 1 講獨立簡報](wiki/presentation_01.md) | [第 1 講精讀筆記](wiki/videos/All_Code_Is_Slop_Except_Mine_Lauren_Tan.md) |
+| **02** | What's Next for AI Agentic Workflows | Andrew Ng (吳恩達) | 8 頁 | [開啟第 2 講獨立簡報](wiki/presentation_02.md) | [第 2 講精讀筆記](wiki/videos/Whats_Next_For_AI_Agentic_Workflows_Andrew_Ng.md) |
 
 ---
 
-### 簡報對應章節與設計說明
-- **第 1–3 頁**：背景與問題意識（從一天審 3 個 PR 到代碼洪流、花園雜草隱喻）
-  - 對應章節：[All Code Is Slop (Except Mine) - I. 核心論點與背景動機](wiki/videos/All_Code_Is_Slop_Except_Mine_Lauren_Tan.md)
-- **第 4 頁**：核心架構（Poteto 倒金字塔 5 層模型視覺化）
-  - 對應概念：[確定性防護欄 (Deterministic Guardrails)](wiki/concepts/deterministic-guardrails.md)
-- **第 5–6 頁**：生產環境踩坑實錄與 183 個定時器爆發事件
-  - 對應章節：[All Code Is Slop (Except Mine) - II. Figure 4 深度解析](wiki/videos/All_Code_Is_Slop_Except_Mine_Lauren_Tan.md)
-- **第 7–9 頁**：形式化驗證（TLA+/Lean）、量化成果（11,000 PRs、0.5% 回滾率）與工程師黃金法則
-  - 對應概念：[形式化驗證在 AI 工程的應用](wiki/concepts/formal-verification-llm.md)
-- **第 10–12 頁**：工作流革命（Andrew Ng: Non-agentic vs. Agentic、HumanEval 評測超越 GPT-4）
-  - 對應章節：[What's Next for AI Agentic Workflows - II. Figure 1 & 2 深度解析](wiki/videos/Whats_Next_For_AI_Agentic_Workflows_Andrew_Ng.md)
-- **第 13 頁**：四大核心代理設計模式（Reflection, Tool Use, Planning, Multi-agent）
-  - 對應概念：[AI Agentic 四大設計模式](wiki/concepts/agentic-design-patterns.md)
-- **第 14–15 頁**：未來趨勢（高速 Token 生成、心智範式移轉）與雙翼知識庫全景導引
-  - 對應概念：[高速 Token 生成對代理架構的關鍵影響](wiki/concepts/fast-token-generation.md)
+## 簡報特色與設計原則
+
+1. **嚴格無圖標與極簡排版**：全面去除表情符號與雜亂截圖，回歸以色彩、卡片、數字指標與排版為核心的現代學術風格。
+2. **每頁標明 Wiki 出處**：落實學術引用規範（Ground truth citation），每張投影片底部皆提供對應之 Wiki 章節或概念頁面連結。
+3. **完全模組化獨立**：各演講簡報互不干擾，可隨影片擴充第 3、第 4、第 5 講，結構清晰井然。
