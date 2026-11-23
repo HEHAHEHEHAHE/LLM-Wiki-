@@ -112,3 +112,11 @@
 - **產出專屬獨立教學 HTML 簡報**：
   - 建立專屬獨立簡報 `slides_03_spacex_lauren_tan.html`（共 8 頁，無 Emoji 圖標、無截圖、純卡片指標排版）。
   - 新增 `wiki/presentation_03.md` 專屬獨立預覽與外連頁面，並同步登錄至 Presentation Hub 與全域側邊欄。
+
+
+## [2026-11-24] upgrade | 深度擴充第 3 講 65 分鐘訪談萬字精讀與 13 頁獨立簡報
+- **大幅擴充深度精讀筆記**：針對 65 分鐘（1,707 行逐字稿）進行深度解剖，擴充為萬字級完整文檔：
+  - 詳細整理 11 大完整時間軸（從「人肉代理」覺醒、語言本質、新原料、上下文預算、消除壞狀態、Dune 框架、內外循環打通、海量 PR 統計抽檢、調光開關隱喻到 Skills 組合哲學）。
+  - 增設 4 大工程隱喻對照表與 3 大尖銳現場 Q&A 實戰答辯。
+- **專屬獨立簡報擴充至 13 頁**：
+  - `slides_03_spacex_lauren_tan.html` 全面涵蓋 Meat Proxy、Mise en Place、Dimmer Switch、Dune 框架、內外循環、Sampling Inspection 與 Skills 合約，零 Emoji、零截圖，保持最高純淨排版。

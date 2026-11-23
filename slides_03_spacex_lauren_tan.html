@@ -118,7 +118,7 @@
 
       <!-- Slide 1: 標題頁 -->
       <section>
-        <span class="badge">第 3 講 · 深度工程訪談</span>
+        <span class="badge">第 3 講 · 深度工程訪談 (65 分鐘精華)</span>
         <h1>Shipping 1,000s of<br><span style="font-size:0.85em; color:var(--accent-color);">PRs a Month at SpaceX</span></h1>
         <p style="font-size: 0.85em; color: #94a3b8; margin-top: 20px;">
           航太級極限工程實戰：如何退居幕後成為軟體工廠經理？
@@ -132,7 +132,7 @@
         </div>
       </section>
 
-      <!-- Slide 2: 工廠經理的心態轉移 -->
+      <!-- Slide 2: 工程師角色的代際轉移 -->
       <section>
         <h2>工程師角色的代際轉移</h2>
         <div class="highlight-box">
@@ -149,11 +149,32 @@
           </div>
         </div>
         <div class="slide-footer">
-          出處章節：<a href="index.html#/wiki/videos/Shipping_1000s_Of_PRs_A_Month_At_SpaceX_Lauren_Tan">I. 核心訪談背景與演進</a>
+          出處章節：<a href="index.html#/wiki/videos/Shipping_1000s_Of_PRs_A_Month_At_SpaceX_Lauren_Tan">I. 1. [00:00 - 05:00] 開場與背景</a>
         </div>
       </section>
 
-      <!-- Slide 3: 商業後廚與備料台隱喻 -->
+      <!-- Slide 3: 擺脫人肉代理 -->
+      <section>
+        <h2>覺醒時刻：擺脫「人肉代理 (The Meat Proxy)」</h2>
+        <div class="highlight-box">
+          Lauren 在 Cursor 早期開發 Agent 視窗時驚覺：<strong>人類成了 Agent 與 DevTools 之間最慢的搬運工</strong>。
+        </div>
+        <div class="card-grid">
+          <div class="card" style="border-left: 4px solid var(--warn-color);">
+            <h4>人肉代理模式 (Meat Proxy)</h4>
+            <p>• 人類在終端機、瀏覽器、DevTools 與 Agent 之間來回複製貼上。<br>• 每次除錯都需要人類親自操作，成為最嚴重的流水線瓶頸。</p>
+          </div>
+          <div class="card" style="border-left: 4px solid var(--success-color);">
+            <h4>自主閉環模式 (Automated Probes)</h4>
+            <p>• 為 Agent 提供專屬的 CLI 探針與無頭除錯環境。<br>• Agent 直接讀取崩潰堆疊與性能日誌，實現機器級速度排查。</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          出處章節：<a href="index.html#/wiki/videos/Shipping_1000s_Of_PRs_A_Month_At_SpaceX_Lauren_Tan">I. 2. [05:00 - 10:00] 人肉代理的覺醒</a>
+        </div>
+      </section>
+
+      <!-- Slide 4: 商業後廚與備料台隱喻 -->
       <section>
         <h2>核心隱喻：商業後廚與備料台 (Mise en Place)</h2>
         <div class="card-grid" style="margin-top: 25px;">
@@ -171,11 +192,58 @@
           </div>
         </div>
         <div class="slide-footer">
-          出處章節：<a href="index.html#/wiki/videos/Shipping_1000s_Of_PRs_A_Month_At_SpaceX_Lauren_Tan">II. 核心架構與隱喻拆解 - 1. 商業後廚</a>
+          出處章節：<a href="index.html#/wiki/videos/Shipping_1000s_Of_PRs_A_Month_At_SpaceX_Lauren_Tan">II. 核心工程隱喻對照表</a>
         </div>
       </section>
 
-      <!-- Slide 4: Context, Not Control -->
+      <!-- Slide 5: 代碼調光開關隱喻 -->
+      <section>
+        <h2>核心隱喻：代碼調光開關 (Dimmer Switch)</h2>
+        <div class="highlight-box">
+          代碼庫的品質不是非黑即白（0 或 1），而是一個<strong>調光開關（Dimmer Switch）</strong>。
+        </div>
+        <div class="card-grid">
+          <div class="card">
+            <h4>雜草對 Agent 的指數級衰減</h4>
+            <p>• 當專案累積了 10% 的髒代碼與臨時 Workaround。<br>• Agent 的注意力衰減與推理失誤率<strong>不是增加 10%，而是增加 100%</strong>！<br>• 髒代碼會以平方速度指數級污染模型的情境感知。</p>
+          </div>
+          <div class="card">
+            <h4>後廚清潔文化 (Zero Tolerance)</h4>
+            <p>• 頂級廚房每出一道菜必徹底擦拭流理台。<br>• 軟體工廠中，Agent 每完成一個功能，必須立即執行重構與冗餘清理，保持土壤絕對純淨。</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          出處章節：<a href="index.html#/wiki/videos/Shipping_1000s_Of_PRs_A_Month_At_SpaceX_Lauren_Tan">I. 10. [55:00 - 60:00] 調光開關隱喻</a>
+        </div>
+      </section>
+
+      <!-- Slide 6: 軟體的新原料 -->
+      <section>
+        <h2>軟體工廠的新原料 (The New Ingredients)</h2>
+        <div class="card-grid" style="grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 25px;">
+          <div class="card">
+            <h4>1. Skills (技能合約)</h4>
+            <p>• 將最佳工程實踐轉化為精確文字。<br>• 建立可重複、可組合的自動化合約。</p>
+          </div>
+          <div class="card">
+            <h4>2. Environment (環境)</h4>
+            <p>• 尖銳的刀：即時反饋的型別與編譯器。<br>• 毫秒級運行的單元測試沙箱。</p>
+          </div>
+          <div class="card">
+            <h4>3. Codebase (純淨土壤)</h4>
+            <p>• 極致的 API 設計與物理目錄劃分。<br>• 根絕所有讓 Agent 產生歧義的語法。</p>
+          </div>
+        </div>
+        <div class="highlight-box" style="margin-top: 25px; text-align: center;">
+          <strong>大眾迷思</strong>：將 90% 精力浪費在尋求更聰明的模型；<br>
+          <strong>工程真相</strong>：頂級團隊將 90% 精力投入在打造讓普通模型也能穩定交付的環境！
+        </div>
+        <div class="slide-footer">
+          出處章節：<a href="index.html#/wiki/videos/Shipping_1000s_Of_PRs_A_Month_At_SpaceX_Lauren_Tan">I. 4. [15:00 - 20:00] 軟體的新原料</a>
+        </div>
+      </section>
+
+      <!-- Slide 7: Context, Not Control -->
       <section>
         <h2>治理哲學：給予上下文，而非微觀控制</h2>
         <div class="highlight-box">
@@ -192,52 +260,92 @@
           </div>
         </div>
         <div class="slide-footer">
-          出處章節：<a href="index.html#/wiki/videos/Shipping_1000s_Of_PRs_A_Month_At_SpaceX_Lauren_Tan">II. 核心架構 - 2. Context, Not Control</a>
+          出處章節：<a href="index.html#/wiki/videos/Shipping_1000s_Of_PRs_A_Month_At_SpaceX_Lauren_Tan">III. 尖端問答精粹 Q1</a>
         </div>
       </section>
 
-      <!-- Slide 5: pstack 與 Skills 本質 -->
+      <!-- Slide 8: Dune 框架與物理邊界 -->
+      <section>
+        <h2>內部框架 Dune：消除壞狀態的物理設計</h2>
+        <div class="highlight-box">
+          好代碼的最高標準：<strong>「讓無效的狀態在系統中根本無法被表達 (Make invalid states unrepresentable)」</strong>。
+        </div>
+        <div class="card-grid">
+          <div class="card">
+            <h4>唯一的正確寫法 (Only One Way)</h4>
+            <p>• 消除代碼庫中的一切二義性（Ambiguity）。<br>• 徹底禁用易出錯語法（如 React useEffect），消除審查負擔。</p>
+          </div>
+          <div class="card">
+            <h4>物理隔離目錄 (Folder Isolation)</h4>
+            <p>• 建立 <code>electron-main</code> 與 <code>electron-renderer</code>。<br>• Linter 在 AST 層級直接阻斷非法跨層引用，介面卡頓降為零。</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          出處章節：<a href="index.html#/wiki/videos/Shipping_1000s_Of_PRs_A_Month_At_SpaceX_Lauren_Tan">I. 7. [30:00 - 35:00] Dune 框架設計細節</a>
+        </div>
+      </section>
+
+      <!-- Slide 9: 內外循環打通 -->
+      <section>
+        <h2>內外循環打通：從用戶回報到自動 PR</h2>
+        <div class="card-grid" style="margin-top: 15px;">
+          <div class="card">
+            <h4>外部循環 (Outer Loop - 回報)</h4>
+            <p>• 監聽 Slack、Linear 與 X 平台上的用戶 Bug 回報。<br>• 自動捕獲錯誤情境與上下文資料。</p>
+          </div>
+          <div class="card">
+            <h4>內部循環 (Inner Loop - 交付)</h4>
+            <p>• 自動啟動沙箱無頭瀏覽器重現問題。<br>• 提取錯誤堆疊，自動生成紅燈單元測試。</p>
+          </div>
+        </div>
+        <div class="highlight-box" style="margin-top: 20px; text-align: center;">
+          <strong>自動化飛輪</strong>：Coding Agent 在本地將紅燈測試轉為綠燈 $\to$ 自動提交 PR $\to$ 15 分鐘完成無人值守閉環！
+        </div>
+        <div class="slide-footer">
+          出處章節：<a href="index.html#/wiki/videos/Shipping_1000s_Of_PRs_A_Month_At_SpaceX_Lauren_Tan">I. 8. [35:00 - 45:00] 內外循環打通</a>
+        </div>
+      </section>
+
+      <!-- Slide 10: 統計抽檢品管哲學 -->
+      <section>
+        <h2>尖銳質疑：海量 PR 如何審查？統計抽檢品管</h2>
+        <div class="highlight-box">
+          「一個月交付幾千個 PR，人類團隊怎麼可能看得過來？」——Lauren 提出的革命性質檢哲學。
+        </div>
+        <div class="card-grid">
+          <div class="card">
+            <h4>現代工廠邏輯 (Sampling Inspection)</h4>
+            <p>• 汽車工廠每天產出數千輛車，廠長不可能摸每顆螺絲。<br>• 放棄肉眼逐行審查，依靠自動化剛性檢測線（CI/CD）與每日隨機抽檢 10-20 個 PR。</p>
+          </div>
+          <div class="card">
+            <h4>根因回歸治理 (Root Cause Correction)</h4>
+            <p>• 抽檢一旦發現髒代碼，<strong>絕不改代碼，而是改規則</strong>！<br>• 追查「為何 Linter 沒有攔截此模式？」隨即更新環境，一勞永逸解決同類問題。</p>
+          </div>
+        </div>
+        <div class="slide-footer">
+          出處章節：<a href="index.html#/wiki/videos/Shipping_1000s_Of_PRs_A_Month_At_SpaceX_Lauren_Tan">III. 尖端問答精粹 Q2</a>
+        </div>
+      </section>
+
+      <!-- Slide 11: pstack 與 Skills 合約 -->
       <section>
         <h2>pstack 理念：Agent Skills 是軟體合約</h2>
         <div class="card-grid">
           <div class="card">
-            <h4>痛點：Agent 重複探索世界的浪費</h4>
-            <p>• 每個新 Agent 都像失憶者，反覆浪費 10 輪對話摸索專案如何運行。<br>• 每個 Agent 採取不同做法，導致工程行為無法標準化。</p>
+            <h4>消除重複探索世界之浪費</h4>
+            <p>• 每個新 Agent 往往反覆浪費 10 輪對話摸索專案如何運行。<br>• `pstack` 將最佳操作路徑固化為可被任何 Agent 調用的指令棧。</p>
           </div>
           <div class="card">
-            <h4>解答：Skills 作為可組合合約 (Contracts)</h4>
-            <p>• Skills 沒有魔法，是自然語言與確定性腳本的標準化封裝。<br>• 將最佳操作路徑固化為可組合合約，消除認知摩擦。</p>
-          </div>
-        </div>
-        <div class="highlight-box" style="margin-top: 20px; text-align: center;">
-          <strong>高階範式</strong>：Bug 分診 Skill $\to$ 調用本地重現 Skill $\to$ 調用修復測試 Skill，形成確定性流水線。
-        </div>
-        <div class="slide-footer">
-          出處章節：<a href="index.html#/wiki/videos/Shipping_1000s_Of_PRs_A_Month_At_SpaceX_Lauren_Tan">III. pstack 與 Agent Skills 的本質</a> ｜ 概念：<a href="index.html#/wiki/concepts/agent-skills-architecture">agent-skills-architecture</a>
-        </div>
-      </section>
-
-      <!-- Slide 6: 盯緊 Agent 與卡帕西閉環 -->
-      <section>
-        <h2>實戰閉環：盯緊 Agent 與自主改進閉環</h2>
-        <div class="card-grid">
-          <div class="card" style="border-left: 4px solid var(--accent-color);">
-            <h4>盯緊你的 Agent 如同實習生</h4>
-            <p>• <strong>觀察猶豫軌跡</strong>：初期親自觀察 Agent 的每一步思維鏈，找出它在哪裡試圖走捷徑或加註解。<br>
-            • <strong>環境回饋原則</strong>：看到 Agent 寫出壞味道代碼，<strong>絕對不責怪模型，而是檢討環境缺少了哪一條 Linter 規則</strong>！</p>
-          </div>
-          <div class="card" style="border-left: 4px solid var(--success-color);">
-            <h4>卡帕西評分閉環 (Karpathy Loop)</h4>
-            <p>• <strong>客觀評判標準 (Objective Judge)</strong>：為任務建立機器可執行的打分機制（測試通過率、效能指標）。<br>
-            • <strong>自主收斂重構</strong>：只要評判標準明確，Agent 就能在無人值守狀態下自我循環重構，直至達標。</p>
+            <h4>可組合合約 (Composable Contracts)</h4>
+            <p>• Skills 本質是自然語言與確定性腳本的標準化封裝。<br>• 建立明確的輸入、執行與斷言合約，實現跨 Agent 模組化組合。</p>
           </div>
         </div>
         <div class="slide-footer">
-          出處章節：<a href="index.html#/wiki/videos/Shipping_1000s_Of_PRs_A_Month_At_SpaceX_Lauren_Tan">IV. 每月交付數千 PR 的實戰閉環</a>
+          出處章節：<a href="index.html#/wiki/videos/Shipping_1000s_Of_PRs_A_Month_At_SpaceX_Lauren_Tan">I. 11. [60:00 - 65:35] pstack 與 Skills 組合哲學</a> ｜ 概念：<a href="index.html#/wiki/concepts/agent-skills-architecture">agent-skills-architecture</a>
         </div>
       </section>
 
-      <!-- Slide 7: 量化指標與極限吞吐 -->
+      <!-- Slide 12: 量化指標與極限吞吐 -->
       <section>
         <h2>SpaceX 實戰量化指標與工程效益</h2>
         <div class="metric-container">
@@ -258,16 +366,16 @@
           核心定律：<strong>任何繁瑣的手動操作（Slack Bug 分診、日誌比對、本地重現），皆應透過特化 Agent 實現零摩擦流轉！</strong>
         </div>
         <div class="slide-footer">
-          出處章節：<a href="index.html#/wiki/videos/Shipping_1000s_Of_PRs_A_Month_At_SpaceX_Lauren_Tan">V. 關鍵量化指標與工程洞察</a>
+          出處章節：<a href="index.html#/wiki/videos/Shipping_1000s_Of_PRs_A_Month_At_SpaceX_Lauren_Tan">IV. 關鍵量化指標與工程成果</a>
         </div>
       </section>
 
-      <!-- Slide 8: 總結頁 -->
+      <!-- Slide 13: 總結頁 -->
       <section>
         <span class="badge">第 3 講總結 · 知識庫查閱</span>
         <h2>感謝聆聽 · 歡迎查閱完整訪談筆記</h2>
         <p style="font-size: 0.85em; color: #94a3b8; margin-top: 25px;">
-          本簡報僅為核心精華提煉，完整訪談逐字稿、時間軸拆解與架構合約實戰，請參閱：
+          本簡報僅為核心精華提煉，完整訪談逐字稿、11 大時間軸拆解與架構合約實戰，請參閱：
         </p>
         <div style="background: rgba(255,255,255,0.06); border-radius: 8px; padding: 18px; margin: 25px auto; max-width: 650px; text-align: left; font-size: 0.82em; line-height: 1.8;">
           <strong>AI Video-to-Wiki 首頁</strong>：<a href="index.html">index.html (Docsify)</a><br>
