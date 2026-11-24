@@ -7,13 +7,13 @@
 
 ## 獨立簡報清單 (Presentation Catalog)
 
-| # | 影片主題 | 講者 | 簡報頁數 | 獨立播放連結 | 筆記對應出處 |
-| :- | :--- | :--- | :--- | :--- | :--- |
-| **01** | All Code Is Slop (Except Mine) | Lauren Tan (Potato) | 10 頁 | [開啟第 1 講獨立簡報](wiki/presentation_01.md) | [第 1 講精讀筆記](wiki/videos/All_Code_Is_Slop_Except_Mine_Lauren_Tan.md) |
-| **02** | What's Next for AI Agentic Workflows | Andrew Ng (吳恩達) | 8 頁 | [開啟第 2 講獨立簡報](wiki/presentation_02.md) | [第 2 講精讀筆記](wiki/videos/Whats_Next_For_AI_Agentic_Workflows_Andrew_Ng.md) |
-| **03** | Shipping 1,000s of PRs a Month at SpaceX | Lauren Tan (Potato) | 13 頁 | [開啟第 3 講獨立簡報](wiki/presentation_03.md) | [第 3 講深度訪談筆記](wiki/videos/Shipping_1000s_Of_PRs_A_Month_At_SpaceX_Lauren_Tan.md) |
-| **04** | What Are AI Agents? (Stanford CS329Z) | Diyi Yang (楊笛一) | 12 頁 | [開啟第 4 講獨立簡報](wiki/presentation_04.md) | [第 4 講史丹佛課程筆記](wiki/videos/What_Are_AI_Agents_Stanford_CS329Z.md) |
-| **05** | From AI Infrastructure to the 6G Future | Ronnie Vasishta | 12 頁 | [開啟第 5 講獨立簡報](wiki/presentation_05.md) | [第 5 講 NVIDIA GTC 筆記](wiki/videos/From_AI_Infrastructure_to_the_6G_Future.md) |
+| # | 影片主題 | 講者 | 簡報頁數 | 頁內預覽 | 獨立全螢幕播放 | 筆記出處 |
+| :- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **01** | All Code Is Slop (Except Mine) | Lauren Tan (Potato) | 10 頁 | [內嵌預覽](wiki/presentation_01.md) | [全螢幕播放](slides_01_lauren_tan.html?v=clean_20261124) | [精讀筆記](wiki/videos/All_Code_Is_Slop_Except_Mine_Lauren_Tan.md) |
+| **02** | What's Next for AI Agentic Workflows | Andrew Ng (吳恩達) | 8 頁 | [內嵌預覽](wiki/presentation_02.md) | [全螢幕播放](slides_02_andrew_ng.html?v=clean_20261124) | [精讀筆記](wiki/videos/Whats_Next_For_AI_Agentic_Workflows_Andrew_Ng.md) |
+| **03** | Shipping 1,000s of PRs a Month at SpaceX | Lauren Tan (Potato) | 13 頁 | [內嵌預覽](wiki/presentation_03.md) | [全螢幕播放](slides_03_spacex_lauren_tan.html?v=clean_20261124) | [深度訪談筆記](wiki/videos/Shipping_1000s_Of_PRs_A_Month_At_SpaceX_Lauren_Tan.md) |
+| **04** | What Are AI Agents? (Stanford CS329Z) | Diyi Yang (楊笛一) | 12 頁 | [內嵌預覽](wiki/presentation_04.md) | [全螢幕播放](slides_04_stanford_cs329z.html?v=clean_20261124) | [史丹佛課程筆記](wiki/videos/What_Are_AI_Agents_Stanford_CS329Z.md) |
+| **05** | From AI Infrastructure to the 6G Future | Ronnie Vasishta | 12 頁 | [內嵌預覽](wiki/presentation_05.md) | [全螢幕播放](slides_05_nvidia_ai_ran_6g.html?v=clean_20261124) | [NVIDIA GTC 筆記](wiki/videos/From_AI_Infrastructure_to_the_6G_Future.md) |
 
 ---
 
